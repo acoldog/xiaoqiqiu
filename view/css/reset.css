@@ -1,0 +1,48 @@
+/*	css hack
+	1.	把IE6/7/8与其它浏览器区别开来,"\9" : margin-top: 15px\9;
+	2.	针对IE6和IE7,"*"	:	*margin-left: 15px;
+	3.	单独针对IE6,"_"	:	_width: 15px;
+	4.	单独针对IE7,"!important"	:	height: 18px !important;
+	5.	单独针对IE8,"\0"	:	background: green\0;
+	6.	单独针对Firefox	:	把针对Firefox的CSS代码写在下面CSS函数的大括号之间
+@-moz-document url-prefix(){ CSS代码  }
+	7.	单独针对Opera	:	把针对Opera的CSS代码写在下面CSS函数的大括号之间
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0){	CSS代码 }
+	8.	针对Safari和Google Chrome	:	把针对Safari和Google Chrome的CSS代码写在下面CSS函数的大括号之间
+@media screen and (-webkit-min-device-pixel-ratio:0){	CSS代码 }
+*/
+@charset "utf-8";
+@charset "utf-8";
+/* CSS Document */
+@media screen and (min-width: 0px) and (max-width: 479px)  { 
+body{font: normal 80% Helvetica, Arial, sans-serif; margin:0;	min-width:20em;}
+}
+@media screen and (min-width: 480px) and (max-width: 767px)  { 
+body{font: normal 93.25% Helvetica, Arial, sans-serif; margin:0;	min-width:20em;}
+}
+@media screen and (min-width: 768px) {
+body{font: normal 125% Helvetica, Arial, sans-serif; margin:0;	min-width:20em;}
+}
+/*basic*/
+html{direction:ltr;*overflow-y:scroll;}
+body{height:100%;background:#fff;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,button,select,option,textarea,p,blockquote,th,td{padding:0;margin:0;font:12px/20px arial, verdana, tahoma, simsun, '\5B8B\4F53', sans-serif;word-break:break-all;word-wrap:break-word;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0;}
+ol,ul,dl{list-style:none;}
+h1{font:bold 16px/18px "microsoft yahei";}
+h2,h2 *{font-weight:bold;font-size:16px;}
+h3,h3 *{font-weight:bold;font-size:14px;}
+a{cursor:pointer;color:#014ccc;text-decoration:none;}
+a:hover{text-decoration:underline;}
+select,option{height:22px;line-height:16px;}
+option{padding-right:6px;}
+textarea{resize:none;}
+input[type="text"],input[type="password"]{height:17px;line-height:17px;}
+input[type="file"]{height:22px;line-height:18px;}
+input[type="radio"],input[type="checkbox"]{vertical-align:middle;padding:1px;margin:-1px 0;}
+input[type="button"],input[type="submit"],input[type="reset"]{width:auto;height:22px;line-height:16px;padding:0 10px;*padding:0;}
+input{_height:17px;_line-height:16px;_overflow-y:visible;}
+button{height:22px;line-height:18px;padding:0 10px;}
+.clear:after{content:".";display:block;clear:both;height:0px;visibility:hidden;}
+.clear{zoom:1;}

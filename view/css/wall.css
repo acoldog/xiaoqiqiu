@@ -1,0 +1,81 @@
+body{background:url(../body_3.jpg) repeat scroll center top #29455F;}
+.container{padding: 20px;width:1200px;}
+.comp_img{margin:0px;padding:1px;width:260px;height:190px;}
+.top span a {font-size:16px;font-weight:bold;}
+
+
+.box{margin: 5px;
+width:262px;
+padding: 1px;
+background: #ffffff;
+overflow:hidden;
+text-align: center;
+font-size: 11px;
+line-height: 1.4em;
+float: left;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;}
+.del_img{width:15px;height:15px;font-size:16px;font-weight:bold;text-decoration:none;float: right;}
+a:hover{text-decoration:none;color:#f00;}
+
+#loading {
+    width: 36px;
+    height: 36px;
+    position:fixed;
+    _position:absolute;
+    top: 50%;
+    left: 50%;
+    margin: -18px 0 0 -18px;
+    text-indent: -9999em;
+    overflow: hidden;
+    display: hidden;
+    /** loading 图片地址 **/
+    background: url(../img/loading.png) no-repeat 0 0;
+    /** webkit **/
+    -webkit-animation-name: loadRotate;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    /** firefox **/ 
+    -moz-animation-name: loadRotate;
+    -moz-animation-duration: 1s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    /** w3c **/
+    animation-name: loadRotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+/** webkit **/
+@-webkit-keyframes loadRotate{
+    from {
+        -webkit-transform:rotate(0deg);
+    }
+    25% {
+
+    }
+    to {
+        -webkit-transform:rotate(360deg);
+    }
+}
+/** firefox **/
+@-moz-keyframes loadRotate{
+    from {
+        -moz-transform:rotate(0deg);
+   }
+   to {
+        -moz-transform:rotate(360deg);
+   }
+
+}
+/** w3c **/
+@keyframes loadRotate{
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

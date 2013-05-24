@@ -1,0 +1,43 @@
+table.global_pop{border-collapse:collapse;margin:0;direction:ltr;color:#333;}
+
+td.pop_topleft,td.pop_topright,td.pop_bottomleft,td.pop_bottomright{height:7px;overflow:hidden;padding:0;width:7px;}
+
+td.pop_topleft{background-image:url('../img/pop_top_left.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/pop_top_left.png',sizingMethod='crop');}
+/*
+	上面第一个路径是相对于此CSS文件的图片路径，第二个是相对于程序文件的图片路径！
+*/
+
+td.pop_topright{background-image:url('../img/pop_top_right.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/pop_top_right.png',sizingMethod='crop');}
+
+td.pop_bottomleft{background-image:url('../img/pop_bottom_left.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/pop_bottom_left.png',sizingMethod='crop');}
+
+td.pop_bottomright{background-image:url('../img/pop_bottom_right.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/pop_bottom_right.png',sizingMethod='scale');}
+
+td.pop_border{background-image:url('../img/pop_border.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/pop_border.png',sizingMethod='scale');}
+
+td.pop_content{background-color:white;padding:0px;border:0 solid #797979;font-size:12px;}
+
+/*
+	内容层里的样式
+*/
+td.pop_content div{text-align:center;height:auto;/*padding-bottom:5px;*/}
+td.pop_content div .mover{height:0px;background:#ff0;padding-bottom:30px;_padding-bottom:10px;}
+/*td.pop_content .close{float:right;margin:7px 10px 0 0;width:11px;height:11px;overflow:hidden;background:url('../img/white_close.gif') no-repeat;text-indent:-5000px;cursor:pointer;}*/
+td.pop_content a:hover{text-decoration:none;color:#ccc}
+.close_pop{font-weight:bold;color:#000;font-size:35px;background:none;_font-size:25px;}
+.min_pop{font-weight:bold;color:#000;font-size:40px;cursor:pointer;}
+.pop_ctl{position: absolute;right: 7px;}
+.pop_title{font-weight:bold;text-align:center;}
+td.pop_content .content{padding:2px;overflow:hidden;}
+/**
+*	影子层
+*/
+/*
+.cover{width:55%;height:100%;position:absolute;top:0px;left:0px;background-color:#222222;padding-left:45%;padding-top:0%;filter:alpha(opacity=30);-moz-opacity:.30;opacity:0.3;}
+*/
+
+
+/*底部缩小栏的样式*/
+.bottom{position:absolute;bottom:10px;right:20px;border:0px #f00 solid;}
+.bottom .bottom_min_pop{-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;float:right;margin:1px;width:30px;height:14px;cursor:pointer;background:#000;filter:Alpha(opacity=70);opacity:0.7;color:#fff;font-size:13px;padding:0px 2px;overflow:hidden;padding: 3px 10px;border:2px solid #000000;}
+.comp_img{cursor:pointer;padding: 2px 5px;}

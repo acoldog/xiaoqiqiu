@@ -1,0 +1,49 @@
+@charset "utf-8";
+/*	css hack
+	1.	把IE6/7/8与其它浏览器区别开来,"\9" : margin-top: 15px\9;
+	2.	针对IE6和IE7,"*"	:	*margin-left: 15px;
+	3.	单独针对IE6,"_"	:	_width: 15px;
+	4.	单独针对IE7,"!important"	:	height: 18px !important;
+	5.	单独针对IE8,"\0"	:	background: green\0;
+	6.	单独针对Firefox	:	把针对Firefox的CSS代码写在下面CSS函数的大括号之间
+@-moz-document url-prefix(){ CSS代码  }
+	7.	单独针对Opera	:	把针对Opera的CSS代码写在下面CSS函数的大括号之间
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0){	CSS代码 }
+	8.	针对Safari和Google Chrome	:	把针对Safari和Google Chrome的CSS代码写在下面CSS函数的大括号之间
+@media screen and (-webkit-min-device-pixel-ratio:0){	CSS代码 }
+*/
+
+/*basic*/
+html{direction:ltr;*overflow-y:scroll;}
+body{height:100%;background:#fff;}
+body,div,dl,dt,dd,ul,ol,li,h1,h1 *,h2,h3,h4,h5,h6,pre,form,fieldset,input,button,select,option,textarea,p,blockquote,th,td{padding:0;margin:0;font:12px/20px arial, verdana, tahoma, simsun, '\5B8B\4F53', sans-serif;word-break:break-all;word-wrap:break-word;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0;}
+ol,ul,dl{list-style:none;}
+h1{font:bold 16px/18px "microsoft yahei";}
+h2,h2 *{font-weight:bold;font-size:16px;}
+h3,h3 *{font-weight:bold;font-size:14px;}
+a{cursor:pointer;color:#014ccc;text-decoration:none;}
+a:hover{text-decoration:underline;}
+select,option{height:22px;line-height:16px;}
+option{padding-right:6px;}
+textarea{resize:none;}
+input[type="text"],input[type="password"]{height:17px;line-height:17px;}
+input[type="file"]{height:22px;line-height:18px;}
+input[type="radio"],input[type="checkbox"]{vertical-align:middle;padding:1px;margin:-1px 0;}
+input[type="button"],input[type="submit"],input[type="reset"]{width:auto;height:22px;line-height:16px;padding:0 10px;*padding:0;}
+input{_height:17px;_line-height:16px;_overflow-y:visible;}
+button{height:22px;line-height:18px;padding:0 10px;}
+/*start*/
+/*div{border:1px solid #f00}*/
+
+body{padding:10px;}
+.container{margin:0 auto;width:700px;padding:10px;border:1px #ccc solid;}
+.container .top{font-size:30px;font-weight:bolder;line-height:50px;}
+.container p{margin-top:10px;}
+.container .back{font-size:20px;text-decoration:underline;}
+
+.upload_photo{position:relative;padding:5px;border:1px #ccc solid;width:590px;margin:10px 0px;}
+#upload_click{border:1px #000 solid;background:#ccc;cursor:pointer;font-size:16px;}
+.upload_file{position:relative; left:-200px; top:0px; filter:alpha(opacity=0);opacity:0}
+.upload_intro{width:300px;display:none;}

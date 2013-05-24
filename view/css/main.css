@@ -1,0 +1,101 @@
+@charset "utf-8";
+/*start*/
+
+html {/*overflow:hidden;*/width:100%;height:100%;_overflow:hidden;_width:90%;}
+body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*background:#8D9538;*/}
+#cover{width:100%;height:100%;position:absolute;top:0;left:0;z-index:100;background:#000;filter:Alpha(opacity=30);opacity:0.3;display:none; }
+
+#body_flash{background:url('../body_2.jpg');position:absolute;z-index:101;}
+.top{width: 100%;height: 30px;background: #29455F;border-bottom: #fff dashed 1px;}
+.top span{float:right;margin:5px;color:#fff;}
+.top span a{color:#ff0}
+
+/*内容*/
+.container{width:1080px;margin:0 auto;padding-top:20px;}
+.hide_content{font-size: 20px;float: right;font-weight: bolder;text-decoration:none;}
+.left{float:left;width:800px;overflow: hidden;padding: 2px;}
+.left .header{position:relative;height:50px;_position:;}
+.left .header span{color:#fff;font-size:50px;line-height:50px;font-weight:bolder;float:left;margin-left: 50px;}
+/*
+左侧栏
+.left .header .add_something{margin-left:100px;font-size:40px;padding-left:1px;padding-right:11px;background:#29455F;color:#fff;-moz-border-radius:10px;-khtml-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
+*/
+.left .header .add_something{cursor:pointer;position:absolute;margin-left:0px;;width:50px;height:50px;background-image:url('../img/btn4.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/btn4.png',sizingMethod='crop');_position:;_float:right;_margin-left:0px;}
+.left .circle{background:#fff;width:750px;padding:15px;margin-top:20px;}
+/*.left .circle .comp_img{width:210px;height:280px;}*/
+.left .left_shadow{
+	position: relative;
+	width: 319px;
+	height: 12px;
+	margin-bottom: 25px;
+	background-image: url(../footer_shadow.png);
+	background-position: -114px -66px;
+	_background-image: none;
+	background-repeat: no-repeat;}
+.left .right_shadow{
+	position: absolute;
+	right: -460px;
+	top: 0;
+	width: 319px;
+	height: 12px;
+	background-image: url(../footer_shadow.png);
+	background-position: -114px -79px;
+	border-width: 0;
+	font-size: 0;
+	_width: 632px;
+	_height: 3px;
+	_left: 0;
+	_background-image: none;
+	_border-width: 1px 0 0;
+}
+.left .comment_div{height:10px;}
+.left .content{background:#F7F7F7;padding:10px;}
+.left .comment_div{margin-top:15px;}
+.left .comment{float:right;}
+.close{float:right;font-weight:bold;color:#000;font-size:20px;background:none;_font-size:15px;}
+.close:hover{text-decoration:none;color:#ccc}
+.edit{float:right;margin-right:10px;font-weight:bold;color:#000;font-size:20px;background:none;_font-size:15px;}
+.edit:hover{text-decoration:none;color:#ccc}
+.comment-float{position: relative;left:760px;top:0px;width:30px;height:25px;cursor:pointer;background-image: url(../footer_shadow.png);background-position: -115px -41px;}
+.comment-float a{margin-left: 3px;}
+/*
+	右侧栏
+*/
+.right{float:right;margin-right:80px;_margin-right:0px;}
+.right .face{width:150px;height:150px;background:#fff;padding:10px;margin-top:50px;}
+.right .menu_click ,.right .menu_over{padding:5px 0px;margin-top:10px;text-align:center;color:#fff;font-size: 20px;font-weight: bolder;background:#29455F;width: 180px;}
+.right .menu_click ,.right .menu_over a{color:#fff;}
+.right .menu_click{cursor: pointer;}
+.slide_item{display: none;}
+.weibo_logo{width:25px;height:25px;margin-right:3px;background-image:url('../img/weibo2.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/weibo2.png',sizingMethod='crop');}
+.tqq_logo{width:25px;height:25px;background-image:url('../img/tqq.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/tqq.png',sizingMethod='crop');background-repeat: no-repeat;}
+.right a{color: #fff;}
+
+/**
+ * 注册层
+ */
+div .reg_left{float:left;width:150px;text-align: left;}
+div .reg_right{margin-left:150px;margin-top:3px;text-align: left;}
+.reg_face{height:60px;}
+.reg_container li{margin:3px;}
+.reg_container input{width:350px;}
+
+
+/*下一页*/
+.btn{cursor:pointer;position:fixed;top:300px;right:50px;width:128px;height:128px;background-image:url('../img/btn_4.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/btn_4.png',sizingMethod='crop');_position:absolute;_right:5%;color:#fff;font-size:20px;font-weight:bolder;line-height:80px;}
+.btn #now_page{font-size:40px;}
+
+.back_btn{cursor:pointer;position:fixed;top:400px;right:40px;width:50px;height:50px;background-image:url('../img/back_btn1.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./view/img/back_btn1.png',sizingMethod='crop');_position:absolute;_right:5%;}
+.back_btn2{cursor:pointer;position:fixed;left:40px;line-height:80px;top:320px;display:block;
+	_position:absolute;_right:5%;font-size:60px;font-weight: bolder;width: 80px;height: 80px;}
+
+.bottom{position:absolute;bottom:10px;right:20px;border:1px #f00 solid;height:40px;min-width:70px;_width:70px;}
+.bottom .bottom_min_pop{-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;float:right;margin:1px;width:30px;height:15px;cursor:pointer;background:#000;filter:Alpha(opacity=70);opacity:0.7;color:#fff;font-size:10px;padding:0px 2px;}
+.add_top{position:absolute;text-align: left;font-size:26px;font-weight: bold;margin:5px 0px;}
+.top_loading{display:none;background:#f00;filter:Alpha(opacity=60);opacity:0.6;left:20%;color:#fff;font-size:20px;font-weight:bold;padding:5px 10px;}
+/*漂浮*/
+.floater{position:fixed;_position:absolute;z-index:1000;}
+/*圆角框*/
+.radius{-moz-border-radius:10px;-khtml-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
+/*滑动块*/
+.unlock{cursor:pointer;background:#000;top:400px;left:300px;padding: 8px 15px;font-size: 24px;color:#fff;font-weight:bolder;position:absolute;border:1px #fff solid;-webkit-user-select:none;-moz-user-select: -moz-none;}

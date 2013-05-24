@@ -1,0 +1,10 @@
+.curtain{position:fixed;_position:absolute;bottom:0px;z-index:999999;filter:Alpha(opacity=0.8);opacity:0.8;bottom:-120px;}
+.curtain ul{position: relative;}
+.curtain ul li{list-style:none;float:left;background:#fff;cursor: pointer;}
+.curtain ul li img{position: relative;filter:Alpha(opacity=80);opacity:0.8;padding:4px 2px;background:#fff;}
+
+.curtain-preview{text-align: center;position:absolute;top:0px;background: #000;width: 100%;filter:Alpha(opacity=100);opacity:1;display: none;}
+.l-btn{position:fixed;left:10px;top: 300px;font-size:40px;font-weight:bold;color:#fff;}
+.r-btn{position:fixed;right:10px;top: 300px;font-size:40px;font-weight:bold;color:#fff;}
+.l-btn:hover ,.r-btn:hover{text-decoration:none;}
+.curtain-preview img{cursor:pointer;}

@@ -1,0 +1,126 @@
+1351440276<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta property="wb:webmaster" content="c2efef57b2b53a48" />
+		<title>维尼的小气球 - acol</title>
+		<link href="http://s1.56img.com/style/i/v3/css/global/global.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/main.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/pop.css" type="text/css" rel="stylesheet"/>
+		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="http://s1.56img.com/script/lib/jquery/jquery-1.4.4.min.js" ></script>
+		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/helper.js"></script>
+		<script type="text/javascript">
+			//	初始化
+			var WEB_ROOT = 'http://xiaoqiqiu.com/',
+				IS_MINE = 0,
+				USER = 'acol';	
+		</script>
+	</head>
+	<body>
+	<div class="top">
+				<span id="login_top">未登录，现在<a href="javascript:;" onclick="$_Index.ini();return false;">登录</a>？</span>
+			</div>
+
+
+	<div class="container clear" id="container">
+		<p>业余时间纯手工打造的半成品，推荐使用chrome或者高版本IE浏览。</p>
+		<div class="left">
+			<div class="header" id="header">
+				<span>acol</span>
+				<a id="add_something" class="add_something" href="javascript:;" onclick="return false;"  style="display:none;" >
+				</a>
+			</div>
+
+			<div id="content">
+									<div class="circle" aid="32">
+												<p>
+	&nbsp;</p>
+<p>
+	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121025190740_.jpg" title="点击查看原图" /></p>
+						<div class="comment_div">
+							<span class="comment"><a href="javascript:;" alt="32" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
+						</div>
+					</div>
+									<div class="circle" aid="29">
+												<p>
+	<span style="color: rgb(84, 84, 84); font-family: Tahoma; font-size: 14px; line-height: 21px; ">要学会在工作和生活中自我增值。</span></p>
+<p>
+	<font color="#545454" face="Tahoma"><span style="font-size: 14px; line-height: 21px;">不要老是期待别人的给予和命运的安排，没有人生下来就欠你的，靠自己</span></font></p>
+						<div class="comment_div">
+							<span class="comment"><a href="javascript:;" alt="29" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
+						</div>
+					</div>
+									<div class="circle" aid="28">
+												<p>
+	小维尼和邻居</p>
+<p>
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" height="505" id="object_acol_flash_0" width="600"><param name="movie" value="http://player.56.com/v_NjgyMzY3MjQ.swf" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="opaque" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><embed allowfullscreen="true" allowscriptaccess="always" height="505" id="embed_acol_flash_0" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://player.56.com/v_NjgyMzY3MjQ.swf" type="application/x-shockwave-flash" width="600" wmode="opaque"></embed></object></p>
+<p>
+	<strong><span style="font-size: 36px; ">很傻很天真的维尼</span></strong></p>
+<p>
+	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121025001537_.jpg" title="点击查看原图" /></p>
+						<div class="comment_div">
+							<span class="comment"><a href="javascript:;" alt="28" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
+						</div>
+					</div>
+									<div class="circle" aid="27">
+												<p>
+	中秋夜</p>
+<p>
+	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024233405_.jpg" title="点击查看原图" /><img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024233519_.jpg" title="点击查看原图" /></p>
+<p>
+	国庆第二天早上6点左右鱼肚白，晨跑 - 寻找小时候的印记。</p>
+<p>
+	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024233609_.jpg" title="点击查看原图" /><img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024233700_.jpg" title="点击查看原图" /></p>
+						<div class="comment_div">
+							<span class="comment"><a href="javascript:;" alt="27" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
+						</div>
+					</div>
+									<div class="circle" aid="26">
+												<p>
+	&nbsp;</p>
+<p>
+	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024232945_.jpg" title="点击查看原图" /></p>
+						<div class="comment_div">
+							<span class="comment"><a href="javascript:;" alt="26" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
+						</div>
+					</div>
+							</div>
+
+			
+
+		</div>
+		<div class="right">
+			<div class="face">
+				<img height="150px" width="150px" src="http://xiaoqiqiu.com/view/img/1.jpg"/>
+				<p><label id="now_user"></label></p>
+			</div>
+			<div class="menu"><a href="/acol/wall">图片墙</a></div>
+			<div style="width:180px;margin-top:10px">
+				<iframe width="100%" height="500"  frameborder="0" scrolling="no" src="http://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=0&height=500&uid=1879892684&skin=8&refer=1&appkey=&pic=0&titlebar=1&border=1&publish=0&atalk=1&recomm=0&at=0&colordiy=0&dpc=1"></iframe>
+			</div>
+		</div>
+		
+		<span class="btn" id="page_btn" title="next page" last_page="2" onclick="$_Index.switch_div('content','next')">
+			<label id="now_page">1</label>/2		</span>
+		<span class="back_btn" id="page_back" title="pre page" onclick="$_Index.switch_div('content','pre')"></span>
+	</div>
+	
+
+	<div class="bottom" id="bottom">
+		
+	</div>
+	<div id="gotop" style="position: fixed; bottom: 50px; right: 10px; cursor: pointer;display:none; " title="回到顶部">
+		<img src="http://xiaoqiqiu.com/view/img/gotop.gif" style="width:31px; height:31px;">
+	</div>
+
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/index.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/space_ui_v2.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/pop.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/ckeditor.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/add.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/uploadify/jquery.uploadify-3.1.min.js"></script>
+	</body>
+</html>

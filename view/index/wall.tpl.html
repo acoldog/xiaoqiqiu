@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta property="wb:webmaster" content="c2efef57b2b53a48" />
+		<title>维尼的照片墙 - acol</title>
+		<link href="http://s1.56img.com/style/i/v3/css/global/global.css" type="text/css" rel="stylesheet"/>
+		<link href="css/reset.css" type="text/css" rel="stylesheet"/>
+		<link href="css/main.css" type="text/css" rel="stylesheet"/>
+		<link href="css/pop.css" type="text/css" rel="stylesheet"/>
+		<link href="css/wall.css" type="text/css" rel="stylesheet"/>
+		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="<?=WEB_ROOT?>plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="http://s1.56img.com/script/lib/jquery/jquery-1.4.4.min.js" ></script>
+		<script type="text/javascript" src="js/helper.js?v=1"></script>
+		<script type="text/javascript">
+			//	初始化
+			var WEB_ROOT = '<?=WEB_ROOT?>',
+				IS_MINE = '<?=$global['is_mine']?>';
+				USER = '<?=$global['user']?>';
+		</script>
+	</head>
+	<body>
+		<div id="top_loading" class="top_loading floater radius"><img src="<?=WEB_ROOT?>/view/top_loading.gif"/> 加载中... </div>
+		<p id="loading">Loading</p>
+		<div class="top">
+			<span class="floater"><a href="<?=WEB_ROOT . $global['user']?>">返回空间</a></span>
+		</div>
+		<div id="container" class="container"></div>
+
+		<div class="mod56_page page_theme_0" style="text-align: center;width: 100%;position:fixed;_position:absolute;bottom:30px;">
+			<div class="mod56_page_pn" id="acolScrollPage" style="display:none;">
+			</div>
+		</div>
+		<div class="bottom" id="bottom">
+		
+		</div>
+		<div id="gotop" style="position: fixed; bottom: 50px; right: 50px; cursor: pointer;display:none; " title="回到顶部">
+			<img src="img/gotop.gif" style="width:31px; height:31px;">
+		</div>
+
+		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v3/jquery.masonry.js"></script>
+		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v4/scroll_page.js?v=2012071901"></script>
+		<script type="text/javascript" src="js/space_ui_v2.js"></script>
+		<script type="text/javascript" src="js/pop.js?v=1"></script>
+		<script type="text/javascript" src="js/wall/wall.js?v=2"></script>
+		<?php
+			include_once('google-analytics.html');
+		?>
+	</body>
+</html>

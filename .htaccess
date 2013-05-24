@@ -1,0 +1,14 @@
+RewriteEngine on
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+#设置当前目录路径
+#Rewritebase /i/
+#设置跳转规则
+RewriteRule ^.*$ index.php
+
+Options All -Indexes
+
+php_flag magic_quotes_gpc off
+php_flag register_globals off
