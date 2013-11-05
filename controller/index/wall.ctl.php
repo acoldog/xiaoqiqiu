@@ -6,7 +6,7 @@
 	class Wall_ctl{
 		protected $mod;
 		function __construct(){
-			include_once ROOT .'/model/index/wall.mod.php';
+			//include_once ROOT .'/model/index/wall.mod.php';
 			$this->mod = new Wall_mod();
 			//	检测URL中的用户名
 			checkUser();

@@ -1,126 +1,241 @@
-1351440276<!DOCTYPE html>
+1381818078<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<meta property="wb:webmaster" content="c2efef57b2b53a48" />
 		<title>维尼的小气球 - acol</title>
+		<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+		<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+		<link rel="shortcut icon" href="weini.ico" type="image/x-icon" />
 		<link href="http://s1.56img.com/style/i/v3/css/global/global.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/reset.css" type="text/css" rel="stylesheet"/>
 		<link href="http://xiaoqiqiu.com/view/css/main.css" type="text/css" rel="stylesheet"/>
 		<link href="http://xiaoqiqiu.com/view/css/pop.css" type="text/css" rel="stylesheet"/>
 		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
 		<link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="http://s1.56img.com/script/lib/jquery/jquery-1.4.4.min.js" ></script>
+		<link type="text/css" rel="stylesheet" href="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shCore.css"/>
+		<link type="text/css" rel="stylesheet" href="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shThemeDefault.css"/>
+
+		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/jquery.min.js" ></script>
 		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/helper.js"></script>
+		<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shCore.js"></script>
+		<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shBrushes.js"></script>
 		<script type="text/javascript">
 			//	初始化
 			var WEB_ROOT = 'http://xiaoqiqiu.com/',
 				IS_MINE = 0,
-				USER = 'acol';	
+				USER = 'acol';
+			SyntaxHighlighter.config.clipboardSwf = WEB_ROOT +'plugin/SyntaxHighlighter/Scripts/clipboard.swf';
+			SyntaxHighlighter.all();
 		</script>
 	</head>
-	<body>
+	<body style="-webkit-transform: rotate(-5deg);">
+	<div id="top_loading" class="top_loading floater radius"><img src="http://xiaoqiqiu.com//view/top_loading.gif"/> 努力加载中... </div>
 	<div class="top">
-				<span id="login_top">未登录，现在<a href="javascript:;" onclick="$_Index.ini();return false;">登录</a>？</span>
+				<span id="login_top">未登录，现在<a href="javascript:;" onclick="$_Index.ini();return false;">登录</a>？ 没有账号，<a href="javascript:;" onclick="$_Index.reg();return false;">注册</a>？</span>
 			</div>
-
 
 	<div class="container clear" id="container">
-		<p>业余时间纯手工打造的半成品，推荐使用chrome或者高版本IE浏览。</p>
-		<div class="left">
+				<p>< 业余时间纯手工打造的半成品，推荐使用chrome或者高版本IE浏览。 ></p>
+				<div class="left">
 			<div class="header" id="header">
-				<span>acol</span>
-				<a id="add_something" class="add_something" href="javascript:;" onclick="return false;"  style="display:none;" >
+				<a id="add_something" title="添加文章，图片，视频" class="add_something" href="javascript:;" onclick="return false;"  style="display:none;" >
 				</a>
+				<span>野生纯种程序猿一枚，求包养</span>
 			</div>
 
+			<!-- <a class="hide_content" id="hide_content" href="javascript:;"> x </a> -->
 			<div id="content">
-									<div class="circle" aid="32">
-												<p>
+									<div class="circle radius" aid="102">
+						<div class="comment-float"><em><a href="javascript:;" alt="102">0</a></em></div>
+												<div class="content">
+							<p>
+	我只会越来越好，不会有堕落</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-09-11 11:48:43 发表</span>
+							<span class="comment"><a href="javascript:;" alt="102">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="101">
+						<div class="comment-float"><em><a href="javascript:;" alt="101">0</a></em></div>
+												<div class="content">
+							<p>
+	<img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175055_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175056_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175108_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175122_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175134_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175142_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175158_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175202_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175210_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175223_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175235_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175237_.PNG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175248_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175256_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175306_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175317_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175329_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175338_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175353_.JPG"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130804175401_.JPG"  lazyload="1" /></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-08-04 17:56:00 发表</span>
+							<span class="comment"><a href="javascript:;" alt="101">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="99">
+						<div class="comment-float"><em><a href="javascript:;" alt="99">0</a></em></div>
+												<div class="content">
+							<p>
+	我总是去坚持我认为是对的决定，这叫做偏执吗</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-07-08 17:58:17 发表</span>
+							<span class="comment"><a href="javascript:;" alt="99">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="98">
+						<div class="comment-float"><em><a href="javascript:;" alt="98">1</a></em></div>
+												<div class="content">
+							<p>
+	这张图特搞笑</p>
+<p>
+	<img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130524142153_.jpg"  lazyload="1" /></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-05-24 14:22:22 发表</span>
+							<span class="comment"><a href="javascript:;" alt="98">我有想法(1)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="97">
+						<div class="comment-float"><em><a href="javascript:;" alt="97">0</a></em></div>
+												<div class="content">
+							<p>
+	这是我来新公司工作一年多来最苦逼的一天，唉</p>
+<p>
+	照片摄于凌晨2点40</p>
+<p>
+	<img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130514040258_.JPG"  lazyload="1" /></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-05-14 04:04:10 发表</span>
+							<span class="comment"><a href="javascript:;" alt="97">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="96">
+						<div class="comment-float"><em><a href="javascript:;" alt="96">0</a></em></div>
+												<div class="content">
+							<p>
 	&nbsp;</p>
 <p>
-	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121025190740_.jpg" title="点击查看原图" /></p>
+	<img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223340_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223352_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223404_.jpg"  lazyload="1" /></p>
+<p>
+	<img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223453_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223505_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223517_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223528_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223540_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223542_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223542_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223551_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223601_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223611_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223629_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223641_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223651_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223702_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223715_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223821_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223832_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223844_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223855_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223909_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130414223940_.jpg"  lazyload="1" /></p>
+						</div>
 						<div class="comment_div">
-							<span class="comment"><a href="javascript:;" alt="32" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
+							<span class="author"> acol 于 2013-04-14 22:43:50 发表</span>
+							<span class="comment"><a href="javascript:;" alt="96">我有想法(0)</a></span>
 						</div>
 					</div>
-									<div class="circle" aid="29">
-												<p>
-	<span style="color: rgb(84, 84, 84); font-family: Tahoma; font-size: 14px; line-height: 21px; ">要学会在工作和生活中自我增值。</span></p>
-<p>
-	<font color="#545454" face="Tahoma"><span style="font-size: 14px; line-height: 21px;">不要老是期待别人的给予和命运的安排，没有人生下来就欠你的，靠自己</span></font></p>
-						<div class="comment_div">
-							<span class="comment"><a href="javascript:;" alt="29" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
-						</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
 					</div>
-									<div class="circle" aid="28">
-												<p>
-	小维尼和邻居</p>
-<p>
-	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" height="505" id="object_acol_flash_0" width="600"><param name="movie" value="http://player.56.com/v_NjgyMzY3MjQ.swf" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="opaque" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><embed allowfullscreen="true" allowscriptaccess="always" height="505" id="embed_acol_flash_0" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://player.56.com/v_NjgyMzY3MjQ.swf" type="application/x-shockwave-flash" width="600" wmode="opaque"></embed></object></p>
-<p>
-	<strong><span style="font-size: 36px; ">很傻很天真的维尼</span></strong></p>
-<p>
-	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121025001537_.jpg" title="点击查看原图" /></p>
-						<div class="comment_div">
-							<span class="comment"><a href="javascript:;" alt="28" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
-						</div>
-					</div>
-									<div class="circle" aid="27">
-												<p>
-	中秋夜</p>
-<p>
-	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024233405_.jpg" title="点击查看原图" /><img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024233519_.jpg" title="点击查看原图" /></p>
-<p>
-	国庆第二天早上6点左右鱼肚白，晨跑 - 寻找小时候的印记。</p>
-<p>
-	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024233609_.jpg" title="点击查看原图" /><img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024233700_.jpg" title="点击查看原图" /></p>
-						<div class="comment_div">
-							<span class="comment"><a href="javascript:;" alt="27" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
-						</div>
-					</div>
-									<div class="circle" aid="26">
-												<p>
+									<div class="circle radius" aid="95">
+						<div class="comment-float"><em><a href="javascript:;" alt="95">0</a></em></div>
+												<div class="content">
+							<p>
 	&nbsp;</p>
 <p>
-	<img class="comp_img" src="http://xiaoqiqiu.com/upload/imgCompress/20121024232945_.jpg" title="点击查看原图" /></p>
-						<div class="comment_div">
-							<span class="comment"><a href="javascript:;" alt="26" onclick="$_Index.comment(this);return false;" >我有想法(0)</a></span>
+	<img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222549_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222600_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222611_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222621_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222635_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222650_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222703_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222720_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222734_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222753_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222812_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222819_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130409222828_.jpg"  lazyload="1" /></p>
 						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-04-09 22:32:52 发表</span>
+							<span class="comment"><a href="javascript:;" alt="95">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="93">
+						<div class="comment-float"><em><a href="javascript:;" alt="93">0</a></em></div>
+												<div class="content">
+							<p>
+	<img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205021_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205034_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205046_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205056_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205109_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205122_.jpg"  lazyload="1" /></p>
+<p>
+	<img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205144_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205202_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205221_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205233_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205245_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205255_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205308_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205322_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205334_.jpg"  lazyload="1" /><img class="comp_img"  src="http://xiaoqiqiu.com/view/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20130326205345_.jpg"  lazyload="1" /></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-03-26 20:55:05 发表</span>
+							<span class="comment"><a href="javascript:;" alt="93">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
 					</div>
 							</div>
-
-			
-
 		</div>
-		<div class="right">
-			<div class="face">
+
+		<div class="right" id="right_menu">
+			<div class="face radius">
 				<img height="150px" width="150px" src="http://xiaoqiqiu.com/view/img/1.jpg"/>
 				<p><label id="now_user"></label></p>
 			</div>
-			<div class="menu"><a href="/acol/wall">图片墙</a></div>
-			<div style="width:180px;margin-top:10px">
-				<iframe width="100%" height="500"  frameborder="0" scrolling="no" src="http://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=0&height=500&uid=1879892684&skin=8&refer=1&appkey=&pic=0&titlebar=1&border=1&publish=0&atalk=1&recomm=0&at=0&colordiy=0&dpc=1"></iframe>
+			<div class="menu_click radius" id="photoWall">
+				<span>图片墙</span>
+				<div class="">
+					<a href="/acol/wall"><img src="http://xiaoqiqiu.com/view/img/wall.jpg"/></a>
+				</div>
+			</div>
+			<div class="menu_click radius" id="videoWall">
+				<span><a href="/video">精彩视频墙</a></span>
+			</div>
+						<div class="menu_click radius">
+				<em class="weibo_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>新浪微博
+				<div class="slide_item" style="display:none;"><iframe id="sina_widget_1879892684" style="width:180px; height:500px;" frameborder="0" scrolling="no" src="http://v.t.sina.com.cn/widget/widget_blog.php?uid=1879892684&width=180&height=500&skin=wd_01&showpic=1"></iframe></div>
+			</div>
+									<div class="menu_click radius">
+				<em class="tqq_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>企鹅微博
+				<div class="slide_item" style="display:none;"><iframe frameborder="0" scrolling="no" src="http://show.v.t.qq.com/index.php?c=show&a=index&n=acolcat&w=180&h=552&fl=2&l=4&o=31&co=4&cs=29455F_29455F_238C1C_0B0B0D" width="180" height="552"></iframe></div>
+			</div>
+						<div class="menu_click radius">
+				<em>友情链接</em>
+				<div class="slide_item">
+					<ul>
+						<li><a href="http://www.56.com" target="_blank">56视频</a></li>
+						<li><a href="http://www.xiaoqiqiu.com/milk" target="_blank">牛奶的空间</a></li>
+						<li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
+						<li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
+						<li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
+						<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		
-		<span class="btn" id="page_btn" title="next page" last_page="2" onclick="$_Index.switch_div('content','next')">
-			<label id="now_page">1</label>/2		</span>
-		<span class="back_btn" id="page_back" title="pre page" onclick="$_Index.switch_div('content','pre')"></span>
+		<span class="btn radius" id="page_btn" title="next page" last_page="7" onclick="$_Index.switch_div('content','next','right')" onfocus="this.blur();" style="-webkit-user-select:none;">
+			<label id="now_page">1</label>/7		</span>
+		<!-- <span class="back_btn" id="page_back" title="pre page" onclick="$_Index.switch_div('content','pre')"></span> -->
+		<span class="back_btn2 radius" id="page_back" title="pre page" onclick="$_Index.switch_div('content','pre','left')"> 《 </span>
 	</div>
-	
+	<div id="gotop" style="position: fixed; bottom: 50px; left: 1000px; cursor: pointer;display:none;" title="猛击我可以灰~">
+		<img src="http://xiaoqiqiu.com/view/img/gotop.png" style="width:64px; height:64px;" />
+	</div>
 
 	<div class="bottom" id="bottom">
 		
 	</div>
-	<div id="gotop" style="position: fixed; bottom: 50px; right: 10px; cursor: pointer;display:none; " title="回到顶部">
-		<img src="http://xiaoqiqiu.com/view/img/gotop.gif" style="width:31px; height:31px;">
-	</div>
 
-	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/index.js"></script>
+	<div id="weatherContent"></div>
+	
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/index.js?v1"></script>
 	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/space_ui_v2.js"></script>
-	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/pop.js"></script>
-	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/ckeditor.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/pop.js?v=1"></script>
 	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/add.js"></script>
 	<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/uploadify/jquery.uploadify-3.1.min.js"></script>
-	</body>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/curtain.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/weather.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/unlock.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/marquee.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/profile.js"></script>
+	<!--<script defer type="text/javascript" charset="utf-8" src="http://julying.com/lab/weather/get/jquery.weather!parentid=acol_weather&zIndex=1&move=true&autoDrop=true&jquery=false&style=blue&area=client&city=101280101"></script>-->
+		</body>
 </html>

@@ -20,8 +20,8 @@
 	///数据库连接设置
 	$config['database']['host'] = 'localhost';			//*
 	$config['database']['port'] = '21';				//*
-	$config['database']['user'] = '';				//*
-	$config['database']['pass'] = '';				//*
+	$config['database']['user'] = 'u117577';				//*
+	$config['database']['pass'] = 'WOVvxqp4';				//*
 	$config['database']['dbname'] = 'u117577_blog';			//*
 	$config['database']['charset'] = 'utf8';			//*
 
