@@ -1,0 +1,103 @@
+1373161179<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>维尼的小气球 - acol</title>
+		<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+		<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+		<link rel="shortcut icon" href="weini.ico" type="image/x-icon" />
+		<link href="http://s1.56img.com/style/i/v3/css/global/global.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/reset.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/main.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/pop.css" type="text/css" rel="stylesheet"/>
+		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+		<link type="text/css" rel="stylesheet" href="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shCore.css"/>
+		<link type="text/css" rel="stylesheet" href="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shThemeDefault.css"/>
+
+		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/jquery.min.js" ></script>
+		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/helper.js"></script>
+		<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shCore.js"></script>
+		<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shBrushes.js"></script>
+		<script type="text/javascript">
+			//	初始化
+			var WEB_ROOT = 'http://xiaoqiqiu.com/',
+				IS_MINE = 0,
+				USER = 'tomasi';
+			SyntaxHighlighter.config.clipboardSwf = WEB_ROOT +'plugin/SyntaxHighlighter/Scripts/clipboard.swf';
+			SyntaxHighlighter.all();
+		</script>
+	</head>
+	<body style="-webkit-transform: rotate(-5deg);">
+	<div id="top_loading" class="top_loading floater radius"><img src="http://xiaoqiqiu.com//view/top_loading.gif"/> 努力加载中... </div>
+	<div class="top">
+				<span id="login_top">未登录，现在<a href="javascript:;" onclick="$_Index.ini();return false;">登录</a>？ 没有账号，<a href="javascript:;" onclick="$_Index.reg();return false;">注册</a>？</span>
+			</div>
+
+	<div class="container clear" id="container">
+				<div class="left">
+			<div class="header" id="header">
+				<a id="add_something" title="添加文章，图片，视频" class="add_something" href="javascript:;" onclick="return false;"  style="display:none;" >
+				</a>
+				<span>http://blogger.readplan.com</span>
+			</div>
+
+			<!-- <a class="hide_content" id="hide_content" href="javascript:;"> x </a> -->
+			<div id="content">
+							</div>
+		</div>
+
+		<div class="right" id="right_menu">
+			<div class="face radius">
+				<img height="150px" width="150px" src="http://xiaoqiqiu.com/upload/imgCompress/20130326101720_.gif"/>
+				<p><label id="now_user"></label></p>
+			</div>
+			<div class="menu_click radius" id="photoWall">
+				<span>图片墙</span>
+				<div class="slide_item">
+					<a href="/tomasi/wall"><img src="http://xiaoqiqiu.com/view/img/wall.jpg"/></a>
+				</div>
+			</div>
+									<div class="menu_click radius">
+				<em>友情链接</em>
+				<div class="slide_item">
+					<ul>
+						<li><a href="http://www.56.com" target="_blank">56视频</a></li>
+						<li><a href="http://www.xiaoqiqiu.com/milk" target="_blank">牛奶的空间</a></li>
+						<li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
+						<li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
+						<li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
+						<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<span class="btn radius" id="page_btn" title="next page" last_page="0" onclick="$_Index.switch_div('content','next','right')" onfocus="this.blur();" style="-webkit-user-select:none;">
+			<label id="now_page">1</label>/0		</span>
+		<!-- <span class="back_btn" id="page_back" title="pre page" onclick="$_Index.switch_div('content','pre')"></span> -->
+		<span class="back_btn2 radius" id="page_back" title="pre page" onclick="$_Index.switch_div('content','pre','left')"> 《 </span>
+	</div>
+	<div id="gotop" style="position: fixed; bottom: 50px; left: 1000px; cursor: pointer;display:none;" title="猛击我可以灰~">
+		<img src="http://xiaoqiqiu.com/view/img/gotop.png" style="width:64px; height:64px;" />
+	</div>
+
+	<div class="bottom" id="bottom">
+		
+	</div>
+
+	<div id="weatherContent"></div>
+	
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/index.js?v1"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/space_ui_v2.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/pop.js?v=1"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/add.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/uploadify/jquery.uploadify-3.1.min.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/curtain.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/weather.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/unlock.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/marquee.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/profile.js"></script>
+	<!--<script defer type="text/javascript" charset="utf-8" src="http://julying.com/lab/weather/get/jquery.weather!parentid=acol_weather&zIndex=1&move=true&autoDrop=true&jquery=false&style=blue&area=client&city=101280101"></script>-->
+		</body>
+</html>

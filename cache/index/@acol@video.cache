@@ -1,0 +1,108 @@
+1381756790<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta property="wb:webmaster" content="c2efef57b2b53a48" />
+		<title>维尼的照片墙 - acol</title>
+		<link href="http://s1.56img.com/style/base/v4/css/base_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="http://s1.56img.com/style/i/v3/css/global/global_v.2.css" type="text/css" rel="stylesheet"/>
+		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.2.css" type="text/css" rel="stylesheet"/>
+		<link href="http://s1.56img.com/style/space/v3/css/space_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+
+		<link href="http://xiaoqiqiu.com/view/css/reset.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/main.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/pop.css" type="text/css" rel="stylesheet"/>
+		<link href="http://xiaoqiqiu.com/view/css/wall.css" type="text/css" rel="stylesheet"/>
+
+		<script type="text/javascript" src="http://s1.56img.com/script/lib/jquery/jquery-1.4.4.min.js" ></script>
+		<script type="text/javascript" src="http://s2.56img.com/script/page/common/v3/o_utf8_v.2.js"></script>
+		<script type="text/javascript" src="http://s2.56img.com/script/fn/comments/v4/objcmt.js?v=120628v1"></script>
+		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/helper.js?v=1"></script>
+		<script type="text/javascript">
+			//	初始化
+			var WEB_ROOT = 'http://xiaoqiqiu.com/',
+				IS_MINE = '0';
+				USER = 'acol';
+		</script>
+	</head>
+	<body>
+		<div id="top_loading" class="top_loading floater radius"><img src="http://xiaoqiqiu.com//view/top_loading.gif"/> 加载中... </div>
+		<div class="top">
+			<span class="floater"><a href="http://xiaoqiqiu.com/acol">返回空间</a></span>
+		</div>
+
+		<div class="space_main waterfall">
+			<div class="space_flow" id="container" style="display:none;"></div>
+
+			<div id="show_loading" class="show_loading" style="display:none;">
+				<img src="http://s1.56img.com/style/space/v3/img/ajax_loading.gif" alt="Loading...">
+				<div><em>加载中，请稍候...</em></div>
+			</div>
+			<div class="mod56_page page_theme_0">
+				<div class="mod56_page_pn" id="acolScrollPage" style="display:none;">
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="bottom" id="bottom">
+		
+		</div>
+		<div id="gotop" style="position: fixed; bottom: 50px; right: 50px; cursor: pointer;display:none; " title="回到顶部">
+			<img src="http://xiaoqiqiu.com/view/img/gotop.gif" style="width:31px; height:31px;">
+		</div>
+
+		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v3/jquery.masonry.js"></script>
+		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v4/space_ui.js?v=2012071901"></script>
+		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v4/scroll_page.js?v=2012071901"></script>
+		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v4/space_square.js?v=2012111401"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//	加载视频列表
+				SquareOfSpace.videoList.masonrySet();
+				$('#container').show();
+				SquareOfSpace.videoList.append_video_list(1 , function(){
+					SquareOfSpace.videoList.masonrySet();
+				});
+				var op = {
+					page_container : $('#acolScrollPage'),
+					content_container : $('#container'),
+					per_page_screen : 10,
+					scroll_delay : 0,
+					scroll_height : 800,
+					auto_show_page_list : false,
+					now_page : 1
+				};
+				AcolScrollPage.init(op);
+				$(window).scroll(function(){
+					if(AcolScrollPage.is_scroll === false && AcolScrollPage.is_loading === false){
+						SquareOfSpace.videoList.append_video_list(AcolScrollPage.now_page);
+					}
+				});
+				//	翻屏重置masonry的高度
+				AcolScrollPage.page_container.find('a').live('mousedown' , function(){
+					//	在首页和末页时禁用上/下一页按钮
+					var page_text = $(this).text();
+					if((page_text == AcolScrollPage.pre_page && AcolScrollPage.now_page == AcolScrollPage.per_page_screen) || 
+						(page_text == AcolScrollPage.next_page && AcolScrollPage.now_page == AcolScrollPage.total_page))return false;
+					$('#container').masonry('destroy');
+		    		SquareOfSpace.videoList.masonrySet();
+		    		SquareOfSpace.videoList.append_video_list(AcolScrollPage.now_page);
+				});
+			});
+			
+
+			(function(){ 
+			    $("#gotop").click(function(){ 
+			        $("html,body").animate({ scrollTop : 0 },"fast");        
+			     })
+			    var showGotop = function(){ 
+			        ($(document).scrollTop() > 0) ? $("#gotop").show() : $("#gotop").hide();
+			    }
+			    $(window).bind("scroll",showGotop);
+			})();
+		</script>
+	</body>
+</html>
