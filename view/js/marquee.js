@@ -64,7 +64,7 @@ XQQ.marquee = (function($){
 			});
 		},
 		init : function(){
-			$_Helper.loadCss(WEB_ROOT +'view/css/marquee.css');
+			$_Helper.loadCss(STATIC_ROOT +'css/marquee.css');
 
 			var _that = this;
 			this.insert_html();

@@ -63,7 +63,7 @@ body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*b
 */
 .right{float:right;margin-right:80px;_margin-right:0px;}
 .right .face{width:150px;height:150px;background:#fff;padding:10px;margin-top:50px;}
-.right .menu_click ,.right .menu_over{padding:5px 0px;margin-top:10px;text-align:center;color:#fff;font-size: 20px;font-weight: bolder;background:#29455F;width: 180px;}
+.right .menu_click ,.right .menu_over ,.right .menu{padding:5px 0px;margin-top:10px;text-align:center;color:#fff;font-size: 20px;font-weight: bolder;background:#29455F;width: 180px;}
 .right .menu_click ,.right .menu_over a{color:#fff;}
 .right .menu_click{cursor: pointer;}
 .slide_item{display: none;}
@@ -99,3 +99,8 @@ div .reg_right{margin-left:150px;margin-top:3px;text-align: left;}
 .radius{-moz-border-radius:10px;-khtml-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
 /*滑动块*/
 .unlock{cursor:pointer;background:#000;top:400px;left:300px;padding: 8px 15px;font-size: 24px;color:#fff;font-weight:bolder;position:absolute;border:1px #fff solid;-webkit-user-select:none;-moz-user-select: -moz-none;}
+
+/*sort list*/
+.sort_ul{text-align: right;padding: 2px 20px;}
+.sort_ul li a{color: #fff;font-size: 14px;font-weight: bold;line-height: 16px;}
+.timesort_logo{display: inline-block;width: 16px;height: 16px;background-image: url("../img/icon.png");background-repeat: no-repeat;vertical-align: -20px;background-position: -249px -222px;}

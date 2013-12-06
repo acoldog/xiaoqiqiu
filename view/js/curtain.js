@@ -54,7 +54,7 @@
 
 		initCss : function(){
 			//	加载CSS
-			$_Helper.loadCss(WEB_ROOT +'view/css/curtain.css');
+			$_Helper.loadCss(STATIC_ROOT +'css/curtain.css');
 			var _that = this;
 			//	居中
 			setTimeout(function(){

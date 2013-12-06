@@ -23,12 +23,13 @@
 		<script type="text/javascript">
 			//	初始化
 			var WEB_ROOT = '<?=WEB_ROOT?>',
+				STATIC_ROOT = '{echo STATIC_ROOT;}',
 				IS_MINE = '<?=$global['is_mine']?>';
 				USER = '<?=$global['user']?>';
 		</script>
 	</head>
 	<body>
-		<div id="top_loading" class="top_loading floater radius"><img src="<?=WEB_ROOT?>/view/top_loading.gif"/> 加载中... </div>
+		<div id="top_loading" class="top_loading floater radius"><img src="<?=STATIC_ROOT?>top_loading.gif"/> 加载中... </div>
 		<div class="top">
 			<span class="floater"><a href="<?=WEB_ROOT . $global['user']?>">返回空间</a></span>
 		</div>

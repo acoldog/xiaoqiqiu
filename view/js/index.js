@@ -104,12 +104,23 @@ $(document).ready(function(){
 		$(document.body).css('-webkit-transform' , 'none');
 	} , 1000);
 	
+	//	sort list
+	$_Index.load_sort_list();
+
+	//prepare ck
+	$_Helper.require(['ckeditor']);
 });
 
+/**
+ * [$_Index 首页功能类]
+ * @type {Object}
+ */
 var $_Index = {
-	page : 0,
-	last_page : 0,
-	switch_T : null,
+	page 			: 0,
+	last_page 		: 0,
+	switch_T 		: null,
+	request_url 	: 'http://xiaoqiqiu.com:8081/api/get_article?callback=?',
+	request_action 	: 'index',
 	
 	ini : function(){
 		
@@ -228,8 +239,10 @@ var $_Index = {
 		var _that = this;
 		clearTimeout(this.switch_T);
 		//	获取下一页数据
-		var now_page = (this.page == 0) ? +$('#now_page').text() : this.page;
+		//var now_page = (this.page == 0) ? +$('#now_page').text() : this.page;
+		var now_page = +$('#now_page').text();
 		var last_page = (this.last_page == 0) ? +$('#page_btn').attr('last_page') : this.last_page;
+
 		if(type == 'next')
 		{
 			if(now_page >= last_page)
@@ -241,9 +254,13 @@ var $_Index = {
 				now_page = last_page;
 			else
 				now_page --;
+		}else if(type == 'goto'){
+			//
 		}
 		//修改当前页
-		$('#page_btn').html('<label id="now_page">'+ now_page +'</label>/'+ last_page);
+		//$('#page_btn').html('<label id="now_page">'+ now_page +'</label>/'+ last_page);
+		$('#now_page').text( +now_page );
+
 		//	内容切换动画的参数
 		var start_pos = {'left':'-750px', 'right':document.body.clientWidth},
 			obj = $('#' + obj_name),
@@ -270,19 +287,27 @@ var $_Index = {
 				//	清空当前页数据
 				$("#gotop").click();
 
-				var request_url = WEB_ROOT + 'api/index/index.php';
-				$.getJSON(request_url , {'user':USER , 'action':'index' , 'page':now_page} , function(callback){
+				//var request_url = WEB_ROOT + 'api/index/index.php';
+				//var request_url = 'http://xiaoqiqiu.com:8081/api/get_article?callback=?';	//改成撸啊接口
+				$.getJSON(_that.request_url , {'user':USER , 'action':_that.request_action , 'page':now_page} , function(callback){
 					if(callback){
-						var content_html = '';
-						callback = callback['data'];
+						var content_html 	= '',
+							last_page 		= callback['last_page'],
+							callback 		= callback['data'];
+
+						$('#page_btn').attr('last_page' , last_page);
+
 						for(var i in callback){
 							if(typeof callback[i].id == 'undefined')continue;
 							content_html += _that.article_html(callback[i]);
 						}
+
 						var next_obj = obj.clone();
 						delete obj;
 						next_obj.css({'position':'absolute' , 'display':'none' , 'left':start_pos[other_dir]});
 						next_obj.html(content_html);
+
+						$('#total_page').text( +last_page );
 
 						$('#' + obj_name).remove();
 						$('#header').after(next_obj);
@@ -423,6 +448,39 @@ var $_Index = {
 		if( typeof XQQ.profile == 'function'){
 			XQQ.profile().edit();
 		}
+	},
+	//	加载分类列表
+	load_sort_list : function(){
+		$.getJSON('http://xiaoqiqiu.com:8081/api/get_sort?action=time&user='+ USER +'&callback=?' 
+			, function(back){
+				var li_html = [],
+					last_one = back.pop();
+
+				for(var i in back){
+					if(typeof back[i] == 'object'){
+						li_html.push('<li><a href="javascript:;" onclick="$_Index.sort_list_event(\''+
+							back[i].name +'\');return false;">'+ back[i].name +'月 （'+ back[i].num +'条）</a></li>');
+					}
+				}
+
+				li_html.push('<li><a href="javascript:;" onclick="$_Index.sort_list_event(\''+
+							last_one.name +'\' , \'more\');return false;" title="更早的">...&nbsp;&nbsp;&nbsp; </a></li>');
+				li_html.push('<li><a href="">全部文笔 >>> </a></li>');
+				li_html = li_html.join('');
+
+				$('#sort_ul').html(li_html);
+			});
+	},
+	// 分类列表事件
+	sort_list_event : function(time , other){
+		var other = other || '';
+
+		$_Index.request_url 		= 'http://xiaoqiqiu.com:8081/api/get_article?callback=?&time='+ time +'&other='+ other;
+		$_Index.request_action 		= 'sort';
+		//$_Index.page 				= 1;
+		$('#now_page').text(1);
+
+		$_Index.switch_div('content','goto','right');
 	}
 
 };		//end object

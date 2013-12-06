@@ -100,9 +100,9 @@
 		public function parse_tpl($data , $html)
 		{
 			//重定向CSS和JS文件引用路径
-			$html = str_replace('href="css/' , 'href="'.WEB_ROOT.'view/css/' , $html);
-			$html = str_replace('src="js/' , 'src="'.WEB_ROOT.'view/js/' , $html);
-			$html = str_replace('src="img/' , 'src="'.WEB_ROOT.'view/img/' , $html);
+			$html = str_replace('href="css/' , 'href="'.STATIC_ROOT.'css/' , $html);
+			$html = str_replace('src="js/' , 'src="'.STATIC_ROOT.'js/' , $html);
+			$html = str_replace('src="img/' , 'src="'.STATIC_ROOT.'img/' , $html);
 			
 			//if else语句输出 
 			$html = str_replace('{if(' , '<?php if(' , $html);

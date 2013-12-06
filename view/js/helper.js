@@ -50,7 +50,7 @@ var $_Helper = {
 				var obj = '$_'+ objname;alert(obj)
 				if(!window.hasOwnProperty(obj) || typeof obj == 'object')
 				{*/
-					$_Helper.load(WEB_ROOT +'view/js/'+ option[i] +'.js');
+					$_Helper.load(STATIC_ROOT +'js/'+ option[i] +'.js');
 				//}
 			}
 		}
@@ -251,7 +251,7 @@ var $_Helper = {
     },
     //	加载中
     loading : function(title){
-    	var loading_html = '<img src="'+ WEB_ROOT +'view/loading.gif" />';
+    	var loading_html = '<img src="'+ STATIC_ROOT +'loading.gif" />';
 		//登陆框弹出层	
 		var title = title || '正在努力加载中...';
 		this.load_obj = $_Pop.create_pop({
@@ -271,10 +271,10 @@ var $_Helper = {
     	var title = title || '加载中...',
     		lobj = $('#top_loading');
     	if(lobj.length > 0){
-    		lobj.html('<img src="'+ WEB_ROOT +'/view/top_loading.gif"/> '+ title).stop(false, true).slideDown();
+    		lobj.html('<img src="'+ STATIC_ROOT +'/top_loading.gif"/> '+ title).stop(false, true).slideDown();
     		return false;
     	}
-    	var loading_html = '<div id="top_loading" class="top_loading floater radius"><img src="'+ WEB_ROOT +'/view/top_loading.gif"/> '+ title +' </div>';
+    	var loading_html = '<div id="top_loading" class="top_loading floater radius"><img src="'+ STATIC_ROOT +'top_loading.gif"/> '+ title +' </div>';
     	$(document.body).prepend(loading_html).find('#top_loading').stop(false, true).slideDown();
     },
     top_loading_done : function(){

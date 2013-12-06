@@ -33,7 +33,7 @@
 		AcolScrollPage.is_loading = true;
 		$('#loading').show();
 		//$_Helper.loading();
-		$.getJSON(WEB_ROOT +'api/imgWall/wall.php', {'action':'imgList', user:USER, page:page, rows:rows} , function(back){
+		$.getJSON('http://xiaoqiqiu.com:8081/api/get_imgList?callback=?', {'action':'imgList', user:USER, page:page, rows:rows} , function(back){
 			if(back){
 				var p_html = [];
 				var data 	= back.data;
@@ -48,7 +48,7 @@
 					if(IS_MINE == 1){
 						p_html.push('<a class="del_img" href="javascript:;" onclick="WallObj.del_img('+ data[i].id +')">x</a>');
 					}
-					p_html.push('<img lazyload="1" style="height:'+ rand_h +'px;" class="comp_img" src="'+ WEB_ROOT +'view/default.jpg" data="'+ data[i].src +'"/>');
+					p_html.push('<img lazyload="1" style="height:'+ rand_h +'px;" class="comp_img" src="'+ STATIC_ROOT +'default.jpg" data="'+ data[i].src +'"/>');
 					p_html.push('</div>');
 				}
 				p_html = p_html.join('');

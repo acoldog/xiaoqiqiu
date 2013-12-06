@@ -30,7 +30,7 @@ XQQ.cmt = (function($){
 		},
 		init : function(obj){
 			//	加载CSS
-			$_Helper.loadCss(WEB_ROOT +'/view/css/comment.css');
+			$_Helper.loadCss(STATIC_ROOT +'/css/comment.css');
 			//if(!aid)return ;
 			if(typeof CKEDITOR == 'undefined'){
 				$_Helper.require(['ckeditor']);			//	载入JS文件

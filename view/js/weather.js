@@ -12,14 +12,14 @@
 			if(rand_num == 0)rand_num = 1;
 			var w_html = [];
 			w_html.push('<div class="weather" id="XQQ_weather">');
-			w_html.push('<img src="'+ WEB_ROOT +'view/img/weather/sketchy_weather_'+ rand_num +'.png" />');
+			w_html.push('<img src="'+ STATIC_ROOT +'img/weather/sketchy_weather_'+ rand_num +'.png" />');
 			w_html.push('</div>');
 			w_html = w_html.join("");
 			$(document.body).append(w_html);
 		},
 		setOp : function(op){
 			//	加载CSS
-			$_Helper.loadCss(WEB_ROOT +'view/css/weather.css');
+			$_Helper.loadCss(STATIC_ROOT +'css/weather.css');
 			this.w_html();
 		}
 	}

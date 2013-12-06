@@ -108,7 +108,7 @@
 
 		if(empty($_GET))return false;
 		$db = new Db();
-		$nums = $db->nums('SELECT * FROM ab_user WHERE username="'. $_GET['user'] .'"');
+		$nums = $db->nums('SELECT * FROM ab_user WHERE username="'. $username .'"');
 		if($nums < 1){
 			Header('Location:http://xiaoqiqiu.com');
 			exit;

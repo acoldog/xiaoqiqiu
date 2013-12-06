@@ -12,6 +12,7 @@
 	define('ROOT' , dirname(dirname(__FILE__)));
 	//define('WEB_ROOT' , 'http://'.str_replace('index.php' , '' ,$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
 	define('WEB_ROOT' , 'http://xiaoqiqiu.com/');
+	define('STATIC_ROOT' , 'http://static.xiaoqiqiu.com/');
 
 	$global['user'] = 'acol';			//	当前用户
 	$global['is_mine'] = 0;				//	是否是当前用户本人空间
@@ -19,10 +20,10 @@
 	$config = array();
 	///数据库连接设置
 	$config['database']['host'] = 'localhost';			//*
-	$config['database']['port'] = '21';				//*
-	$config['database']['user'] = 'u117577';				//*
-	$config['database']['pass'] = 'WOVvxqp4';				//*
-	$config['database']['dbname'] = 'u117577_blog';			//*
+	$config['database']['port'] = '3366';				//*
+	$config['database']['user'] = 'root';				//*
+	$config['database']['pass'] = 'root';				//*
+	$config['database']['dbname'] = 'acol_blog';			//*
 	$config['database']['charset'] = 'utf8';			//*
 
 	///分页设置	

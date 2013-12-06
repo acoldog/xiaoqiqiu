@@ -35,7 +35,7 @@
 			//$val['content'] = preg_replace('/(\.jpg|\.gif|\.png){1}"/i', "$1.lazyload\"", $val['content']);
 			$val['content'] = str_replace('lazyload="0"', '', $val['content']);
 			//$val['content'] = preg_replace('/<img(.*?)(\.jpg|\.gif|\.png){1}"([^>]*)>/is', "<img $1$2.lazyload\" $3  lazyload=\"1\" />", $val['content']);
-			$val['content'] = preg_replace('/<img (.*?)src="(.*?)(\.jpg|\.gif|\.png){1}"([^>]*)>/is', "<img $1 src=\"". WEB_ROOT ."view/default.jpg\" $4 data=\"$2$3\"  lazyload=\"1\" />", $val['content']);
+			$val['content'] = preg_replace('/<img (.*?)src="(.*?)(\.jpg|\.gif|\.png){1}"([^>]*)>/is', "<img $1 src=\"". STATIC_ROOT ."default.jpg\" $4 data=\"$2$3\"  lazyload=\"1\" />", $val['content']);
 
 			$val['time'] = date('Y-m-d H:i:s' , $val['time']);
 		}

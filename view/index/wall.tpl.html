@@ -4,24 +4,25 @@
 		<meta charset="utf-8"/>
 		<meta property="wb:webmaster" content="c2efef57b2b53a48" />
 		<title>维尼的照片墙 - acol</title>
-		<link href="http://s1.56img.com/style/i/v3/css/global/global.css" type="text/css" rel="stylesheet"/>
+		<link href="css/global.css" type="text/css" rel="stylesheet"/>
 		<link href="css/reset.css" type="text/css" rel="stylesheet"/>
 		<link href="css/main.css" type="text/css" rel="stylesheet"/>
 		<link href="css/pop.css" type="text/css" rel="stylesheet"/>
 		<link href="css/wall.css" type="text/css" rel="stylesheet"/>
-		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="css/module_v.1.css" type="text/css" rel="stylesheet"/>
 		<link href="<?=WEB_ROOT?>plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="http://s1.56img.com/script/lib/jquery/jquery-1.4.4.min.js" ></script>
 		<script type="text/javascript" src="js/helper.js?v=1"></script>
 		<script type="text/javascript">
 			//	初始化
 			var WEB_ROOT = '<?=WEB_ROOT?>',
+				STATIC_ROOT = '{echo STATIC_ROOT;}',
 				IS_MINE = '<?=$global['is_mine']?>';
 				USER = '<?=$global['user']?>';
 		</script>
 	</head>
 	<body>
-		<div id="top_loading" class="top_loading floater radius"><img src="<?=WEB_ROOT?>/view/top_loading.gif"/> 加载中... </div>
+		<div id="top_loading" class="top_loading floater radius"><img src="<?=STATIC_ROOT?>top_loading.gif"/> 加载中... </div>
 		<p id="loading">Loading</p>
 		<div class="top">
 			<span class="floater"><a href="<?=WEB_ROOT . $global['user']?>">返回空间</a></span>

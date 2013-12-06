@@ -6,11 +6,11 @@
 		<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
 		<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
 		<link rel="shortcut icon" href="weini.ico" type="image/x-icon" />
-		<link href="http://s1.56img.com/style/i/v3/css/global/global.css" type="text/css" rel="stylesheet"/>
+		<link href="css/global.css" type="text/css" rel="stylesheet"/>
 		<link href="css/reset.css" type="text/css" rel="stylesheet"/>
 		<link href="css/main.css" type="text/css" rel="stylesheet"/>
 		<link href="css/pop.css" type="text/css" rel="stylesheet"/>
-		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="css/module_v.1.css" type="text/css" rel="stylesheet"/>
 		<link href="<?=WEB_ROOT?>plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
 		<link type="text/css" rel="stylesheet" href="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Styles/shCore.css"/>
 		<link type="text/css" rel="stylesheet" href="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Styles/shThemeDefault.css"/>
@@ -22,6 +22,7 @@
 		<script type="text/javascript">
 			//	初始化
 			var WEB_ROOT = '{echo WEB_ROOT;}',
+				STATIC_ROOT = '{echo STATIC_ROOT;}',
 				IS_MINE = {echo $data["is_mine"];},
 				USER = '{echo $data["user"];}';
 			SyntaxHighlighter.config.clipboardSwf = WEB_ROOT +'plugin/SyntaxHighlighter/Scripts/clipboard.swf';
@@ -29,7 +30,7 @@
 		</script>
 	</head>
 	<body style="-webkit-transform: rotate(-5deg);">
-	<div id="top_loading" class="top_loading floater radius"><img src="<?=WEB_ROOT?>/view/top_loading.gif"/> 努力加载中... </div>
+	<div id="top_loading" class="top_loading floater radius"><img src="<?=STATIC_ROOT?>/top_loading.gif"/> 努力加载中... </div>
 	<div class="top">
 		{if(!isset($_SESSION['username']))}
 		<span id="login_top">未登录，现在<a href="javascript:;" onclick="$_Index.ini();return false;">登录</a>？ 没有账号，<a href="javascript:;" onclick="$_Index.reg();return false;">注册</a>？</span>
@@ -78,11 +79,20 @@
 				<img height="150px" width="150px" src="{echo $data['userInfo']['face'];}"/>
 				<p><label id="now_user"></label></p>
 			</div>
-			<div class="menu_click radius" id="photoWall">
-				<span>图片墙</span>
-				<div class="">
-					<a href="/{echo $data["user"];}/wall"><img src="img/wall.jpg"/></a>
+			
+			<div class="menu radius">
+				<em class="timesort_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>时间轴
+				<div class="slide_item" style="display:block;">
+					<ul id="sort_ul" class="sort_ul"></ul>
 				</div>
+			</div>
+			
+
+			<div class="menu_click radius" id="photoWall">
+				<span><a href="/{echo $data["user"];}/wall">图片墙</a></span>
+				<!-- <div class="">
+					<a href="/{echo $data["user"];}/wall"><img src="img/wall.jpg"/></a>
+				</div> -->
 			</div>
 			<div class="menu_click radius" id="videoWall">
 				<span><a href="/video">精彩视频墙</a></span>
@@ -115,7 +125,7 @@
 		</div>
 		
 		<span class="btn radius" id="page_btn" title="next page" last_page="{echo $data['last_page'];}" onclick="$_Index.switch_div('content','next','right')" onfocus="this.blur();" style="-webkit-user-select:none;">
-			<label id="now_page">{echo $data['page'];}</label>/{echo $data['last_page'];}
+			<label id="now_page">{echo $data['page'];}</label>/<label id="total_page">{echo $data['last_page'];}</label>
 		</span>
 		<!-- <span class="back_btn" id="page_back" title="pre page" onclick="$_Index.switch_div('content','pre')"></span> -->
 		<span class="back_btn2 radius" id="page_back" title="pre page" onclick="$_Index.switch_div('content','pre','left')"> 《 </span>
