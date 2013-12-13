@@ -15,7 +15,7 @@ var $_Helper = {
 	load_obj : null,
 	//	判断浏览器类型
 	isIE : function(){
-		if($.browser.msie)
+		if(typeof $.browser != 'undefined' && $.browser.msie)
 			return $.browser.version;
 		else
 			return false;
@@ -27,7 +27,7 @@ var $_Helper = {
 			return false;
 	},
 	isFF : function(){
-		if($.browser.mozilla)
+		if(typeof $.browser != 'undefined' && $.browser.mozilla)
 			return true;
 		else
 			return false;

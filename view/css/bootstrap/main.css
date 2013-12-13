@@ -1,0 +1,37 @@
+@charset "utf-8";
+/*	css hack
+	1.	把IE6/7/8与其它浏览器区别开来,"\9" : margin-top: 15px\9;
+	2.	针对IE6和IE7,"*"	:	*margin-left: 15px;
+	3.	单独针对IE6,"_"	:	_width: 15px;
+	4.	单独针对IE7,"!important"	:	height: 18px !important;
+	5.	单独针对IE8,"\0"	:	background: green\0;
+	6.	单独针对Firefox	:	把针对Firefox的CSS代码写在下面CSS函数的大括号之间
+@-moz-document url-prefix(){ CSS代码  }
+	7.	单独针对Opera	:	把针对Opera的CSS代码写在下面CSS函数的大括号之间
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0){	CSS代码 }
+	8.	针对Safari和Google Chrome	:	把针对Safari和Google Chrome的CSS代码写在下面CSS函数的大括号之间
+@media screen and (-webkit-min-device-pixel-ratio:0){	CSS代码 }
+*/
+
+/*basic*/
+body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*background:#8D9538;*/}
+/*漂浮*/
+.floater{position:fixed;_position:absolute;z-index:1000;}
+/*圆角框*/
+.radius{-moz-border-radius:10px;-khtml-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
+/*文章块*/
+.circle{background:#fff;width:750px;padding:15px;margin-top:20px;}
+.circle .comment_div{height:10px;}
+.circle .acticle-content{background:#F7F7F7;padding:10px;}
+.circle .comment_div{margin-top:15px;}
+.circle .comment{float:right;}
+.acticle-close{float:right;font-weight:bold;color:#000;font-size:20px;background:none;_font-size:15px;}
+.acticle-close:hover{text-decoration:none;color:#ccc}
+.acticle-edit{float:right;margin-right:10px;font-weight:bold;color:#000;font-size:20px;background:none;_font-size:15px;}
+.acticle-edit:hover{text-decoration:none;color:#ccc}
+/*评论数浮块*/
+.comment-float{position: relative;left:725px;top:0px;width:30px;height:25px;cursor:pointer;background-image: url(../../footer_shadow.png);background-position: -115px -41px;}
+.comment-float a{margin-left: 3px;}
+/*app*/
+.weibo_logo{width:25px;height:25px;margin-right:3px;background-image:url('../../img/weibo2.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../view/img/weibo2.png',sizingMethod='crop');}
+.tqq_logo{width:25px;height:25px;background-image:url('../../img/tqq.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../view/img/tqq.png',sizingMethod='crop');background-repeat: no-repeat;}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+	<title>维尼的小气球 - acol</title>
+	<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+	<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+	<link rel="shortcut icon" href="weini.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/bootstrap2.x/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/grumble/css/grumble.min.css">
+
+	<link href="<?=WEB_ROOT?>plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+	<link type="text/css" rel="stylesheet" href="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Styles/shThemeDefault.css"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/bootstrap/main.css">
+
+  </head>
+  <body>
+    <div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="progress progress-info progress-striped active hide">
+					<div class="progress-bar" style="width: 60%;"></div>
+				</div>
+				
+				<h3 class="text-center">
+					{echo $data['userInfo']['desc'];}
+				</h3>
+				{if($data["user"] == 'acol')}
+					<p id="acol_tips">< 业余时间纯手工打造的半成品，推荐使用chrome或者高版本IE浏览。 ></p>
+				{/if}
+
+				<div class="navbar navbar-inverse" role="navigation">
+			        <div class="navbar-header">
+			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			          </button>
+			          <a class="navbar-brand" href="">Home</a>
+			        </div>
+			        <div class="navbar-collapse collapse">
+
+			          <ul class="nav navbar-nav">
+			            <li><a href="/{echo $data["user"];}/wall">图片墙</a></li>
+			            <li><a href="/{echo $data["user"];}/video">精彩视频墙</a></li>
+			            <li>
+			            	<a id="add_something" class="tooltip-acol" data-original-title="添加文章，图片，视频" href="javascript:;" {if($global['is_mine'] != 1)} style="display:none;" {/if} data-toggle="modal" data-target="#myModal">发表</a>
+			            </li>
+			            <li class="dropdown">
+			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
+			              
+			              <ul class="dropdown-menu">
+			                <li><a href="http://www.56.com" target="_blank">56视频</a></li>
+			                <li><a href="http://www.xiaoqiqiu.com/milk" target="_blank">牛奶的空间</a></li>
+			                <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
+			                <li class="divider"></li>
+			                <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
+			                <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
+							<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
+			              </ul>
+
+			            </li>
+			          </ul>
+
+			          <ul class="nav navbar-nav navbar-right">
+			          {if(!isset($_SESSION['username']))}
+			            	<li class="active"><a href="javascript:;" onclick="$_Index.ini();return false;">登录</a></li>
+			            	<li><a href="javascript:;" onclick="$_Index.reg();return false;">注册</a></li>
+			           {/else}
+							<li class="active"><a href="http://xiaoqiqiu.com/{echo $_SESSION['username'];}">当前登录：{echo $_SESSION['username'];}</a></li>
+			            	<li><a href="javascript:;" onclick="$_Index.edit();return false;">修改资料</a></li>
+			            	<li><a href="javascript:;" onclick="$_Index.logout();return false;">退出</a></li>
+			           {/if}
+			          </ul>
+			        </div><!--/.nav-collapse -->
+			    </div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div id="content" class="col-md-8">
+				
+				{loop $db}
+					<div class="circle radius" aid="{$id}">
+						<div class="comment-float"><em><a href="javascript:;" alt="{$id}">{$cmt_num}</a></em></div>
+						{if($data["is_mine"] == 1)}
+						<a class="acticle-close" href="javascript:;" onfocus="this.blur();" onclick="$_Add.del_article({$id});return false;"> × </a>
+						<a class="acticle-edit" href="javascript:;" onfocus="this.blur();" onclick="$_Add.edit_article({$id});return false;"> + </a>
+						{/if}
+						<div class="acticle-content">
+							{$content}
+						</div>
+						<div class="comment_div">
+							<span class="author"> {$username} 于 {$time} 发表</span>
+							<span class="comment"><a href="javascript:;" alt="{$id}">我有想法({$cmt_num})</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+				{/loop}
+
+			</div>
+			<div class="col-md-4">
+				
+				<div class="face radius">
+					<img height="200px" width="200px" src="{echo $data['userInfo']['face'];}" class="img-circle" />
+					<p><label id="now_user"></label></p>
+				</div>
+
+				<div class="menu radius">
+					<h4>时间轴</h4>
+					<div class="slide_item" style="display:block;">
+						<ul id="sort_ul" class="sort_ul"></ul>
+					</div>
+				</div>
+
+				<div class="carousel slide" id="carousel-794314" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li class="active" data-slide-to="0" data-target="#carousel-794314">
+						</li>
+						<li data-slide-to="1" data-target="#carousel-794314">
+						</li>
+						<li data-slide-to="2" data-target="#carousel-794314">
+						</li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20121111022246_.jpg" />
+							<div class="carousel-caption">
+								<p>由于自己的html+css比较业余，所以想用 Bootstrap 做另一个版本的UI，而且不再考虑SEO，首屏内容也直接异步。</p>
+							</div>
+						</div>
+						<div class="item">
+							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20130804175202_.JPG" />
+							<div class="carousel-caption">
+								<p>感谢涛锅大力协助，终于把小气球站的rewrite搞好了~~ 附上配置</p>
+							</div>
+						</div>
+						<div class="item">
+							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20130130223740_.jpg" />
+							<div class="carousel-caption">
+								<p>按文章发布时间分类已做好~ 下一步开始研究这个rewrite了</p>
+							</div>
+						</div>
+					</div> <!-- <a data-slide="prev" href="#carousel-794314" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-794314" class="right carousel-control">›</a> -->
+					<a class="left carousel-control" href="#carousel-794314" data-slide="prev">
+			          <span class="glyphicon glyphicon-chevron-left"></span>
+			        </a>
+			        <a class="right carousel-control" href="#carousel-794314" data-slide="next">
+			          <span class="glyphicon glyphicon-chevron-right"></span>
+			        </a>
+				</div>
+
+				
+				<div id="modal-container-251374" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">
+							标题栏
+						</h3>
+					</div>
+					<div class="modal-body">
+						<p>
+							显示信息
+						</p>
+					</div>
+					<div class="modal-footer">
+						 <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button> <button class="btn btn-default btn-primary">保存设置</button>
+					</div>
+				</div>
+				<div class="jumbotron" style="margin-top:10px">
+					<!-- <h1>
+						Hello, world!
+					</h1>
+					<p>
+						这是一个可视化布局模板, 你可以点击模板里的文字进行修改, 也可以通过点击弹出的编辑框进行富文本修改. 拖动区块能实现排序.
+					</p> -->
+					{if( !empty($data['userInfo']['weibo']) )}
+						<em class="weibo_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>新浪微博
+						<div class="slide_item">{echo $data['userInfo']['weibo'];}</div>
+					{/if}
+					<p>
+						<a class="btn btn-default btn-primary btn-lg" href="#">参看更多 »</a>
+					</p>
+				</div>
+
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				      </div>
+				      <div class="modal-body">
+				        ...
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div><!-- /.modal-content -->
+				  </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Scripts/shCore.js"></script>
+	<script type="text/javascript" src="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Scripts/shBrushes.js"></script>
+	<script type="text/javascript">
+		//	初始化
+		var WEB_ROOT = '{echo WEB_ROOT;}',
+			STATIC_ROOT = '{echo STATIC_ROOT;}',
+			IS_MINE = {echo $data["is_mine"];},
+			USER = '{echo $data["user"];}';
+		SyntaxHighlighter.config.clipboardSwf = WEB_ROOT +'plugin/SyntaxHighlighter/Scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="http://xiaoqiqiu.com/plugin/bootstrap2.x/js/bootstrap.min.js"></script>-->
+	<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="http://xiaoqiqiu.com/plugin/grumble/js/jquery.grumble.min.js"></script>
+	<script src="http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js"></script>
+
+	<script type="text/javascript" src="js/helper.js"></script>
+	<script src="http://static.xiaoqiqiu.com/js/bootstrap/main.js"></script>
+
+  </body>
+</html>
