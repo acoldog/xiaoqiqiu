@@ -15,6 +15,7 @@
 
 /*basic*/
 body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*background:#8D9538;*/}
+.progress{position: relative;z-index:1050;}
 /*漂浮*/
 .floater{position:fixed;_position:absolute;z-index:1000;}
 /*圆角框*/
@@ -35,3 +36,14 @@ body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*b
 /*app*/
 .weibo_logo{width:25px;height:25px;margin-right:3px;background-image:url('../../img/weibo2.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../view/img/weibo2.png',sizingMethod='crop');}
 .tqq_logo{width:25px;height:25px;background-image:url('../../img/tqq.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../view/img/tqq.png',sizingMethod='crop');background-repeat: no-repeat;}
+/*侧边栏*/
+.menu{background: #fff;padding: 5px;margin-bottom: 10px;}
+/**
+ * 注册层
+ */
+div .reg_left{float:left;width:150px;text-align: left;}
+div .reg_right{margin-left:150px;margin-top:3px;text-align: left;}
+.reg_container ul li{list-style-type: none;}
+.reg_face{height:60px;}
+.reg_container li{margin:3px;}
+.reg_container input{width:350px;}

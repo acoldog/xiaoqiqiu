@@ -22,22 +22,21 @@
         <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/bootstrap/main.css">
+	<link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/global.css">
 
   </head>
   <body>
+  	<div id="loading_bar" class="progress progress-info progress-striped active hide">
+		<div class="progress-bar" style="width: 10%;"></div>
+	</div>
+
     <div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="progress progress-info progress-striped active hide">
-					<div class="progress-bar" style="width: 60%;"></div>
-				</div>
 				
 				<h3 class="text-center">
 					{echo $data['userInfo']['desc'];}
 				</h3>
-				{if($data["user"] == 'acol')}
-					<p id="acol_tips">< 业余时间纯手工打造的半成品，推荐使用chrome或者高版本IE浏览。 ></p>
-				{/if}
 
 				<div class="navbar navbar-inverse" role="navigation">
 			        <div class="navbar-header">
@@ -55,7 +54,7 @@
 			            <li><a href="/{echo $data["user"];}/wall">图片墙</a></li>
 			            <li><a href="/{echo $data["user"];}/video">精彩视频墙</a></li>
 			            <li>
-			            	<a id="add_something" class="tooltip-acol" data-original-title="添加文章，图片，视频" href="javascript:;" {if($global['is_mine'] != 1)} style="display:none;" {/if} data-toggle="modal" data-target="#myModal">发表</a>
+			            	<a id="add_something" class="tooltip-acol" data-original-title="添加文章，图片，视频" href="#" {if($global['is_mine'] != 1)} style="display:none;" {/if} data-toggle="modal" data-target="#myModal">发表</a>
 			            </li>
 			            <li class="dropdown">
 			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
@@ -73,14 +72,14 @@
 			            </li>
 			          </ul>
 
-			          <ul class="nav navbar-nav navbar-right">
+			          <ul id="profile_ul" class="nav navbar-nav navbar-right">
 			          {if(!isset($_SESSION['username']))}
-			            	<li class="active"><a href="javascript:;" onclick="$_Index.ini();return false;">登录</a></li>
-			            	<li><a href="javascript:;" onclick="$_Index.reg();return false;">注册</a></li>
+			            	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#">登录</a></li>
+			            	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
 			           {/else}
 							<li class="active"><a href="http://xiaoqiqiu.com/{echo $_SESSION['username'];}">当前登录：{echo $_SESSION['username'];}</a></li>
-			            	<li><a href="javascript:;" onclick="$_Index.edit();return false;">修改资料</a></li>
-			            	<li><a href="javascript:;" onclick="$_Index.logout();return false;">退出</a></li>
+			            	<li><a id="edit_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">修改资料</a></li>
+			            	<li><a id="logout_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">退出</a></li>
 			           {/if}
 			          </ul>
 			        </div><!--/.nav-collapse -->
@@ -93,17 +92,17 @@
 				
 				{loop $db}
 					<div class="circle radius" aid="{$id}">
-						<div class="comment-float"><em><a href="javascript:;" alt="{$id}">{$cmt_num}</a></em></div>
+						<div class="comment-float"><em><a href="#" alt="{$id}">{$cmt_num}</a></em></div>
 						{if($data["is_mine"] == 1)}
-						<a class="acticle-close" href="javascript:;" onfocus="this.blur();" onclick="$_Add.del_article({$id});return false;"> × </a>
-						<a class="acticle-edit" href="javascript:;" onfocus="this.blur();" onclick="$_Add.edit_article({$id});return false;"> + </a>
+						<a class="acticle-close" href="#" onfocus="this.blur();" onclick="$_Add.del_article({$id});return false;"> × </a>
+						<a class="acticle-edit" href="#" onfocus="this.blur();" onclick="$_Add.edit_article({$id});return false;"> + </a>
 						{/if}
 						<div class="acticle-content">
 							{$content}
 						</div>
 						<div class="comment_div">
 							<span class="author"> {$username} 于 {$time} 发表</span>
-							<span class="comment"><a href="javascript:;" alt="{$id}">我有想法({$cmt_num})</a></span>
+							<span class="comment"><a href="#" alt="{$id}">我有想法({$cmt_num})</a></span>
 						</div>
 					</div>
 					<div class="left_shadow">
@@ -114,7 +113,7 @@
 			</div>
 			<div class="col-md-4">
 				
-				<div class="face radius">
+				<div>
 					<img height="200px" width="200px" src="{echo $data['userInfo']['face'];}" class="img-circle" />
 					<p><label id="now_user"></label></p>
 				</div>
@@ -163,23 +162,8 @@
 			        </a>
 				</div>
 
-				
-				<div id="modal-container-251374" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-header">
-						 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h3 id="myModalLabel">
-							标题栏
-						</h3>
-					</div>
-					<div class="modal-body">
-						<p>
-							显示信息
-						</p>
-					</div>
-					<div class="modal-footer">
-						 <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button> <button class="btn btn-default btn-primary">保存设置</button>
-					</div>
-				</div>
+
+				{if( !empty($data['userInfo']['weibo']) )}
 				<div class="jumbotron" style="margin-top:10px">
 					<!-- <h1>
 						Hello, world!
@@ -187,15 +171,15 @@
 					<p>
 						这是一个可视化布局模板, 你可以点击模板里的文字进行修改, 也可以通过点击弹出的编辑框进行富文本修改. 拖动区块能实现排序.
 					</p> -->
-					{if( !empty($data['userInfo']['weibo']) )}
-						<em class="weibo_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>新浪微博
-						<div class="slide_item">{echo $data['userInfo']['weibo'];}</div>
-					{/if}
+					
+					<em class="weibo_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>新浪微博
+					<div class="slide_item">{echo $data['userInfo']['weibo'];}</div>
+					
 					<p>
-						<a class="btn btn-default btn-primary btn-lg" href="#">参看更多 »</a>
+						<a class="btn btn-default btn-primary btn-lg" href="http://weibo.com" target="_blank">查看更多 »</a>
 					</p>
 				</div>
-
+				{/if}
 
 				<!-- Modal -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -205,12 +189,12 @@
 				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
 				      </div>
-				      <div class="modal-body">
+				      <div id="modal_body" class="modal-body">
 				        ...
 				      </div>
 				      <div class="modal-footer">
-				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				        <button type="button" class="btn btn-primary">Save changes</button>
+				        <button id="modal_btn1" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button id="modal_btn2" type="button" class="btn btn-primary">Save changes</button>
 				      </div>
 				    </div><!-- /.modal-content -->
 				  </div><!-- /.modal-dialog -->
@@ -219,6 +203,11 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="gotop" style="position: fixed; bottom: 50px; left: 1000px; cursor: pointer;display:none;" title="猛击我可以灰~">
+		<img src="img/gotop.png" style="width:64px; height:64px;" />
+	</div>
+
 	<script type="text/javascript" src="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Scripts/shCore.js"></script>
 	<script type="text/javascript" src="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Scripts/shBrushes.js"></script>
 	<script type="text/javascript">
@@ -239,7 +228,9 @@
 	<script src="http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js"></script>
 
 	<script type="text/javascript" src="js/helper.js"></script>
+	<script type="text/javascript" src="js/space_ui_v2.js"></script>
 	<script src="http://static.xiaoqiqiu.com/js/bootstrap/main.js"></script>
+	<script src="http://static.xiaoqiqiu.com/js/bootstrap/pop.js"></script>
 
   </body>
 </html>

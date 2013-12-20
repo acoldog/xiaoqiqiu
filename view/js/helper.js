@@ -35,8 +35,9 @@ var $_Helper = {
 	/**
 	*	导入JS包
 	*	option - 是个带js文件名的数组（文件名和对象名对应的）
+	*	callback - 加载成功后执行的回调
 	*/
-	require : function(option){
+	require : function(option , callback){
 		var option = option || {};
 		for(var i in option)
 		{
@@ -50,8 +51,13 @@ var $_Helper = {
 				var obj = '$_'+ objname;alert(obj)
 				if(!window.hasOwnProperty(obj) || typeof obj == 'object')
 				{*/
-					$_Helper.load(STATIC_ROOT +'js/'+ option[i] +'.js');
+					//$_Helper.load(STATIC_ROOT +'js/'+ option[i] +'.js');
 				//}
+				if( option[i].indexOf('xiaoqiqiu.com') != -1 ){
+					scriptLoader.load(option[i] , callback);
+				}else{
+					scriptLoader.load(STATIC_ROOT +'js/'+ option[i] +'.js' , callback);
+				}
 			}
 		}
 	},
@@ -66,6 +72,7 @@ var $_Helper = {
         a.href = url;
         b.appendChild(a, null);
 	},
+	//load js file
 	load : function(src){
 		var scpt = document.createElement("SCRIPT");
 		scpt.type = "text/javascript";
@@ -280,6 +287,21 @@ var $_Helper = {
     top_loading_done : function(){
     	$('#top_loading').stop(false, true).slideUp();
     },
+
+    //bootstrap loading
+    bs_top_loading : function(title){
+    	var title 	= title || '加载中...',
+    		bar_obj = $('#loading_bar');
+
+    	bar_obj.find('.progress-bar').css({width:'10%'}).delay(500);
+    	bar_obj.removeClass('hide').find('.progress-bar').text(title).animate({
+    		width : "100%"
+    	} , 'slow');
+    },
+    bs_top_loading_done : function(){
+    	$('#loading_bar').addClass('hide').find('.progress-bar').stop(false, true);
+    },
+    
     //	图片展示效果
 	zoom_img : function(obj){
 		var comp_img_src = $(obj).attr('src'),
@@ -470,4 +492,77 @@ var ParseSWF = {
 	}
 };
 
+// IE10同时支持两种事件，但是当JS有缓存的时候，会先触发onreadystatechange再执行JS程序
+var scriptOnloadEvent = 'onload' in document.createElement('script') ?
+	'onload' : 'onreadystatechange';
+// 脚本读取器
+var scriptLoader = {
+	// script的父节点
+	_scriptParent: document.getElementsByTagName('head')[0],
+	
+	// 标注加载中（1）或已加载（2）的url
+	_loaded: { },
+
+	_config : {charset : 'utf-8'},
+	
+	// 获取当前运行的脚本所在的script标签
+	getExecutingScript: function() {
+		if (this._currentlyAddingScript) {
+			return this._currentlyAddingScript;
+		}
+
+		var executingScript = this._executingScript;
+		if (executingScript && executingScript.readyState === 'interactive') {
+			return executingScript;
+		}
+
+		var scripts = this._scriptParent.getElementsByTagName('script'), script;
+		for (var i = 0; i < scripts.length; i++) {
+			script = scripts[i];
+			if (script.readyState === 'interactive') {
+				return (this._executingScript = script);
+			}
+		}
+	},
+
+	// 加载script文件
+	load: function(src, onload, attrs) {
+		var self = this, state = self._loaded[src];
+
+		if (state) {
+			// state为1时表示此文件加载中，无须二次加载
+			// state为2时表示文件加载完成，直接执行回调
+			if (state === 2 && onload) { onload(script); }
+		} else {
+			var script = document.createElement('script');
+			script.src = src;
+			self._loaded[src] = 1;
+			if (self._config.charset) { script.charset = self._config.charset; }
+			script.async = 'async';
+			if (attrs) {
+				// 设置附加属性
+				for (var key in attrs) {
+					script.setAttribute(key, attrs[key]);
+				}
+			}
+			script[scriptOnloadEvent] = script.onerror = function() {			
+				if (!script.readyState ||
+					'loaded' === script.readyState || 'complete' === script.readyState
+				) {
+					self._loaded[src] = 2;
+					self._executingScript = null;
+				
+					script[scriptOnloadEvent] = script.onerror = null;
+					onload && onload(script);
+					script.parentNode.removeChild(script);
+					script = null;
+				}
+			};
+
+			this._currentlyAddingScript = script;
+			self._scriptParent.insertBefore(script, self._scriptParent.firstChild);
+			this._currentlyAddingScript = null;
+		}
+	}
+};
 //--><!]]>

@@ -395,16 +395,28 @@
 		 * 	浏览器判断
 		 */
 		isIE : function(){
-			return $.browser.msie;
+			if(typeof $.browser != 'undefined' && $.browser.msie)
+				return $.browser.version;
+			else
+				return false;
 		}(),
 		isIE6 : function(){
-			return $.browser.msie && ($.browser.version.indexOf('6.0') != -1);
+			if(this.isIE && this.isIE.indexOf('6.0') != -1)
+				return true;
+			else
+				return false;
 		}(),
 		isFF : function(){
-			return $.browser.mozilla;
+			if(typeof $.browser != 'undefined' && $.browser.mozilla)
+				return true;
+			else
+				return false;
 		}(),
 		isChrome : function(){
-			return $.browser.safari && $.browser.webkit;
+			if(typeof $.browser != 'undefined' && $.browser.safari && $.browser.webkit)
+				return true;
+			else
+				return false;
 		}(),
 		/**
 		 * 	字符串操作相关
