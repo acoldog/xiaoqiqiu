@@ -106,7 +106,7 @@
 				}
 			});
 
-			AcolScrollPage.page_container.find('a').live('mousedown' , function(){
+			AcolScrollPage.page_container.delegate('a' ,'mousedown' , function(){
 				$("html,body").scrollTop(0);
 				//	在首页和末页时禁用上/下一页按钮
 				var page_text = $(this).text();

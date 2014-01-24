@@ -95,7 +95,12 @@
 	//	检测URL中的用户名参数(检测GET第一个参数是否是用户)
 	function checkUser(){
 		global $global;
-		$username = empty($_GET[0]) ? $_REQUEST['user'] : $_GET[0];
+		$user = 'acol';
+		if( isset($_REQUEST['user']) ){
+			$user = $_REQUEST['user'];
+		}
+
+		$username = empty($_GET[0]) ? $user : $_GET[0];
 		//	判断是不是自己的空间
 		if(isset($_SESSION['username']) && trim($_SESSION['username']) != ''){
 			if(empty($username)){

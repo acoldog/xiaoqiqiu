@@ -13,6 +13,7 @@
 var $_Helper = {
 
 	load_obj : null,
+	_loaded_css : {},
 	//	判断浏览器类型
 	isIE : function(){
 		if(typeof $.browser != 'undefined' && $.browser.msie)
@@ -38,7 +39,16 @@ var $_Helper = {
 	*	callback - 加载成功后执行的回调
 	*/
 	require : function(option , callback){
-		var option = option || {};
+		
+		var option 		= option || {};
+
+		if( typeof arguments == 'object' && typeof arguments.shift == 'function' ){
+			arguments.shift();
+			callback = arguments;
+		}else{
+			callback = [callback];
+		}
+
 		for(var i in option)
 		{
 			if(typeof option[i] == 'string')
@@ -54,9 +64,9 @@ var $_Helper = {
 					//$_Helper.load(STATIC_ROOT +'js/'+ option[i] +'.js');
 				//}
 				if( option[i].indexOf('xiaoqiqiu.com') != -1 ){
-					scriptLoader.load(option[i] , callback);
+					scriptLoader.load(option[i] , callback[i]);
 				}else{
-					scriptLoader.load(STATIC_ROOT +'js/'+ option[i] +'.js' , callback);
+					scriptLoader.load(STATIC_ROOT +'js/'+ option[i] +'.js' , callback[i]);
 				}
 			}
 		}
@@ -64,6 +74,8 @@ var $_Helper = {
 	//	动态插入CSS
 	loadCss : function(url){
 		if (!url) return;
+		if( typeof this._loaded_css[url] != 'undefined' )return;
+
         var a = document.createElement('link');
         var b = document.getElementsByTagName('HEAD')
             .item(0);
@@ -71,6 +83,8 @@ var $_Helper = {
         a.type = "text/css";
         a.href = url;
         b.appendChild(a, null);
+        //记录已加载的css
+        this._loaded_css[url] = 1;
 	},
 	//load js file
 	load : function(src){
@@ -293,7 +307,7 @@ var $_Helper = {
     	var title 	= title || '加载中...',
     		bar_obj = $('#loading_bar');
 
-    	bar_obj.find('.progress-bar').css({width:'10%'}).delay(500);
+    	bar_obj.find('.progress-bar').css({width:'50%'}).delay(500);
     	bar_obj.removeClass('hide').find('.progress-bar').text(title).animate({
     		width : "100%"
     	} , 'slow');
@@ -307,22 +321,42 @@ var $_Helper = {
 		var comp_img_src = $(obj).attr('src'),
 			big_img_src = comp_img_src.replace('imgCompress' , 'img'),
 			zoom_html = '<img src="'+ big_img_src +'"/>';
-		var pop_obj = $_Pop.create_pop({
-			title : '原图欣赏',
-			container : $(document.body) , 
-			css_ini : {'z-index':'101','position':'absolute','top':'30px','left':'100px'} ,
-			content : zoom_html,
-			callback : function(pop_obj){
-				$_Helper.top_loading('正在加载原图...');
-				pop_obj.hide();
-				pop_obj.find('img').load(function(){
-					var oLeft = ($(window).width() - pop_obj.width()) / 2;
-					pop_obj.css('left' , oLeft).fadeIn('fast');
-					$_Helper.top_loading_done();
-				});
-			},
-			move_type : 'self'
-		});	
+
+		if( typeof arguments[1] == 'object' ){	//new pop
+
+			$('#pop_helper').click();
+			var imgNode = this.createImg(big_img_src);
+			arguments[1].set({
+				btn1 		: 'Close',
+				title 		: '原图欣赏',
+				content 	: imgNode,
+				type		: 'img'
+			});
+		}else{
+			var pop_obj = $_Pop.create_pop({
+				title : '原图欣赏',
+				container : $(document.body) , 
+				css_ini : {'z-index':'101','position':'absolute','top':'30px','left':'100px'} ,
+				content : zoom_html,
+				callback : function(pop_obj){
+					$_Helper.top_loading('正在加载原图...');
+					pop_obj.hide();
+					pop_obj.find('img').load(function(){
+						var oLeft = ($(window).width() - pop_obj.width()) / 2;
+						pop_obj.css('left' , oLeft).fadeIn('fast');
+						$_Helper.top_loading_done();
+					});
+				},
+				move_type : 'self'
+			});	
+		}
+		
+	},
+	//创建图片节点
+	createImg : function(src){
+		var img = new Image();
+		img.src = src;
+		return img; 
 	},
 	lazyload : function(){
 		var imgs_obj = $('img[lazyload=1]');

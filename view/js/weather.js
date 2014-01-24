@@ -38,7 +38,7 @@
 	                if (typeof remote_ip_info == 'object' && remote_ip_info.ret == '1'){     
 	                	var city = remote_ip_info.city;
 						$.getScript("http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&day=2&city=" + city + "&dfc=3", function() {
-				            if (type == 'js') {
+				            if (typeof type != 'undefined' && type == 'js') {
 				            	//echo(city);
                                 console.log(SWther)
 				            }
@@ -151,6 +151,6 @@
     }
 	  
 
-	//var a = new Weather('');
+	var a = new Weather('');   //暂时做装饰用吧
 	//getWeather();
 })(jQuery);

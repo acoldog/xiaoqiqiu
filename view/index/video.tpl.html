@@ -15,11 +15,8 @@
 		<link href="css/main.css" type="text/css" rel="stylesheet"/>
 		<link href="css/pop.css" type="text/css" rel="stylesheet"/>
 		<link href="css/wall.css" type="text/css" rel="stylesheet"/>
+		<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
 
-		<script type="text/javascript" src="http://s1.56img.com/script/lib/jquery/jquery-1.4.4.min.js" ></script>
-		<script type="text/javascript" src="http://s2.56img.com/script/page/common/v3/o_utf8_v.2.js"></script>
-		<script type="text/javascript" src="http://s2.56img.com/script/fn/comments/v4/objcmt.js?v=120628v1"></script>
-		<script type="text/javascript" src="js/helper.js?v=1"></script>
 		<script type="text/javascript">
 			//	初始化
 			var WEB_ROOT = '<?=WEB_ROOT?>',
@@ -30,11 +27,60 @@
 	</head>
 	<body>
 		<div id="top_loading" class="top_loading floater radius"><img src="<?=STATIC_ROOT?>top_loading.gif"/> 加载中... </div>
-		<div class="top">
+		<!-- <div class="top">
 			<span class="floater"><a href="<?=WEB_ROOT . $global['user']?>">返回空间</a></span>
+		</div> -->
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
+			        <div class="navbar-header">
+			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			          </button>
+			          <a class="navbar-brand" href="<?=WEB_ROOT . $global['user']?>">Home</a>
+			        </div>
+			        <div class="navbar-collapse collapse">
+
+			          <ul class="nav navbar-nav">
+			            <li><a href="/{echo $data["user"];}/wall">图片墙</a></li>
+			            <li><a href="/{echo $data["user"];}/video">精彩视频墙</a></li>
+
+			            <li class="dropdown">
+			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
+			              
+			              <ul class="dropdown-menu">
+			                <li><a href="http://www.56.com" target="_blank">56视频</a></li>
+			                <li><a href="http://www.xiaoqiqiu.com/milk" target="_blank">牛奶的空间</a></li>
+			                <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
+			                <li class="divider"></li>
+			                <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
+			                <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
+							<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
+			              </ul>
+
+			            </li>
+			          </ul>
+
+			          <ul id="profile_ul" class="nav navbar-nav navbar-right">
+			          {if(!isset($_SESSION['username']))}
+			            	<li class="active"><a href="<?=WEB_ROOT . $global['user']?>">登录</a></li>
+			            	<li><a href="<?=WEB_ROOT . $global['user']?>">注册</a></li>
+			           {/else}
+							<li class="active"><a href="<?=WEB_ROOT . $global['user']?>">当前登录：{echo $_SESSION['username'];}</a></li>
+			           {/if}
+			          </ul>
+			        </div><!--/.nav-collapse -->
+			    </div>
+
+			</div>
 		</div>
 
-		<div class="space_main waterfall">
+		<div class="space_main waterfall" style="width:1100px">
 			<div class="space_flow" id="container" style="display:none;"></div>
 
 			<div id="show_loading" class="show_loading" style="display:none;">
@@ -55,10 +101,16 @@
 			<img src="img/gotop.gif" style="width:31px; height:31px;">
 		</div>
 
-		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v3/jquery.masonry.js"></script>
-		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v4/space_ui.js?v=2012071901"></script>
-		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v4/scroll_page.js?v=2012071901"></script>
-		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v4/space_square.js?v=2012111401"></script>
+		<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js"></script>
+
+		<script type="text/javascript" src="http://s2.56img.com/script/page/common/v3/o_utf8_v.2.js"></script>
+		<script type="text/javascript" src="js/helper.js?v=1"></script>
+		<script type="text/javascript" charset="utf-8" src="http://static.xiaoqiqiu.com/js/wall/jquery.masonry.js"></script>
+		<script type="text/javascript" src="js/space_ui_v2.js"></script>
+		<script type="text/javascript" charset="utf-8" src="http://static.xiaoqiqiu.com/js/wall/scroll_page.js?v=2012071901"></script>
+		<script type="text/javascript" charset="utf-8" src="http://static.xiaoqiqiu.com/js/wall/space_square.js?v=2012111401"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				//	加载视频列表
@@ -83,7 +135,7 @@
 					}
 				});
 				//	翻屏重置masonry的高度
-				AcolScrollPage.page_container.find('a').live('mousedown' , function(){
+				AcolScrollPage.page_container.delegate('a' ,'mousedown' , function(){
 					//	在首页和末页时禁用上/下一页按钮
 					var page_text = $(this).text();
 					if((page_text == AcolScrollPage.pre_page && AcolScrollPage.now_page == AcolScrollPage.per_page_screen) || 
@@ -91,6 +143,11 @@
 					$('#container').masonry('destroy');
 		    		SquareOfSpace.videoList.masonrySet();
 		    		SquareOfSpace.videoList.append_video_list(AcolScrollPage.now_page);
+				});
+
+				//钉子
+				$("#top_menu").pin({
+			    	containerSelector: "body"
 				});
 			});
 			
@@ -105,5 +162,9 @@
 			    $(window).bind("scroll",showGotop);
 			})();
 		</script>
+
+		<?php
+			include('baidu-analytics.html');
+		?>
 	</body>
 </html>

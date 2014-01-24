@@ -55,10 +55,10 @@ class Index_ctl{
 
 		//导入模板
 		$load = new Load();
-		if( $data['user'] != 'acol' ){
-			$load->tpl('index/index',$data);
-		}else{
+		if( $data['userInfo']['version'] == 1 ){
 			$load->tpl('index/bootstrap',$data);
+		}else{
+			$load->tpl('index/index',$data);
 		}
 		
 	}

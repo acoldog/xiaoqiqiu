@@ -1,14 +1,13 @@
 <!--//--><![CDATA[//><!--
 /**
- * [$_Index 首页功能类]
+ * [$_BsIndex 首页功能类]
  * @type {Object}
  */
 var $_BsIndex = {
-	page 			: 0,
-	last_page 		: 0,
-	switch_T 		: null,
-	request_url 	: 'http://xiaoqiqiu.com:8081/api/get_article?callback=?',
-	request_action 	: 'index',
+	_page 			: 1,
+	_last_page 		: 0,
+	_request_url 	: 'http://xiaoqiqiu.com:8081/api/get_article?callback=?',
+	_request_action 	: 'index',
 	
 	login : function(){
 		
@@ -76,12 +75,14 @@ var $_BsIndex = {
 	article_html : function(data){
 		var content_html = [];
 		content_html.push('<div class="circle radius"  aid="'+ data.id +'">');
-		content_html.push('<div class="comment-float"><em><a href="javascript:;" alt="'+ data.id +'">'+ data.cmt_num +'</a></em></div>');
+//		content_html.push('<div class="pin-wrapper" style="height: 25px;">');
+		content_html.push('		<div class="comment-float"><em><a href="javascript:;" alt="'+ data.id +'">'+ data.cmt_num +'</a></em></div>');
+//		content_html.push('</div>');
 		if(typeof IS_MINE != 'undefined' && IS_MINE == 1){
-			content_html.push('<a class="close" href="javascript:;" onfocus="this.blur();" onclick="$_Add.del_article('+ data.id +');return false;">×</a>');
-			content_html.push('<a class="edit" href="javascript:;" onfocus="this.blur();" onclick="$_Add.edit_article('+ data.id +');return false;"> + </a>');
+			content_html.push('<a class="acticle-close" href="javascript:;" onfocus="this.blur();" onclick="$_BsAdd.del_article('+ data.id +');return false;">×</a>');
+			content_html.push('<a class="acticle-edit" href="javascript:;" onfocus="this.blur();" onclick="$_BsAdd.edit_article('+ data.id +');return false;"> + </a>');
 		}
-		content_html.push('<div class="content">'+ data.content +'</div>');
+		content_html.push('<div class="acticle-content">'+ data.content +'</div>');
 		content_html.push('<div class="comment_div">');
 		content_html.push('	<span class="comment_div">');
 		content_html.push('		<span class="author"> '+ data.username +' 于 '+ data.time +' 发表</span>');
@@ -96,105 +97,46 @@ var $_BsIndex = {
 	
 	//	切换内容动画
 	switch_div : function(obj_name , type , direction){
-		var _that = this;
-		clearTimeout(this.switch_T);
-		//	获取下一页数据
-		//var now_page = (this.page == 0) ? +$('#now_page').text() : this.page;
-		var now_page = +$('#now_page').text();
-		var last_page = (this.last_page == 0) ? +$('#page_btn').attr('last_page') : this.last_page;
+		var _that 		= this,
+			obj 		= $('#' + obj_name);
 
-		if(type == 'next')
-		{
-			if(now_page >= last_page)
-				now_page = 1;
-			else
-				now_page ++;
-		}else if(type == 'pre'){
-			if(now_page <= 1)
-				now_page = last_page;
-			else
-				now_page --;
-		}else if(type == 'goto'){
-			//
-		}
-		//修改当前页
-		//$('#page_btn').html('<label id="now_page">'+ now_page +'</label>/'+ last_page);
-		$('#now_page').text( +now_page );
+		//遮罩
+		$_Helper.bs_top_loading('努力加载图文中...');
 
-		//	内容切换动画的参数
-		var start_pos = {'left':'-750px', 'right':document.body.clientWidth},
-			obj = $('#' + obj_name),
-			former_left = obj.offset().left,
-			direction = direction || 'left',
-			other_dir = '';
-		if(direction == 'left'){
-			other_dir = 'right';
-		}else{
-			other_dir = 'left';
-		}
-		
-		this.switch_T = setTimeout(function(){
-			//遮罩
-			//$('#top_loading').show();
-			$_Helper.top_loading('努力加载图文中...');
-			//this.loading_cover();
-			obj.css({'position':'absolute'}).animate({
-			   left: start_pos[direction], opacity: 'hide'
-			}, 600 , function(){
-				$(this).css({'position':''});
-				obj.empty();
+		$.getJSON(this._request_url , {'user':USER , 'action':this._request_action , 'page':this._page} , function(callback){
+			if(callback){
+				var content_html 	= '',
+					last_page 		= callback['last_page'],
+					callback 		= callback['data'];
 
-				//	清空当前页数据
+				$('#page_btn').attr('last_page' , last_page);
+
+				for(var i in callback){
+					if(typeof callback[i].id == 'undefined')continue;
+					content_html += _that.article_html(callback[i]);
+				}
+
+				obj.html(content_html);
+
+				//$('#total_page').text( +last_page );
+
+				$_Helper.bs_top_loading_done();
+				//	代码高亮
+				if(typeof SyntaxHighlighter == 'object'){
+					SyntaxHighlighter.highlight();
+				}
+
 				$("#gotop").click();
-
-				//var request_url = WEB_ROOT + 'api/index/index.php';
-				//var request_url = 'http://xiaoqiqiu.com:8081/api/get_article?callback=?';	//改成撸啊接口
-				$.getJSON(_that.request_url , {'user':USER , 'action':_that.request_action , 'page':now_page} , function(callback){
-					if(callback){
-						var content_html 	= '',
-							last_page 		= callback['last_page'],
-							callback 		= callback['data'];
-
-						$('#page_btn').attr('last_page' , last_page);
-
-						for(var i in callback){
-							if(typeof callback[i].id == 'undefined')continue;
-							content_html += _that.article_html(callback[i]);
-						}
-
-						var next_obj = obj.clone();
-						delete obj;
-						next_obj.css({'position':'absolute' , 'display':'none' , 'left':start_pos[other_dir]});
-						next_obj.html(content_html);
-
-						$('#total_page').text( +last_page );
-
-						$('#' + obj_name).remove();
-						$('#header').after(next_obj);
-						next_obj.animate({
-						   left: former_left, opacity: 'show'
-						}, 600 ,function(){
-							$(this).css({'position':'','opacity':'1'});
-							//$('#top_loading').hide();
-							//$_Index.loading_hide();
-							$_Helper.top_loading_done();
-						});		//动画完成后，去除position属性
-						//	代码高亮
-						if(typeof SyntaxHighlighter == 'object'){
-							SyntaxHighlighter.highlight();
-						}
-					}
-				});
-			});
+			}
+		});
 			
-		} , 300);
 
 	},		//end func
 
 
 	//	注册
 	reg : function(){
-		$_Helper.require(['bootstrap/profile'] , function(){
+		$_Helper.require(['bootstrap/bsprofile'] , function(){
 			if( typeof XQQ.bsProfile == 'function'){
 				XQQ.bsProfile().reg();
 			}
@@ -202,7 +144,7 @@ var $_BsIndex = {
 	},
 	//	修改资料
 	edit : function(){
-		$_Helper.require(['bootstrap/profile'] , function(){
+		$_Helper.require(['bootstrap/bsprofile'] , function(){
 			if( typeof XQQ.profile == 'function'){
 				XQQ.profile().edit();
 			}
@@ -217,12 +159,12 @@ var $_BsIndex = {
 
 				for(var i in back){
 					if(typeof back[i] == 'object'){
-						li_html.push('<li><a href="javascript:;" onclick="$_Index.sort_list_event(\''+
+						li_html.push('<li><a href="javascript:;" onclick="$_BsIndex.sort_list_event(\''+
 							back[i].name +'\');return false;">'+ back[i].name +'月 （'+ back[i].num +'条）</a></li>');
 					}
 				}
 
-				li_html.push('<li><a href="javascript:;" onclick="$_Index.sort_list_event(\''+
+				li_html.push('<li><a href="javascript:;" onclick="$_BsIndex.sort_list_event(\''+
 							last_one.name +'\' , \'more\');return false;" title="更早的">...&nbsp;&nbsp;&nbsp; </a></li>');
 				li_html.push('<li><a href="">全部文笔 >>> </a></li>');
 				li_html = li_html.join('');
@@ -234,12 +176,11 @@ var $_BsIndex = {
 	sort_list_event : function(time , other){
 		var other = other || '';
 
-		$_Index.request_url 		= 'http://xiaoqiqiu.com:8081/api/get_article?callback=?&time='+ time +'&other='+ other;
-		$_Index.request_action 		= 'sort';
-		//$_Index.page 				= 1;
-		$('#now_page').text(1);
+		$_BsIndex._request_url 		= 'http://xiaoqiqiu.com:8081/api/get_article?callback=?&time='+ time +'&other='+ other;
+		$_BsIndex._request_action 		= 'sort';
+		$_BsIndex._page 				= 1;
 
-		$_Index.switch_div('content','goto','right');
+		$_BsIndex.switch_div('content','goto','right');
 	}
 
 };		//end object

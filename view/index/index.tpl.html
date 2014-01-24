@@ -36,6 +36,9 @@
 		<span id="login_top">未登录，现在<a href="javascript:;" onclick="$_Index.ini();return false;">登录</a>？ 没有账号，<a href="javascript:;" onclick="$_Index.reg();return false;">注册</a>？</span>
 		{/else}
 		<span id="login_top">当前用户：<a href="http://xiaoqiqiu.com/{echo $_SESSION['username'];}">{echo $_SESSION['username'];}</a> ，<a href="javascript:;" onclick="$_Index.edit();return false;">修改资料</a> &nbsp;&nbsp;/&nbsp;&nbsp; <a href="javascript:;" onclick="$_Index.logout();return false;">退出</a>？</span>
+			{if( $data["is_mine"] == 1 )}
+	    		<span><a href="<?=WEB_ROOT . 'api/index/changeVer.php?action=change_version&user='. $data["user"] .'&version='. ($data['userInfo']['version']==1 ? 0 : 1);?>">换版本</a></span>
+	    	{/if}
 		{/if}
 	</div>
 
@@ -152,7 +155,7 @@
 	<script type="text/javascript" src="js/profile.js"></script>
 	<!--<script defer type="text/javascript" charset="utf-8" src="http://julying.com/lab/weather/get/jquery.weather!parentid=acol_weather&zIndex=1&move=true&autoDrop=true&jquery=false&style=blue&area=client&city=101280101"></script>-->
 	<?php
-		//include_once('google-analytics.html');
+		include('baidu-analytics.html');
 	?>
 	</body>
 </html>

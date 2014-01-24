@@ -8,6 +8,7 @@
 	*
 	************************************************/
 	@session_start();
+	date_default_timezone_set('Asia/Shanghai');
 	//获取程序根目录
 	define('ROOT' , dirname(dirname(__FILE__)));
 	//define('WEB_ROOT' , 'http://'.str_replace('index.php' , '' ,$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));

@@ -15,7 +15,10 @@
 
 /*basic*/
 body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*background:#8D9538;*/}
-.progress{position: relative;z-index:1050;}
+.progress{position: fixed;_position:absolute;z-index:1000;top:0px;width: 100%;z-index:1050;height:30px;}
+.progress .progress-bar{letter-spacing: 8px;font-family: inherit;font-weight: bold;font-size: 20px;line-height: 28px;}
+/*顶部menu*/
+#top_menu{z-index:1;}
 /*漂浮*/
 .floater{position:fixed;_position:absolute;z-index:1000;}
 /*圆角框*/
@@ -38,6 +41,9 @@ body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*b
 .tqq_logo{width:25px;height:25px;background-image:url('../../img/tqq.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../view/img/tqq.png',sizingMethod='crop');background-repeat: no-repeat;}
 /*侧边栏*/
 .menu{background: #fff;padding: 5px;margin-bottom: 10px;}
+#time_line{z-index:100;}
+.sort_ul{background: #F7F7F7;}
+.carousel{margin-top: 5px;}
 /**
  * 注册层
  */
@@ -47,3 +53,5 @@ div .reg_right{margin-left:150px;margin-top:3px;text-align: left;}
 .reg_face{height:60px;}
 .reg_container li{margin:3px;}
 .reg_container input{width:350px;}
+
+.comp_img{cursor:pointer;}

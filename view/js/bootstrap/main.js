@@ -13,10 +13,12 @@ $(document).ready(function(){
 		}
 	);
 
+
 	//气泡2
 	setTimeout(function(){
 		$('.tooltip-acol').tooltip();
 	} , 2000);
+
 
 	//加载时间轴
 	$.getJSON('http://xiaoqiqiu.com:8081/api/get_sort?action=time&user='+ USER +'&callback=?', function(back){
@@ -38,29 +40,43 @@ $(document).ready(function(){
 		$('#sort_ul').html(li_html);
 	});
 
+
 	//钉子
-	$(".comment-float").pin({
+	/*$(".comment-float").pin({
 	      containerSelector: ".circle"
-	});
+	});*/
+	//	comment float
+	$(window).scroll(comment_float);
+
+	/*$("#time_line").pin({
+	      containerSelector: ".container"
+	});*/
+	/*$("#top_menu").pin({
+	      containerSelector: ".container"
+	});*/
+
 
 	// 返回顶部	
 	$("#gotop").click(function(){
 		$("html,body").animate({ scrollTop : 0 },"fast");        	     
 	});
 	$(window).bind("scroll", function(){
-		var gleft = $('#content').offset().left + $('#content').width();
+		var gleft = $('#container').offset().left + $('#container').width();
 		($(document).scrollTop() > 0) ? 
 		$("#gotop").css('left' , gleft).show() : 
 		$("#gotop").fadeOut('normal');
 	});
 
+
 	//	lazyload
 	setInterval($_Helper.lazyload , 1000);
 
+
 	//	图片浏览事件
 	$(document).delegate('.comp_img' , 'click' , function(){
-		$_Helper.zoom_img($(this));
+		$_Helper.zoom_img($(this) ,$_BsPop);
 	});
+
 
 	//article mouseover
 	$(document).delegate('.circle' , 'mouseover' , function(){
@@ -68,6 +84,7 @@ $(document).ready(function(){
 	}).delegate('.circle' , 'mouseout' , function(){
 		$(this).find('.acticle-content').css('background-color','#F7F7F7');
 	});
+
 
 	//load index.js
 	$_Helper.require(['bootstrap/index'] , function(){
@@ -92,8 +109,52 @@ $(document).ready(function(){
 		});*/
 	});
 
+	//load add.js
+	$_Helper.require(['bootstrap/bsadd'] , function(){
+
+		$(document).delegate('#add_something', 'click' ,function(e){
+			e.preventDefault();
+			$_BsAdd.ini();
+		});
+	});
+
+	//comment
+	$_Helper.require(['bootstrap/bscmt'] , function(){
+
+		$('#content').delegate('.comment , .comment-float' , 'click' , function(){
+			XQQ.cmt.init($(this).find('a'));
+		});
+	});
+
 
 });
 
+function comment_float(){
+	var  _parent = $('.comment-float').parent('.circle');
+	$('.comment-float').each(function(i){
+		var _top = $(this).offset().top,
+			play = false,
+			_thatObj = $(this),
+			_parent_top = _parent.eq(i).offset().top,
+			_parent_height = _parent.eq(i).height(),
+			_scrollTop 	= $(document).scrollTop(),
+			winHeight 	= $(window).height();
 
+		if((_parent_top + _parent_height) > _scrollTop 
+			&& ( _parent_height > winHeight || (_parent_top + _parent_height) < (_scrollTop + winHeight)) ){
+				if(_parent_top < _scrollTop){
+					_thatObj.stop().animate({'top' : (_scrollTop - _parent_top)} , 'fast');
+					//_thatObj.css('top' , (_scrollTop - _parent_top));
+					play = true;
+				}else if( parseInt(_thatObj.css('top')) > 0 ){
+					_thatObj.css('top' , 0);
+				}
+		}
+
+		if(play){
+			return false;
+		}
+	});
+	
+}
 //--><!]]>

@@ -157,7 +157,7 @@
 					if(_that.is_hide_preview)$(this).hide();
 				});
 				
-				$('#curtain_prv_img').live('click' , function(){
+				$(document).delegate('#curtain_prv_img' ,'click' , function(){
 					var big_img_src = $(this).attr('src').replace('imgCompress' , 'img');
 					$(document.body).css({
 						'background-image' : 'url('+ big_img_src +')',

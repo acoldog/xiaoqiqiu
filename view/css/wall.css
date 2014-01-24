@@ -1,7 +1,8 @@
-body{background:url(../body_3.jpg) repeat scroll center top #29455F;}
-.container{padding: 20px;width:1200px;}
+body{background:url(../body_3.jpg) repeat scroll center top #29455F;height:2000px;}
+.container{padding: 0px;width:1200px;}
 .comp_img{margin:0px;padding:1px;width:260px;height:190px;}
 .top span a {font-size:16px;font-weight:bold;}
+#top_menu{z-index:1;}
 
 
 .box{margin: 5px;

@@ -26,11 +26,11 @@
 
   </head>
   <body>
-  	<div id="loading_bar" class="progress progress-info progress-striped active hide">
-		<div class="progress-bar" style="width: 10%;"></div>
+  	<div id="loading_bar" class="progress active progress-striped progress-success hide">
+		<div class="progress-bar" style="width: 10%;">加载中</div>
 	</div>
 
-    <div class="container">
+    <div id="container" class="container">
 		<div class="row">
 			<div class="col-md-12">
 				
@@ -38,7 +38,7 @@
 					{echo $data['userInfo']['desc'];}
 				</h3>
 
-				<div class="navbar navbar-inverse" role="navigation">
+				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
 			        <div class="navbar-header">
 			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			            <span class="sr-only">Toggle navigation</span>
@@ -54,7 +54,7 @@
 			            <li><a href="/{echo $data["user"];}/wall">图片墙</a></li>
 			            <li><a href="/{echo $data["user"];}/video">精彩视频墙</a></li>
 			            <li>
-			            	<a id="add_something" class="tooltip-acol" data-original-title="添加文章，图片，视频" href="#" {if($global['is_mine'] != 1)} style="display:none;" {/if} data-toggle="modal" data-target="#myModal">发表</a>
+			            	<a id="add_something" class="tooltip-acol" data-original-title="文章图片视频" href="#" {if($global['is_mine'] != 1)} style="display:none;" {/if} data-toggle="modal" data-target="#myModal">发表</a>
 			            </li>
 			            <li class="dropdown">
 			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
@@ -73,13 +73,17 @@
 			          </ul>
 
 			          <ul id="profile_ul" class="nav navbar-nav navbar-right">
-			          {if(!isset($_SESSION['username']))}
-			            	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#">登录</a></li>
+			          {if( !isset($_SESSION['username']) )}
+			            	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">登录</a></li>
 			            	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
 			           {/else}
 							<li class="active"><a href="http://xiaoqiqiu.com/{echo $_SESSION['username'];}">当前登录：{echo $_SESSION['username'];}</a></li>
 			            	<li><a id="edit_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">修改资料</a></li>
 			            	<li><a id="logout_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">退出</a></li>
+
+			            	{if( $data["is_mine"] == 1 )}
+			            		<li><a href="<?=WEB_ROOT . 'api/index/changeVer.php?action=change_version&user='. $data["user"] .'&version='. ($data['userInfo']['version']==1 ? 0 : 1);?>">换版本</a></li>
+			            	{/if}
 			           {/if}
 			          </ul>
 			        </div><!--/.nav-collapse -->
@@ -94,8 +98,8 @@
 					<div class="circle radius" aid="{$id}">
 						<div class="comment-float"><em><a href="#" alt="{$id}">{$cmt_num}</a></em></div>
 						{if($data["is_mine"] == 1)}
-						<a class="acticle-close" href="#" onfocus="this.blur();" onclick="$_Add.del_article({$id});return false;"> × </a>
-						<a class="acticle-edit" href="#" onfocus="this.blur();" onclick="$_Add.edit_article({$id});return false;"> + </a>
+						<a class="acticle-close" href="#" onfocus="this.blur();" onclick="$_BsAdd.del_article({$id});return false;"> × </a>
+						<a class="acticle-edit" href="#" onfocus="this.blur();" onclick="$_BsAdd.edit_article({$id});return false;"> + </a>
 						{/if}
 						<div class="acticle-content">
 							{$content}
@@ -118,7 +122,7 @@
 					<p><label id="now_user"></label></p>
 				</div>
 
-				<div class="menu radius">
+				<div id="time_line" class="menu radius">
 					<h4>时间轴</h4>
 					<div class="slide_item" style="display:block;">
 						<ul id="sort_ul" class="sort_ul"></ul>
@@ -207,6 +211,12 @@
 	<div id="gotop" style="position: fixed; bottom: 50px; left: 1000px; cursor: pointer;display:none;" title="猛击我可以灰~">
 		<img src="img/gotop.png" style="width:64px; height:64px;" />
 	</div>
+	
+	<!--弹层hepler-->
+	<a id="pop_helper" href="#" data-toggle="modal" data-target="#myModal"></a>
+
+	<!--百度分享-->
+	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 	<script type="text/javascript" src="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Scripts/shCore.js"></script>
 	<script type="text/javascript" src="<?=WEB_ROOT?>plugin/SyntaxHighlighter/Scripts/shBrushes.js"></script>
@@ -227,10 +237,16 @@
 	<script src="http://xiaoqiqiu.com/plugin/grumble/js/jquery.grumble.min.js"></script>
 	<script src="http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js"></script>
 
+	<script src="http://static.xiaoqiqiu.com/js/bootstrap/bspop.js"></script>
 	<script type="text/javascript" src="js/helper.js"></script>
 	<script type="text/javascript" src="js/space_ui_v2.js"></script>
 	<script src="http://static.xiaoqiqiu.com/js/bootstrap/main.js"></script>
-	<script src="http://static.xiaoqiqiu.com/js/bootstrap/pop.js"></script>
+	<script type="text/javascript" src="js/curtain.js"></script>
+	<script type="text/javascript" src="js/weather.js"></script>
+
+	<?php
+		include('baidu-analytics.html');
+	?>
 
   </body>
 </html>
