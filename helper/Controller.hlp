@@ -6,9 +6,10 @@ abstract class Controller{
 	protected $mod 			= null;
 	protected $load 		= null;
 
-	public function __construct($class_name)
+	public function __construct($class_name , $mod_dir="/model/index/")
 	{
 		$mod_name = str_replace('_ctl', '_mod', $class_name);
+		include_once ROOT . $mod_dir . strtolower( str_replace('_ctl', '', $class_name) ) .'.mod.php';
 		$this->mod = new $mod_name();
 		//	检查登录用户
 		checkUser();

@@ -33,10 +33,15 @@ var $_BsPop = {
 				$_Helper.bs_top_loading_done();
 			}
 		}
-		op.width ? container_obj.css('width' , op.width + extra_width) : container_obj.css('width' , 600);
-		op.height ? container_obj.css('height' , op.height) : '';
+		
 		//set style
-		op.style ? container_obj.css(op.style) : container_obj.removeAttr('style');
+		if( typeof op.style == 'object' ){
+			container_obj.css(op.style);
+		}else{
+			container_obj.removeAttr('style');
+			op.width ? container_obj.css('width' , op.width + extra_width) : container_obj.css('width' , 600);
+			op.height ? container_obj.css('height' , op.height) : '';
+		}
 
 		//绑定按钮事件
 		typeof op.btn1_click == 'function' ? (
@@ -56,6 +61,10 @@ var $_BsPop = {
 		$(document).bind('keydown' , _that.enter_event);
 		//	运行callback
 		if(typeof op.callback == 'function')op.callback(body_obj);
+		//auto close
+		if( op.close_time ){
+			setTimeout($_BsPop.close , parseInt(op.close_time) );
+		}
 	},
 
 	//	回车事件

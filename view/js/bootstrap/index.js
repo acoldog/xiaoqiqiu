@@ -33,7 +33,8 @@ var $_BsIndex = {
 							$_BsPop.set({
 								btn1 		: 'Close',
 								title 		: 'welcome!',
-								content 	: welcome_html
+								content 	: welcome_html,
+								close_time 	: 2000
 							});
 
 							$('#add_something').show();
@@ -60,7 +61,8 @@ var $_BsIndex = {
 				$_BsPop.set({
 						btn1 		: 'Close',
 						title 		: 'welcome!',
-						content 	: welcome_html
+						content 	: welcome_html,
+						close_time 	: 2000
 					});
 				$('#profile_ul').html('<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#">登录</a></li><li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>');
 
