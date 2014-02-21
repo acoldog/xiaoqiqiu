@@ -1,10 +1,8 @@
 <?php
 	
-	class Add_mod{
-		public $db;
-
+	class Add_mod extends Model{
 		function __construct(){
-			$this->db = new Db();	
+			parent::__construct();
 		}
 		public function save_data($data)
 		{
@@ -31,7 +29,9 @@
 			$time = time();
 			$ip = get_client_ip();
 			$table = 'ab_diary';
-			$data_arr = array('content'=>$content, 'time'=>$time, 'ip'=>$ip,'username'=>$_SESSION['username']);
+
+			$content = str_replace("'", "\'", $content);	//过滤可能的单引号
+			$data_arr = array('content'=>mysql_escape_string($content), 'time'=>$time, 'ip'=>$ip,'username'=>$_SESSION['username']);
 			if($aid < 1){
 				$result = $this->db->insert($data_arr , $table);
 				return array(
@@ -49,6 +49,9 @@
 		}
 		//	保存图片
 		public function SavePhoto($photo){
+			$time = time();
+			$ip = get_client_ip();
+			
 			$photoData = str_replace("'", "\"", $photo);
 			$photoData = json_decode($photoData , true);
 			if(!empty($photoData)){

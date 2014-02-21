@@ -75,7 +75,7 @@ XQQ.cmt = (function($){
 				btn1 		: 'Close',
 				title 		: '闲话多说~',
 				content 	: cmt_html,
-				width 		: 700,
+				style 		: {'width':700},
 				callback 	: function(pop_obj){
 					pop_obj.animate({
 		                left	:'0px',

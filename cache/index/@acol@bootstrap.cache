@@ -1,0 +1,569 @@
+1392193499<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+	<title>维尼的小气球 - acol</title>
+	<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+	<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+	<link rel="shortcut icon" href="weini.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/bootstrap2.x/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/grumble/css/grumble.min.css">
+
+	<link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+	<link type="text/css" rel="stylesheet" href="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shThemeDefault.css"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/bootstrap/main.css">
+	<link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/global.css">
+
+  </head>
+  <body>
+  	<div id="loading_bar" class="progress active progress-striped progress-success hide">
+		<div class="progress-bar" style="width: 10%;">加载中</div>
+	</div>
+
+    <div id="container" class="container">
+		<div class="row">
+			<div class="col-md-12">
+				
+				<h3 class="text-center">
+					野生纯种程序猿一枚，求包养				</h3>
+
+				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
+			        <div class="navbar-header">
+			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			          </button>
+			          <a class="navbar-brand" href="">Home</a>
+			        </div>
+			        <div class="navbar-collapse collapse">
+
+			          <ul class="nav navbar-nav">
+			            <li><a href="/acol/wall">图片墙</a></li>
+			            <li><a href="/acol/video">精彩视频墙</a></li>
+			            <li>
+			            	<a id="add_something" class="tooltip-acol" data-original-title="文章图片视频" href="#"  style="display:none;"  data-toggle="modal" data-target="#myModal">发表</a>
+			            </li>
+			            <li class="dropdown">
+			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
+			              
+			              <ul class="dropdown-menu">
+			                <li><a href="http://www.56.com" target="_blank">56视频</a></li>
+			                <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
+			                <li class="divider"></li>
+			                <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
+			                <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
+							<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
+			              </ul>
+
+			            </li>
+			          </ul>
+
+			          <ul id="profile_ul" class="nav navbar-nav navbar-right">
+			          			            	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">登录</a></li>
+			            	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
+			           			          </ul>
+			        </div><!--/.nav-collapse -->
+			    </div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div id="content" class="col-md-8">
+				
+									<div class="circle radius" aid="113">
+						<div class="comment-float"><em><a href="#" alt="113">4</a></em></div>
+												<div class="acticle-content">
+							<p>
+	<img class="comp_img"  src="http://static.xiaoqiqiu.com/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20140122172208_.jpg"  lazyload="1" />新版你好~</p>
+<p>
+	维尼的表情 哈哈</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-01-24 18:05:18 发表</span>
+							<span class="comment"><a href="#" alt="113">我有想法(4)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="119">
+						<div class="comment-float"><em><a href="#" alt="119">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" height="505" id="object_acol_flash_0.02186332060955465" width="600"><param name="movie" value="http://player.youku.com/player.php/sid/XMjMwNTA0MTYw/v.swf" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="opaque" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><embed allowfullscreen="true" allowscriptaccess="always" height="505" id="embed_acol_flash_0.02186332060955465" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://player.youku.com/player.php/sid/XMjMwNTA0MTYw/v.swf" type="application/x-shockwave-flash" width="600" wmode="opaque"></embed></object></p>
+
+	&nbsp; &nbsp; &nbsp; &nbsp; Broken Angel的MV画面唯美，故事动人。
+
+	理解MV的故事，听歌时更添丝丝感动...
+
+	这是一个经典的三部曲
+
+	第一个是《Arash》初见相恋
+
+	第二个是《Pure Love》生死离别
+
+	街上发生了车祸，Arash赶到现场，发现爱人Marianne Puglia受伤被送上救护车。
+
+	他跟上车，握住爱人的手，回忆起甜蜜往事点点滴滴, 纯纯的爱
+
+	医院中，Marianne Puglia在救护后醒来，Arash才发现自已已死去，只是灵魂留在了世上
+
+	他悄然离去...
+
+	第三个是《Broken Angel》
+
+	Arash回来找恋人，看到Marianne Puglia已结婚，有丈夫、小孩和家。
+
+	她回忆往事，深感孤独痛苦。人鬼之恋，缠绵悱恻。
+
+	Marianne Puglia驱车来到悬崖，将旧照片洒向空中...
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-01-24 18:04:10 发表</span>
+							<span class="comment"><a href="#" alt="119">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="116">
+						<div class="comment-float"><em><a href="#" alt="116">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	&nbsp;</p>
+<p>
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" height="505" id="object_acol_flash_0.17552793701179326" width="600"><param name="movie" value="http://player.youku.com/player.php/sid/XNjU5NTkyMjQ0/v.swf" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="opaque" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><embed allowfullscreen="true" allowscriptaccess="always" height="505" id="embed_acol_flash_0.17552793701179326" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://player.youku.com/player.php/sid/XNjU5NTkyMjQ0/v.swf" type="application/x-shockwave-flash" width="600" wmode="opaque"></embed></object></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-01-24 17:51:38 发表</span>
+							<span class="comment"><a href="#" alt="116">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="111">
+						<div class="comment-float"><em><a href="#" alt="111">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	由于自己的html+css比较业余，所以想用 Bootstrap 做另一个版本的UI，而且不再考虑SEO，首屏内容也直接异步。<img alt="" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/22.gif"  lazyload="1" /></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-12-10 18:20:11 发表</span>
+							<span class="comment"><a href="#" alt="111">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="108">
+						<div class="comment-float"><em><a href="#" alt="108">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	感谢涛锅大力协助，终于把小气球站的rewrite搞好了~~ 附上配置</p>
+<pre class="brush:bash;">
+server {
+        ,,,,,
+
+        rewrite ^/view/(.*)$ /view/$1 break;  #break 终止匹配, 不再匹配后面的规则
+        rewrite ^/api/(.*)$ /api/$1 break;
+        rewrite ^/plugin/(.*)$ /plugin/$1 break;
+        rewrite ^/ckeditor/(.*)$ /ckeditor/$1 break;
+        rewrite ^/upload/(.*)$ /upload/$1 break;
+
+        rewrite ^/(.*)$ /index.php break;   #所有匹配到的都指向入口文件index.php
+            
+        error_page  404  /404.html;
+  
+        ......
+  }</pre>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-11-29 11:31:34 发表</span>
+							<span class="comment"><a href="#" alt="108">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="107">
+						<div class="comment-float"><em><a href="#" alt="107">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	按文章发布时间分类已做好~</p>
+<p>
+	下一步开始研究这个rewrite了</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-11-15 11:15:31 发表</span>
+							<span class="comment"><a href="#" alt="107">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="106">
+						<div class="comment-float"><em><a href="#" alt="106">2</a></em></div>
+												<div class="acticle-content">
+							<p>
+	<img alt="broken heart" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="broken heart" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/19.gif"  lazyload="1" />趁文章数量还不多，要做个文章分类了，势在必行！路由什么的延后一点算了</p>
+<p>
+	计划做2种：</p>
+<p>
+	1. 按文章发布时间的月份排序分类</p>
+<p>
+	&nbsp;</p>
+<p>
+	2. 可创建分类对文章在发布的时候归类</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-11-05 21:35:08 发表</span>
+							<span class="comment"><a href="#" alt="106">我有想法(2)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="105">
+						<div class="comment-float"><em><a href="#" alt="105">1</a></em></div>
+												<div class="acticle-content">
+							<p>
+	<img alt="broken heart" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="broken heart" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/19.gif"  lazyload="1" />核心model v1.0版本，持续增加新功能中..</p>
+<p>
+	&nbsp;</p>
+<pre class="brush:php;">
+local Helper    = require "lib.helper"
+local Config    = require "lib.config"
+local ngx       = ngx
+local say       = ngx.say
+local print_r   = Helper.print_r
+
+local setmetatable          = setmetatable
+local type                  = type
+local pairs                 = pairs
+local ipairs                = ipairs
+local tostring              = tostring
+local tonumber              = tonumber
+local next                  = next
+local error                 = error
+local table                 = table
+-- db setting
+-- private
+local db_set = Config.dbConfig()
+
+-- db相关
+local mysql = require "resty.mysql"
+
+
+module(...)
+
+_VERSION = &#39;1.00&#39;
+
+--[[
+    private function
+]]--
+
+-- where
+local function where(where_arr)
+    local i ,where = 1 ,{}
+
+    for k,v in pairs(where_arr) do
+        where[i] = k ..&#39;=&#39;&#39;.. v ..&#39;&#39;&#39;
+        i = i + 1
+    end
+    where = table.concat(where , &#39; AND &#39;)
+    return " WHERE ".. where
+end
+
+--[[
+    public
+]]--
+local mt = { __index = _M }
+
+--  constructor
+function new(self , ...)
+    --local db, err = mysql:new()
+
+    return setmetatable({_connDb = nil}, mt)
+end
+
+
+
+-- db连接
+function conn_db(self)
+    if not self._db then
+        self._db, self._err = mysql:new()
+    end
+
+    -- 保证只conn一次
+    if self._connDb then
+        return
+    end
+
+    if not self._db then
+       ngx.say("failed to instantiate mysql: ", self._err)
+       return
+    end
+
+    self._db:set_timeout(1000) -- 1 sec
+
+    local ok, err, errno, sqlstate = self._db:connect{
+                host = db_set[&#39;host&#39;],
+                port = db_set[&#39;port&#39;],
+                database = db_set[&#39;db_name&#39;],
+                user = db_set[&#39;user&#39;],
+                password = db_set[&#39;pass&#39;],
+                max_packet_size = 1024 * 1024 }
+
+    --  set names要在connect之后
+    local charset = db_set[&#39;charset&#39;] or &#39;utf8&#39;;
+    self._db:query("SET NAMES " .. charset);
+
+    if not ok then
+        ngx.say("failed to connect: ", err, ": ", errno, " ", sqlstate)
+        return
+    end
+
+    --  正在连接的库
+    self._connDb = db_set[&#39;db_name&#39;]
+    --ngx.say(&#39;yes&#39;);
+    --return self._db
+end
+
+--get one
+function get_one(self ,sql)
+    self:conn_db()
+
+    local rs = self._db:query(sql)
+
+    return rs[1]
+end
+
+--get all
+function get_all(self ,sql)
+    self:conn_db()
+
+    local rs = self._db:query(sql)
+    return rs
+end
+
+--insert
+function insert(self , insert_data ,table_name)
+    self:conn_db()
+    
+    local i ,col ,val ,sql = 1 ,{} ,{} ,&#39;&#39;
+
+    for k,v in pairs(insert_data) do
+        col[i] = &#39;`&#39;.. k ..&#39;`&#39;
+        val[i] = &#39;&#39;&#39;.. v ..&#39;&#39;&#39;
+        i = i + 1
+    end
+
+    col = table.concat(col , &#39;,&#39;)
+    val = table.concat(val , &#39;,&#39;)
+
+    --ngx.say(col)
+    sql = &#39;INSERT INTO &#39;.. table_name ..&#39; ( &#39;.. col ..&#39; ) VALUES ( &#39;.. val ..&#39; )&#39;
+
+    local res, err, errno, sqlstate = self._db:query(sql)
+    return res
+
+end
+
+--update
+function update(self , update_data ,where_arr ,table_name)
+    self:conn_db()
+    local sql ,update_str;
+    
+    if type(update_data) == &#39;table&#39; then
+        local i ,update_arr ,sql = 1 ,{} ,&#39;&#39;
+
+        for k,v in pairs(update_data) do
+            update_arr[i] = &#39;`&#39;.. k ..&#39;`=&#39;&#39;.. v ..&#39;&#39;&#39;
+            i = i + 1
+        end
+
+        update_str = table.concat(update_arr , &#39;,&#39;)
+    else
+        update_str = tostring(update_data)
+    end
+
+    --ngx.say(col)
+    sql = &#39;UPDATE `&#39;.. table_name ..&#39;` SET &#39;.. update_str .. where(where_arr)
+
+    local res, err, errno, sqlstate = self._db:query(sql)
+    return res
+
+end
+
+--db close
+function close(self)
+    if self._db then
+        self._db:close()
+    end
+end
+
+
+-- 原话：to prevent use of casual module global variables
+-- 这个可以防止new出来的实例table产生全局变量，所以要注意table实体里的参数都要是局部变量，否则就报error
+setmetatable(_M, {
+    __newindex = function (table, key, val)
+        ngx.log(ngx.EMERG ,&#39;--attempt to write to undeclared variable "&#39; .. key .. &#39;" val:"&#39;.. val ..&#39;" in &#39; .. table._NAME);
+    end
+})</pre>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2013-11-05 21:30:20 发表</span>
+							<span class="comment"><a href="#" alt="105">我有想法(1)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+				
+			</div>
+			<div class="col-md-4">
+				
+				<div>
+					<img height="200px" width="200px" src="http://xiaoqiqiu.com/view/img/1.jpg" class="img-circle" />
+					<p><label id="now_user"></label></p>
+				</div>
+
+				<div id="time_line" class="menu radius">
+					<h4>时间轴</h4>
+					<div class="slide_item" style="display:block;">
+						<ul id="sort_ul" class="sort_ul"></ul>
+					</div>
+				</div>
+
+				<div class="carousel slide" id="carousel-794314" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li class="active" data-slide-to="0" data-target="#carousel-794314">
+						</li>
+						<li data-slide-to="1" data-target="#carousel-794314">
+						</li>
+						<li data-slide-to="2" data-target="#carousel-794314">
+						</li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20121111022246_.jpg" />
+							<div class="carousel-caption">
+								<p>由于自己的html+css比较业余，所以想用 Bootstrap 做另一个版本的UI，而且不再考虑SEO，首屏内容也直接异步。</p>
+							</div>
+						</div>
+						<div class="item">
+							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20130804175202_.JPG" />
+							<div class="carousel-caption">
+								<p>感谢涛锅大力协助，终于把小气球站的rewrite搞好了~~ 附上配置</p>
+							</div>
+						</div>
+						<div class="item">
+							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20130130223740_.jpg" />
+							<div class="carousel-caption">
+								<p>按文章发布时间分类已做好~ 下一步开始研究这个rewrite了</p>
+							</div>
+						</div>
+					</div> <!-- <a data-slide="prev" href="#carousel-794314" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-794314" class="right carousel-control">›</a> -->
+					<a class="left carousel-control" href="#carousel-794314" data-slide="prev">
+			          <span class="glyphicon glyphicon-chevron-left"></span>
+			        </a>
+			        <a class="right carousel-control" href="#carousel-794314" data-slide="next">
+			          <span class="glyphicon glyphicon-chevron-right"></span>
+			        </a>
+				</div>
+
+
+								<div class="jumbotron" style="margin-top:10px">
+					<!-- <h1>
+						Hello, world!
+					</h1>
+					<p>
+						这是一个可视化布局模板, 你可以点击模板里的文字进行修改, 也可以通过点击弹出的编辑框进行富文本修改. 拖动区块能实现排序.
+					</p> -->
+					
+					<em class="weibo_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>新浪微博
+					<div class="slide_item"><iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1879892684&verifier=6d797160&dpc=1"></iframe></div>
+					
+					<p>
+						<a class="btn btn-default btn-primary btn-lg" href="http://weibo.com" target="_blank">查看更多 »</a>
+					</p>
+				</div>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				      </div>
+				      <div id="modal_body" class="modal-body">
+				        ...
+				      </div>
+				      <div class="modal-footer">
+				        <button id="modal_btn1" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button id="modal_btn2" type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div><!-- /.modal-content -->
+				  </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+
+			</div>
+		</div>
+	</div>
+
+	<div id="gotop" style="position: fixed; bottom: 50px; left: 1000px; cursor: pointer;display:none;" title="猛击我可以灰~">
+		<img src="http://static.xiaoqiqiu.com/img/gotop.png" style="width:64px; height:64px;" />
+	</div>
+	
+	<!--弹层hepler-->
+	<a id="pop_helper" href="#" data-toggle="modal" data-target="#myModal"></a>
+
+	<!--百度分享-->
+	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+	<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shCore.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shBrushes.js"></script>
+	<script type="text/javascript">
+		//	初始化
+		var WEB_ROOT = 'http://xiaoqiqiu.com/',
+			STATIC_ROOT = 'http://static.xiaoqiqiu.com/',
+			IS_MINE = 0,
+			USER = 'acol';
+		SyntaxHighlighter.config.clipboardSwf = WEB_ROOT +'plugin/SyntaxHighlighter/Scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="http://xiaoqiqiu.com/plugin/bootstrap2.x/js/bootstrap.min.js"></script>-->
+	<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="http://xiaoqiqiu.com/plugin/grumble/js/jquery.grumble.min.js"></script>
+	<script src="http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js"></script>
+
+	<script src="http://static.xiaoqiqiu.com/js/bootstrap/bspop.js"></script>
+	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/helper.js"></script>
+	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/space_ui_v2.js"></script>
+	<script src="http://static.xiaoqiqiu.com/js/bootstrap/main.js"></script>
+	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/curtain.js"></script>
+	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/weather.js"></script>
+
+	<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c99824a3757f51aecbd3546e2bf0724' type='text/javascript'%3E%3C/script%3E"));
+</script>
+  </body>
+</html>

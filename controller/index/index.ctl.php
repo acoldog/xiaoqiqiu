@@ -4,18 +4,17 @@
 	//$arr = $db->getOne(" select * from ep_user ");		//这里写法是错误的，controller里不应该有DB操作，要把这一步单独创建个文件写到model里
 	
 
-class Index_ctl{
-	private 	$mod;
+class Index_ctl extends Controller{
 	public 		$load_index = true;	//	是否做默认操作（针对AJAX情况）
 	public 		$username = 'acol';
 
 	public function __construct(){
-		$this->mod = new Index_mod();
-		//	检查登录用户
-		checkUser();
+		parent::__construct(__CLASS__);
 	}
 
 	public function __destruct(){			//这里的析构函数真TM有用啊，我就是要整个类执行完后才执行load->tpl操作！！
+		parent::__destruct();
+
 		global $global , $config;
 		$page = get_by_pos(0);
 		if(empty($page) || !is_numeric($page))
@@ -54,11 +53,10 @@ class Index_ctl{
 		$data['is_mine'] = $global['is_mine'];
 
 		//导入模板
-		$load = new Load();
 		if( $data['userInfo']['version'] == 1 ){
-			$load->tpl('index/bootstrap',$data);
+			$this->load->tpl('index/bootstrap',$data ,'index');
 		}else{
-			$load->tpl('index/index',$data);
+			$this->load->tpl('index/index',$data);
 		}
 		
 	}

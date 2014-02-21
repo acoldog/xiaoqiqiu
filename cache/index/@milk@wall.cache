@@ -1,31 +1,77 @@
-1381756787<!DOCTYPE html>
+1392830950<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
 		<meta property="wb:webmaster" content="c2efef57b2b53a48" />
 		<title>维尼的照片墙 - acol</title>
-		<link href="http://s1.56img.com/style/i/v3/css/global/global.css" type="text/css" rel="stylesheet"/>
-		<link href="http://xiaoqiqiu.com/view/css/reset.css" type="text/css" rel="stylesheet"/>
-		<link href="http://xiaoqiqiu.com/view/css/main.css" type="text/css" rel="stylesheet"/>
-		<link href="http://xiaoqiqiu.com/view/css/pop.css" type="text/css" rel="stylesheet"/>
-		<link href="http://xiaoqiqiu.com/view/css/wall.css" type="text/css" rel="stylesheet"/>
-		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+		<link href="http://static.xiaoqiqiu.com/css/global.css" type="text/css" rel="stylesheet"/>
+		<link href="http://static.xiaoqiqiu.com/css/reset.css" type="text/css" rel="stylesheet"/>
+		<link href="http://static.xiaoqiqiu.com/css/main.css" type="text/css" rel="stylesheet"/>
+		<link href="http://static.xiaoqiqiu.com/css/pop.css" type="text/css" rel="stylesheet"/>
+		<link href="http://static.xiaoqiqiu.com/css/wall.css" type="text/css" rel="stylesheet"/>
+		<link href="http://static.xiaoqiqiu.com/css/module_v.1.css" type="text/css" rel="stylesheet"/>
 		<link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="http://s1.56img.com/script/lib/jquery/jquery-1.4.4.min.js" ></script>
-		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/helper.js?v=1"></script>
+		<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+
 		<script type="text/javascript">
 			//	初始化
 			var WEB_ROOT = 'http://xiaoqiqiu.com/',
+				STATIC_ROOT = 'http://static.xiaoqiqiu.com/',
 				IS_MINE = '0';
 				USER = 'milk';
 		</script>
 	</head>
 	<body>
-		<div id="top_loading" class="top_loading floater radius"><img src="http://xiaoqiqiu.com//view/top_loading.gif"/> 加载中... </div>
+		<div id="top_loading" class="top_loading floater radius"><img src="http://static.xiaoqiqiu.com/top_loading.gif"/> 加载中... </div>
 		<p id="loading">Loading</p>
-		<div class="top">
+		<!-- <div class="top">
 			<span class="floater"><a href="http://xiaoqiqiu.com/milk">返回空间</a></span>
+		</div> -->
+		<div class="row">
+			<div class="col-md-12">
+
+				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
+			        <div class="navbar-header">
+			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			          </button>
+			          <a class="navbar-brand" href="http://xiaoqiqiu.com/milk">Home</a>
+			        </div>
+			        <div class="navbar-collapse collapse">
+
+			          <ul class="nav navbar-nav">
+			            <li><a href="/milk/wall">图片墙</a></li>
+			            <li><a href="/milk/video">精彩视频墙</a></li>
+
+			            <li class="dropdown">
+			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
+			              
+			              <ul class="dropdown-menu">
+			                <li><a href="http://www.56.com" target="_blank">56视频</a></li>
+			                <li><a href="http://www.xiaoqiqiu.com/milk" target="_blank">牛奶的空间</a></li>
+			                <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
+			                <li class="divider"></li>
+			                <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
+			                <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
+							<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
+			              </ul>
+
+			            </li>
+			          </ul>
+
+			          <ul id="profile_ul" class="nav navbar-nav navbar-right">
+			          			            	<li class="active"><a href="http://xiaoqiqiu.com/milk">登录</a></li>
+			            	<li><a href="http://xiaoqiqiu.com/milk">注册</a></li>
+			           			          </ul>
+			        </div><!--/.nav-collapse -->
+			    </div>
+
+			</div>
 		</div>
+
 		<div id="container" class="container"></div>
 
 		<div class="mod56_page page_theme_0" style="text-align: center;width: 100%;position:fixed;_position:absolute;bottom:30px;">
@@ -36,26 +82,30 @@
 		
 		</div>
 		<div id="gotop" style="position: fixed; bottom: 50px; right: 50px; cursor: pointer;display:none; " title="回到顶部">
-			<img src="http://xiaoqiqiu.com/view/img/gotop.gif" style="width:31px; height:31px;">
+			<img src="http://static.xiaoqiqiu.com/img/gotop.gif" style="width:31px; height:31px;">
 		</div>
 
-		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v3/jquery.masonry.js"></script>
-		<script type="text/javascript" charset="utf-8" src="http://s2.56img.com/script/page/space/v4/scroll_page.js?v=2012071901"></script>
-		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/space_ui_v2.js"></script>
-		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/pop.js?v=1"></script>
-		<script type="text/javascript" src="http://xiaoqiqiu.com/view/js/wall/wall.js?v=2"></script>
+		<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js"></script>
+
+		<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/helper.js?v=1"></script>
+		<script type="text/javascript" charset="utf-8" src="http://static.xiaoqiqiu.com/js/wall/jquery.masonry.js"></script>
+		<script type="text/javascript" charset="utf-8" src="http://static.xiaoqiqiu.com/js/wall/scroll_page.js?v=2012071901"></script>
+		<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/space_ui_v2.js"></script>
+		<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/pop.js?v=1"></script>
+		<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/wall/wall.js?v=2"></script>
+		
 		<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37299257-1']);
-  _gaq.push(['_setDomainName', 'xiaoqiqiu.com']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>	</body>
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c99824a3757f51aecbd3546e2bf0724' type='text/javascript'%3E%3C/script%3E"));
+</script>		<script type="text/javascript">
+		$(document).ready(function(){
+			//钉子
+			$("#top_menu").pin({
+		    	containerSelector: "body"
+			});
+		});
+		</script>
+	</body>
 </html>

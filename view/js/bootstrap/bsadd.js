@@ -109,30 +109,20 @@
 		},
 		flash_upload : function(){
 			var _that = this;
-			var add_html = '<input type="text" id="flash_url" style="width:360px;" />&nbsp;&nbsp;<button id="flash_url_btn">确认</button>';
-			//登陆框弹出层	
-			$_BsPop.set({
-				btn1 		: 'Close',
-				title 		: '插入视频 - 每篇日记仅限一个',
-				content 	: add_html,
-				width 		: 500,
-				callback 	: function(obj){
-					$('#flash_url').focus();
-					$('#flash_url_btn').bind('click' , function(){
-						var flash_url = $('#flash_url').val();
-						var f_html = ParseSWF.parse_url('acol_flash_'+ _that.rad ,flash_url);
-						if(f_html){
-							var ed_html = _that.get_editor_content();
-							if(/<object[^>]*>/.test(ed_html)){
-								SpaceUI.alert('不能放置多个视频');
-								return false;
-							}
-							_that.insert_editor(f_html);
-							obj.remove();
-						}
-					});
+
+			var flash_url = window.prompt("插入视频","请在此输入视频地址");
+			if( flash_url ){
+				var f_html = ParseSWF.parse_url('acol_flash_'+ _that.rad ,flash_url);
+				if(f_html){
+					var ed_html = _that.get_editor_content();
+					if(/<object[^>]*>/.test(ed_html)){
+						SpaceUI.alert('不能放置多个视频');
+						return false;
+					}
+					_that.insert_editor(f_html);
 				}
-			});
+			}
+			
 		},
 		submit : function(aid){
 			var content = $_BsAdd.get_editor_content(),

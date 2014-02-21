@@ -1,0 +1,16 @@
+<?php
+/**
+ *  model公共父类
+ */
+abstract class Model{
+	protected $db 			= null;
+
+	public function __construct()
+	{
+		$this->db = new Db();
+	}
+
+	public function __destruct(){
+		
+	}
+}

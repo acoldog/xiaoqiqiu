@@ -6992,7 +6992,12 @@
         }
 
           if (s == 147 || s == 3) {
-            n.push(' onkeydown="" onfocus="return false;" ' + (c ? 'onclick="return false;" onmouseup' : "onclick") + '="$_Add.flash_upload();return false;"><span class="cke_icon"')
+            if( typeof $_Add == 'undefined' ){
+                n.push(' onkeydown="" onfocus="return false;" ' + (c ? 'onclick="return false;" onmouseup' : "onclick") + '="$_BsAdd.flash_upload();return false;"><span class="cke_icon"')
+            }else{
+                n.push(' onkeydown="" onfocus="return false;" ' + (c ? 'onclick="return false;" onmouseup' : "onclick") + '="$_Add.flash_upload();return false;"><span class="cke_icon"')
+            }
+            
           } else {
             n.push(' onkeydown="return CKEDITOR.tools.callFunction(', u, ', event);" onfocus="return CKEDITOR.tools.callFunction(', v, ', event);" ' + (c ? 'onclick="return false;" onmouseup' : "onclick") + '="CKEDITOR.tools.callFunction(', s, ', this); return false;"><span class="cke_icon"')
           }

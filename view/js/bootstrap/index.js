@@ -101,22 +101,33 @@ var $_BsIndex = {
 			obj 		= $('#' + obj_name);
 
 		//遮罩
+		var gopage = $('#nowpage').val();
+		if( gopage == 'last' ){
+			return false;
+		}else{
+			gopage = +gopage + 1;
+		}
 		$_Helper.bs_top_loading('努力加载图文中...');
 
-		$.getJSON(this._request_url , {'user':USER , 'action':this._request_action , 'page':this._page} , function(callback){
+		$.getJSON(this._request_url , {'user':USER , 'action':this._request_action , 'page':gopage} , function(callback){
 			if(callback){
 				var content_html 	= '',
 					last_page 		= callback['last_page'],
 					callback 		= callback['data'];
 
-				$('#page_btn').attr('last_page' , last_page);
+				//$('#page_btn').attr('last_page' , last_page);
 
 				for(var i in callback){
 					if(typeof callback[i].id == 'undefined')continue;
 					content_html += _that.article_html(callback[i]);
 				}
 
-				obj.html(content_html);
+				if( type == 'goto' ){
+					obj.html(content_html);
+					$("#gotop").click();
+				}else if(type == 'append'){
+					obj.append(content_html);
+				}
 
 				//$('#total_page').text( +last_page );
 
@@ -126,7 +137,11 @@ var $_BsIndex = {
 					SyntaxHighlighter.highlight();
 				}
 
-				$("#gotop").click();
+				if(gopage == last_page){
+					$('#nowpage').val('last');
+				}else{
+					$('#nowpage').val(gopage);
+				}
 			}
 		});
 			
@@ -178,7 +193,8 @@ var $_BsIndex = {
 
 		$_BsIndex._request_url 		= 'http://xiaoqiqiu.com:8081/api/get_article?callback=?&time='+ time +'&other='+ other;
 		$_BsIndex._request_action 		= 'sort';
-		$_BsIndex._page 				= 1;
+		//$_BsIndex._page 				= 1;
+		$('#nowpage').val(0);
 
 		$_BsIndex.switch_div('content','goto','right');
 	}

@@ -1,16 +1,15 @@
 <?php
 	
-	class Add_ctl{
-		private $mod;
+	class Add_ctl extends Controller{
 		public $text = '';
 
 		function __construct(){
-			include_once ROOT .'/model/index/add.mod.php'; 
-			$this->mod = new Add_mod();
+			parent::__construct(__CLASS__);
 		}
 
 		function __destruct()			//这里的析构函数真TM有用啊，我就是要整个类执行完后才执行load->tpl操作！！
 		{
+			parent::__destruct();
 			//导入模板
 			/*$data['text'] = $this->text;
 			$load = new Load();

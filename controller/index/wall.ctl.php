@@ -3,21 +3,19 @@
 	/**
 	*	照片墙，瀑布流
 	*/
-	class Wall_ctl{
+	class Wall_ctl extends Controller{
 		protected $mod;
 		function __construct(){
-			//include_once ROOT .'/model/index/wall.mod.php';
-			$this->mod = new Wall_mod();
-			//	检测URL中的用户名
-			checkUser();
-			
+			parent::__construct(__CLASS__);
 		}
 		function __destruct(){
+			parent::__destruct();
+
 			global $global;
 			//导入模板
 			$load = new Load();
 			$data['user'] = $global['user'];
-			$load->tpl('index/wall' , $data);
+			$this->load->tpl('index/wall' , $data);
 		}
 
 		//	取用户图片

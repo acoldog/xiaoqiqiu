@@ -1,9 +1,8 @@
 <?php
 
-	class Video_mod{
-		protected $db;
+	class Video_mod extends Model{
 		public function __construct(){
-			$this->db = new Db();
+			parent::__construct();
 		}
 		
 		//	取视频列表

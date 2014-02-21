@@ -1,9 +1,8 @@
 <?php
 
-	class Wall_mod{
-		protected $db;
+	class Wall_mod extends Model{
 		public function __construct(){
-			$this->db = new Db();
+			parent::__construct();
 		}
 		//	取照片数据
 		public function getImgList($page , $rows , $user=''){
@@ -32,7 +31,7 @@
 				//	判断关联文章是否存在
 				$res1 = $this->db->getOne('SELECT diary_id,src FROM ab_photo WHERE id='. $pid);
 				if($res1){
-					$res2 = $this->db->getOne('SELECT * FROM ab_diary WHERE id='. $res1['diary_id']);
+					$res2 = $this->db->getOne('SELECT content FROM ab_diary WHERE id='. $res1['diary_id']);
 					if(!$res2){
 						//	文章不存在则执行删除
 						$res3 = $this->db->del(array('id'=>intval($pid)) , 'ab_photo');
@@ -50,7 +49,7 @@
 					}else{
 						$back = array(
 							'status'=>'error',
-							'msg'	=>'图片删除失败，必须先删除图片相关文章'
+							'msg'	=>'图片删除失败，必须先删除图片相关文章('. $res1['diary_id'] .') --- “'. substr(strip_tags($res2['content']), 0, 50) .'”'
 						);
 					}
 				}else{

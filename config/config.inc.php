@@ -54,9 +54,11 @@
 	$config['cache']['compress_pic_path'] = 'upload/imgCompress/';
 
 	header('Content-type:text/html;charset=utf-8');
-	include_once(ROOT."/helper/Url.hlp.php");			//	路由
-	include_once(ROOT."/helper/Load.hlp.php");			//	页面cache和模版引擎
-	include_once(ROOT."/helper/Db.hlp.php");			//	DB操作
-	include_once(ROOT."/helper/Page.hlp.php");			//	分页
-	include_once(ROOT."/helper/useful.func.php");		//	帮助函数
-	include_once(ROOT."/helper/Passport.hlp.php");		//	登录
+	include_once(ROOT."/helper/useful.func");		//	帮助函数
+	//include_once(ROOT."/helper/Url.hlp");			//	路由
+	//include_once(ROOT."/helper/Load.hlp");			//	页面cache和模版引擎
+	//include_once(ROOT."/helper/Db.hlp");			//	DB操作
+	//include_once(ROOT."/helper/Page.hlp");			//	分页
+	//include_once(ROOT."/helper/Passport.hlp");		//	登录
+	//include_once(ROOT."/helper/Controller.hlp");	//	controller父类
+	//include_once(ROOT."/helper/Model.hlp");	//	model父类

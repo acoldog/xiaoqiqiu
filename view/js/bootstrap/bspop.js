@@ -22,6 +22,7 @@ var $_BsPop = {
 		op.btn2 ? (btn2_obj.text(op.btn2) && btn2_obj.show()) : btn2_obj.hide();
 		op.title ? title_obj.text(op.title) :'';
 		op.content ? body_obj.html(op.content) :'';
+		//	加载图片成功后重置弹层尺寸
 		if( op.type && op.type == 'img' && typeof op.content == 'object' ){
 
 			container_obj.css('width' , 1300);	//展示图片的时候初始设置大一点，为了好看~
@@ -34,7 +35,8 @@ var $_BsPop = {
 		}
 		op.width ? container_obj.css('width' , op.width + extra_width) : container_obj.css('width' , 600);
 		op.height ? container_obj.css('height' , op.height) : '';
-
+		//set style
+		op.style ? container_obj.css(op.style) : container_obj.removeAttr('style');
 
 		//绑定按钮事件
 		typeof op.btn1_click == 'function' ? (

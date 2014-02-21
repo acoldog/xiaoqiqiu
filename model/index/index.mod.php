@@ -1,12 +1,11 @@
 <?php
 
-	class Index_mod{
+	class Index_mod extends Model{
 		public $load;
-		public $db;
 		public $data_nums_from_db;		// 数据总数
 
 		function __construct(){
-			$this->db = new Db();	
+			parent::__construct();
 		}
 		public function get_data($username , $page=0 , $content_num=8)
 		{

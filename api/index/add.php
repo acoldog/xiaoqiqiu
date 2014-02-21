@@ -1,5 +1,6 @@
 <?php
 	
+	if( !isset($_REQUEST['action']) )exit;
 	/*
 	*	内容添加页的所有AJAX请求处理处
 	*/
@@ -12,7 +13,6 @@
 	*/
 	if($_POST['action'] == 'upload')
 	{
-		include_once '../../helper/PhotoUpload.hlp.php';
 		$pu = new PhotoUpload($_FILES['Filedata'] , false);
 		$result = $pu->uploadOne();
 		echo json_encode($result);
@@ -40,6 +40,7 @@
 		
 		if(!empty($_POST['content'])){
 			include_once '../../controller/index/add.ctl.php';
+			include_once '../../model/index/add.mod.php';
 			$add = new Add_ctl();
 			$result = $add->SaveArticle($_POST['content'] , $_POST['aid']);
 
@@ -69,6 +70,7 @@
 	if($_GET['action'] == 'del'){
 		if(!empty($_GET['aid'])){
 			include_once '../../controller/index/add.ctl.php';
+			include_once '../../model/index/add.mod.php';
 			$add = new Add_ctl();
 			$result = $add->DelArticle($_GET['aid']);
 			if($result){

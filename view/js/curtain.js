@@ -137,7 +137,7 @@
 			obj.find('li').mouseenter(function(){
 				var imgObj = $(this).find('img');
 				imgObj.css('opacity' , '1');
-				imgObj.css('position' , 'relative').stop(true).animate({
+				imgObj.css('position' , 'relative').stop(true).delay('1000').animate({
 					width:_that.img_w*_that.times, 
 					height:_that.img_h*_that.times,
 					top:'-'+ _that.img_h +'px'

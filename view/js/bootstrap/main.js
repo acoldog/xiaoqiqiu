@@ -22,18 +22,25 @@ $(document).ready(function(){
 
 	//加载时间轴
 	$.getJSON('http://xiaoqiqiu.com:8081/api/get_sort?action=time&user='+ USER +'&callback=?', function(back){
-		var li_html = [],
-			last_one = back.pop();
+		var li_html = [];
+			//last_one = back.pop();
 
 		for(var i in back){
-			if(typeof back[i] == 'object'){
-				li_html.push('<li><a class="tooltip-acol" data-original-title="点击查看'+ back[i].name +'发表的文章"  href="javascript:;" onclick="$_BsIndex.sort_list_event(\''+
-					back[i].name +'\');return false;">'+ back[i].name +'月 （'+ back[i].num +'）</a></li>');
+			if( typeof i != 'undefined' && typeof back[i][0] == 'object' ){
+				li_html.push('<li><em>'+ back[i][0].year +'</em><ul>');
+
+				for(var j in back[i]){
+					if(typeof back[i][j] == 'object'){
+						li_html.push('<li><a class="tooltip-acol" data-original-title="点击查看'+ back[i][j].name +'月发表的文章"  href="javascript:;" onclick="$_BsIndex.sort_list_event(\''+
+							back[i][j].year +'-'+ back[i][j].name +'\');return false;">'+ back[i][j].name +'月 （'+ back[i][j].num +'）</a></li>');
+					}
+				}
+				li_html.push('</ul></li>');
 			}
 		}
 
-		li_html.push('<li><a href="javascript:;" onclick="$_BsIndex.sort_list_event(\''+
-					last_one.name +'\' , \'more\');return false;" class="tooltip-acol" data-original-title="更早的" title="更早的">...&nbsp;&nbsp;&nbsp; </a></li>');
+		//li_html.push('<li><a href="javascript:;" onclick="$_BsIndex.sort_list_event(\''+
+		//			last_one.name +'\' , \'more\');return false;" class="tooltip-acol" data-original-title="更早的" title="更早的">...&nbsp;&nbsp;&nbsp; </a></li>');
 		li_html.push('<li><a href="">全部文笔 >>> </a></li>');
 		li_html = li_html.join('');
 
@@ -99,7 +106,7 @@ $(document).ready(function(){
 			$_BsIndex.logout();
 		});
 
-		$('#reg_btn').bind('click' , function(e){
+		$(document).delegate('#reg_btn', 'click' ,function(e){
 			e.preventDefault();
 			$_BsIndex.reg();
 		});
@@ -107,6 +114,22 @@ $(document).ready(function(){
 			e.preventDefault();
 			$_BsIndex.edit();
 		});*/
+
+		//滚动加载文章
+		window.__onscroll = false;	//防止每次触发一堆滚动事件
+		$(window).scroll(function(){
+			if(!__onscroll){
+				__onscroll = true;
+				setTimeout(function(){
+					if( ($(document).scrollTop() / $(document).height()) > 0.7 
+						&& $('#loading_bar').css('display') == 'none' ){
+						$_BsIndex.switch_div('content','append');
+					}
+					__onscroll = false;
+				} , 800);
+			}
+		});
+
 	});
 
 	//load add.js
@@ -125,7 +148,6 @@ $(document).ready(function(){
 			XQQ.cmt.init($(this).find('a'));
 		});
 	});
-
 
 });
 

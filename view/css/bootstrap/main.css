@@ -33,6 +33,31 @@ body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*b
 .acticle-close:hover{text-decoration:none;color:#ccc}
 .acticle-edit{float:right;margin-right:10px;font-weight:bold;color:#000;font-size:20px;background:none;_font-size:15px;}
 .acticle-edit:hover{text-decoration:none;color:#ccc}
+.row .left_shadow{
+	position: relative;
+	width: 319px;
+	height: 12px;
+	margin-bottom: 25px;
+	background-image: url(../../footer_shadow.png);
+	background-position: -114px -66px;
+	_background-image: none;
+	background-repeat: no-repeat;}
+.row .right_shadow{
+	position: absolute;
+	right: -428px;
+	top: 0;
+	width: 319px;
+	height: 12px;
+	background-image: url(../../footer_shadow.png);
+	background-position: -114px -79px;
+	border-width: 0;
+	font-size: 0;
+	_width: 632px;
+	_height: 3px;
+	_left: 0;
+	_background-image: none;
+	_border-width: 1px 0 0;
+}
 /*评论数浮块*/
 .comment-float{position: relative;left:725px;top:0px;width:30px;height:25px;cursor:pointer;background-image: url(../../footer_shadow.png);background-position: -115px -41px;}
 .comment-float a{margin-left: 3px;}
