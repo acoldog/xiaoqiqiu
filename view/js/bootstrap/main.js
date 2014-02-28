@@ -130,6 +130,9 @@ $(document).ready(function(){
 			}
 		});
 
+		//load marquee photos
+		$_BsIndex.load_marquee_photos();
+
 	});
 
 	//load add.js
@@ -147,6 +150,18 @@ $(document).ready(function(){
 		$('#content').delegate('.comment , .comment-float' , 'click' , function(){
 			XQQ.cmt.init($(this).find('a'));
 		});
+	});
+
+	//edit notice
+	$('#edit_notice').bind('click', function(){
+		var notice = window.prompt("修改公告","");
+		if( notice ){
+			$.getJSON(WEB_ROOT + 'api/index/add.php' , {'action':'editNotice', 'notice':notice, 'user':USER}, function(back){
+				if(back){
+					$('#user_notice').text(back.notice);
+				}
+			});
+		}
 	});
 
 });

@@ -199,6 +199,34 @@ var $_BsIndex = {
 		$('#nowpage').val(0);
 
 		$_BsIndex.switch_div('content','goto','right');
+	},
+	// 加载首页幻灯片数据 
+	load_marquee_photos : function(){
+		$.getJSON(WEB_ROOT + 'api/index/index.php' , {'action':'marqueeP', 'user':USER}, function(back){
+			if(back){
+				var p_html = [],
+					d_html = [];
+
+				for(var i in back){
+					var data = back[i];
+					if(typeof data != 'object')continue;
+
+					p_html.push('<li class="'+ (i==0 ? 'active' : '') +'" data-slide-to="'+ i +'" data-target="#carousel-794314"></li>');
+
+					d_html.push('<div class="item '+ (i==0 ? 'active' : '') +' marqueeP">');
+					d_html.push('	<img width="360px" alt="" src="'+ data.src +'" />');
+					d_html.push('	<div class="carousel-caption">');
+					d_html.push('		<p title="'+ data.content +'">'+ data.less +'</p>');
+					d_html.push('	</div>');
+					d_html.push('</div>');
+				}
+				p_html = p_html.join('');
+				d_html = d_html.join('');
+
+				$('#maquee-points').html(p_html);
+				$('#maquee-photos').html(d_html).parent().removeClass('hide');
+			}
+		});
 	}
 
 };		//end object

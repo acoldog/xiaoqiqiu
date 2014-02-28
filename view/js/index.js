@@ -453,18 +453,31 @@ var $_Index = {
 	load_sort_list : function(){
 		$.getJSON('http://xiaoqiqiu.com:8081/api/get_sort?action=time&user='+ USER +'&callback=?' 
 			, function(back){
-				var li_html = [],
-					last_one = back.pop();
+				var li_html = [];
+					//last_one = back.pop();
 
-				for(var i in back){
+				/*for(var i in back){
 					if(typeof back[i] == 'object'){
 						li_html.push('<li><a href="javascript:;" onclick="$_Index.sort_list_event(\''+
 							back[i].name +'\');return false;">'+ back[i].name +'月 （'+ back[i].num +'条）</a></li>');
 					}
+				}*/
+				for(var i in back){
+					if( typeof i != 'undefined' && typeof back[i][0] == 'object' ){
+						li_html.push('<li><em>'+ back[i][0].year +'年</em><ul>');
+
+						for(var j in back[i]){
+							if(typeof back[i][j] == 'object'){
+								li_html.push('<li><a class="tooltip-acol" data-original-title="点击查看'+ back[i][j].name +'月发表的文章"  href="javascript:;" onclick="$_Index.sort_list_event(\''+
+									back[i][j].year +'-'+ back[i][j].name +'\');return false;">'+ back[i][j].name +'月 （'+ back[i][j].num +'）</a></li>');
+							}
+						}
+						li_html.push('</ul></li>');
+					}
 				}
 
-				li_html.push('<li><a href="javascript:;" onclick="$_Index.sort_list_event(\''+
-							last_one.name +'\' , \'more\');return false;" title="更早的">...&nbsp;&nbsp;&nbsp; </a></li>');
+				//li_html.push('<li><a href="javascript:;" onclick="$_Index.sort_list_event(\''+
+				//			last_one.name +'\' , \'more\');return false;" title="更早的">...&nbsp;&nbsp;&nbsp; </a></li>');
 				li_html.push('<li><a href="">全部文笔 >>> </a></li>');
 				li_html = li_html.join('');
 

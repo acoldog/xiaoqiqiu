@@ -63,4 +63,10 @@
 		public function GetArticle($aid){
 			return $this->mod->GetArticle($aid);
 		}
+		/**
+		*	修改公告
+		*/
+		public function editNotice($notice, $user){
+			return $this->mod->editNotice($notice, $user);
+		}
 	}

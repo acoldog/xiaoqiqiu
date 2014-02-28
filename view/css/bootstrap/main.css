@@ -24,6 +24,9 @@ body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*b
 /*圆角框*/
 .radius{-moz-border-radius:10px;-khtml-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
 /*文章块*/
+.leftqout{background:url(../../img/leftquot.png) right bottom no-repeat;}
+.rightqout{background:url(../../img/rightquot.png) right bottom no-repeat;}
+
 .circle{background:#fff;width:750px;padding:15px;margin-top:20px;}
 .circle .comment_div{height:10px;}
 .circle .acticle-content{background:#F7F7F7;padding:10px;}
@@ -65,10 +68,13 @@ body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*b
 .weibo_logo{width:25px;height:25px;margin-right:3px;background-image:url('../../img/weibo2.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../view/img/weibo2.png',sizingMethod='crop');}
 .tqq_logo{width:25px;height:25px;background-image:url('../../img/tqq.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../view/img/tqq.png',sizingMethod='crop');background-repeat: no-repeat;}
 /*侧边栏*/
+.face-container{margin-bottom: 5px;}
 .menu{background: #fff;padding: 5px;margin-bottom: 10px;}
 #time_line{z-index:100;}
 .sort_ul{background: #F7F7F7;}
 .carousel{margin-top: 5px;}
+
+.marqueeP{height:200px;overflow: hidden;}
 /**
  * 注册层
  */

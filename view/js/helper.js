@@ -503,7 +503,10 @@ var ParseSWF = {
 
 		if(swf_url){
 			return this.loadSwf(obj_id ,swf_url , '505' , '600');
-		}else{
+		}else if( url.indexOf('.swf') != -1 ){
+			return this.loadSwf(obj_id ,url , '505' , '600');
+		}
+		else{
 			SpaceUI.alert('你填写的地址无法识别');
 			return false;
 		}

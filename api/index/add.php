@@ -100,6 +100,24 @@
 		}
 	}
 
+	/**
+	*	编辑-公告栏
+	*
+	*/
+	if($_GET['action'] == 'editNotice'){
+		if(!empty($_GET['notice'])){
+			include_once '../../controller/index/add.ctl.php';
+			$add = new Add_ctl();
+			$result = $add->editNotice($_GET['notice'], $_GET['user']);
+			if($result){
+				echo json_encode(array(
+						'status'	=>'success',
+						'notice'		=>$result['notice']
+					));
+			}
+		}
+	}
+
 	//	同步到微博
 	function sync2weibo($content){
 		if($_SESSION['username'] != 'acol')return;
@@ -124,3 +142,5 @@
         //$res = Http::Get('i.56.com' , 'api/getUserProfileForSquare.php?user_id=acoldog&uid=acoldog');
         var_dump($res);
 	}
+
+	

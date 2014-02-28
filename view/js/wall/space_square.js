@@ -160,7 +160,7 @@
                             list.push('      </div>');
                             list.push('     </div>');
                             list.push('     <div class="video">');
-                            list.push('      <a target="_blank" href="' + back[i].flvUrl + '" onclick="setStat(\'vzoneindex_16180748\')" onmouseover="$(this).find(\'.play\').show();" onmouseout="$(this).find(\'.play\').hide();"><img src="' + back[i].img + '" width="185" height="111" alt="' + back[i].Subject + '"><span class="play" title="播放"></span></a>');
+                            list.push('      <a onclick="SquareOfSpace.playVideo(' + back[i].vid + ');return false;" href="' + back[i].flvUrl + '" onclick="setStat(\'vzoneindex_16180748\')" onmouseover="$(this).find(\'.play\').show();" onmouseout="$(this).find(\'.play\').hide();"><img src="' + back[i].img + '" width="185" height="111" alt="' + back[i].Subject + '"><span class="play" title="播放"></span></a>');
                             if (back[i].hd == 1) {
                                 list.push('      <span class="video_type icon_hd"></span>');
                             } else if (back[i].hd == 2) {
@@ -204,7 +204,7 @@
                                     list.push('      </li>');
                                 }
                                 list.push('     </ul>');
-                                list.push('     <div class="view_all"><a href="' + back[i].flvUrl + '" target="_blank" class="view_btn">查看全部</a></div>');
+                                list.push('     <div class="view_all"><a onclick="SquareOfSpace.playVideo(' + back[i].vid + ');return false;" href="' + back[i].flvUrl + '" class="view_btn">查看全部</a></div>');
                             }
                             list.push('    </div>');
                             list.push('   </div>');
@@ -574,7 +574,13 @@
                     his_obj.addClass('active').parent().siblings().find('a').removeClass('active');
                 }
             }
+        },
+
+        playVideo : function(vid){
+            var html = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="swf_ie_content" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="620" height="480"><param name="movie" value="http://player.56.com/web2_'+ vid +'.swf"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="allowNetworking" value="all"><param name="FlashVars" value="ban_ad=on&ban_over_panel_auto_play=off&ban_over_panel=off&auto_start=off&pause_popup_page=off&from=backend"><param name="quality" value="high"><param name="wmode" value="transparent" /><embed id="swf_other_content" wmode="opaque" width="620" height="480" src="http://player.56.com/web2_'+ vid +'.swf" flashvars="ban_ad=on&ban_over_panel_auto_play=off&ban_over_panel=off&auto_start=off&pause_popup_page=off&from=backend" allowscriptaccess="always" allowfullscreen="true" allowNetworking="all" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></object>';
+            $('#playVideo').html(html).parent().show();
         }
+
     };
     window.SquareOfSpace = Square;
 })(jQuery);

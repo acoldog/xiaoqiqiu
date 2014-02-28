@@ -122,7 +122,8 @@
 			//各表达式尾部统一处理
 			$html = str_replace(';}' , '; ?>' , $html);
 			$html = str_replace('{/loop}' , '<?php } ?>' , $html);		
-			$html = str_replace('{/else}' , '<? }else{ ?>' , $html);	
+			$html = str_replace('{/else}' , '<?php }else{ ?>' , $html);
+			$html = str_replace('{/elif(' , '<?php }else if(' , $html);
 			$html = str_replace('{/if}' , '<?php } ?>' ,$html);
 
 			return $html;

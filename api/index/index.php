@@ -104,3 +104,19 @@
 		else
 			echo json_encode($data);
 	}
+	/**
+	 * 	取幻灯片的图片
+	 */
+	if($_GET['action'] == 'marqueeP')
+	{
+		include_once '../../model/index/index.mod.php';
+		$user 		= $_GET['user'];
+
+		$mod = new Index_mod();
+		$data = $mod->getMarqueePhotos($user);
+
+		if(empty($data))
+			echo json_encode(false);
+		else
+			echo json_encode($data);
+	}

@@ -34,8 +34,8 @@
 				'password'		=>sha1($_POST['password']),
 				'desc'			=>$_POST['desc'],
 				'face'			=>$_POST['face'],
-				'tqq'			=>$_POST['tqq'],
-				'weibo'			=>$_POST['weibo'],
+				'tqq'			=>($_POST['tqq'] == '微博组件代码，没有可不填' ? '' : $_POST['tqq']),
+				'weibo'			=>($_POST['weibo'] == '微博组件代码，没有可不填' ? '' : $_POST['weibo']),
 				'reg_time'		=>time()
 			);
 		$result = $db->insert($data_arr , 'ab_user');

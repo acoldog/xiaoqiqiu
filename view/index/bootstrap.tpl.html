@@ -33,7 +33,7 @@
 
     <div id="container" class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-11">
 				
 				<h3 class="text-center">
 					{echo $data['userInfo']['desc'];}
@@ -92,6 +92,7 @@
 			</div>
 		</div>
 		<div class="row">
+			
 			<div id="content" class="col-md-8">
 				
 				{loop $db}
@@ -115,31 +116,43 @@
 				{/loop}
 
 			</div>
-			<div class="col-md-4">
+
+			<div class="col-md-3">
 				
-				<div>
+				<div class="face-container">
 					<img height="200px" width="200px" src="{echo $data['userInfo']['face'];}" class="img-circle" />
-					<p><label id="now_user"></label></p>
+					<!-- <p><label id="now_user"></label></p> -->
 				</div>
 
+				{if( !empty($data['userInfo']['notice']) || $data["is_mine"] == 1 )}
+				<div class="menu radius">
+					<em class="leftqout">&nbsp;&nbsp;&nbsp;&nbsp;</em>
+					<span id="user_notice">{echo $data['userInfo']['notice'];}</span>
+					<em class="rightqout">&nbsp;&nbsp;&nbsp;&nbsp;</em>
+					{if($data["is_mine"] == 1)}
+						<a id="edit_notice" data-original-title="修改小站公告" class="acticle-edit tooltip-acol" href="#" onfocus="this.blur();"> + </a>
+					{/if}
+				</div>
+				{/if}
+
 				<div id="time_line" class="menu radius">
-					<h4>时间轴</h4>
+					<h4>时间点滴</h4>
 					<div class="slide_item" style="display:block;">
 						<ul id="sort_ul" class="sort_ul"></ul>
 					</div>
 				</div>
 
-				<div class="carousel slide" id="carousel-794314" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li class="active" data-slide-to="0" data-target="#carousel-794314">
+				<div class="carousel slide hide" id="carousel-794314" data-ride="carousel">
+					<ol class="carousel-indicators" id="maquee-points">
+						<!-- <li class="active" data-slide-to="0" data-target="#carousel-794314">
 						</li>
 						<li data-slide-to="1" data-target="#carousel-794314">
 						</li>
 						<li data-slide-to="2" data-target="#carousel-794314">
-						</li>
+						</li> -->
 					</ol>
-					<div class="carousel-inner">
-						<div class="item active">
+					<div class="carousel-inner" id="maquee-photos">
+						<!-- <div class="item active">
 							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20121111022246_.jpg" />
 							<div class="carousel-caption">
 								<p>由于自己的html+css比较业余，所以想用 Bootstrap 做另一个版本的UI，而且不再考虑SEO，首屏内容也直接异步。</p>
@@ -156,7 +169,7 @@
 							<div class="carousel-caption">
 								<p>按文章发布时间分类已做好~ 下一步开始研究这个rewrite了</p>
 							</div>
-						</div>
+						</div> -->
 					</div> <!-- <a data-slide="prev" href="#carousel-794314" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-794314" class="right carousel-control">›</a> -->
 					<a class="left carousel-control" href="#carousel-794314" data-slide="prev">
 			          <span class="glyphicon glyphicon-chevron-left"></span>
@@ -168,7 +181,7 @@
 
 
 				{if( !empty($data['userInfo']['weibo']) )}
-				<div class="jumbotron" style="margin-top:10px">
+				<div class="jumbotron" style="padding:10px;margin-top:10px;">
 					<!-- <h1>
 						Hello, world!
 					</h1>
@@ -186,7 +199,7 @@
 				{/if}
 
 				<!-- Modal -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true"><!-- data-backdrop为false不出遮罩层 -->
 				  <div class="modal-dialog">
 				    <div class="modal-content">
 				      <div class="modal-header">

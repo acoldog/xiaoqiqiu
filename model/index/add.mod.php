@@ -57,6 +57,11 @@
 			if(!empty($photoData)){
 				$diary_id = mysql_insert_id();
 				foreach ($photoData as $key => $value) {
+					//判断图片格式
+					if( !preg_match('/[\.jpg|\.gif|\.png|\.bmp]/' , $value) ){
+						continue;
+					}
+
 					$insert_arr = array('diary_id'=>$diary_id ,'time'=>$time, 'ip'=>$ip,'username'=>$_SESSION['username'],'src'=>$value);
 					$result = $this->db->insert($insert_arr , 'ab_photo');
 				}
@@ -73,4 +78,21 @@
 		public function GetArticle($aid){
 			return $this->db->getOne('SELECT content FROM `ab_diary` WHERE id='. intval($aid));
 		}
+		// 编辑公告
+		public function editNotice($notice, $user){
+			$where_arr = array('username'=>$user);
+			$data_arr  = array('notice'=>$notice);
+
+			$result = $this->db->update($data_arr , $where_arr , 'ab_user');
+			if($result){
+				$res = array(
+					'res'	=>$result,
+					'notice'	=>$notice
+				);
+			}else{
+				$res = false;
+			}
+			return $res;
+		}
+
 	}
