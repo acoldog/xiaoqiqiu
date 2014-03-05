@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 
 	//加载时间轴
-	$.getJSON('http://xiaoqiqiu.com:8081/api/get_sort?action=time&user='+ USER +'&callback=?', function(back){
+	$.getJSON('http://lua.xiaoqiqiu.com/api/get_sort?action=time&user='+ USER +'&callback=?', function(back){
 		var li_html = [];
 			//last_one = back.pop();
 
@@ -110,10 +110,11 @@ $(document).ready(function(){
 			e.preventDefault();
 			$_BsIndex.reg();
 		});
-		/*$('#edit_btn').bind('click' , function(e){
+		//修改资料
+		$(document).delegate('#edit_btn', 'click' ,function(e){
 			e.preventDefault();
 			$_BsIndex.edit();
-		});*/
+		});
 
 		//滚动加载文章
 		window.__onscroll = false;	//防止每次触发一堆滚动事件
@@ -154,14 +155,29 @@ $(document).ready(function(){
 
 	//edit notice
 	$('#edit_notice').bind('click', function(){
-		var notice = window.prompt("修改公告","");
-		if( notice ){
-			$.getJSON(WEB_ROOT + 'api/index/add.php' , {'action':'editNotice', 'notice':notice, 'user':USER}, function(back){
-				if(back){
-					$('#user_notice').text(back.notice);
+
+		$_Helper.require(['bootstrap/bscmt'] , function(){
+			SpaceUI.pop({
+				title 	:'输入新公告',
+				text 	:'<input id="new-notice-ipt" type="text" size="60" />',
+				css 	:{width:'500px'},
+				yes 	:{
+					text:'提交更新',
+					callback:function(){
+						var notice = $('#new-notice-ipt').val();
+						if( notice && notice != '' ){
+							$.getJSON(WEB_ROOT + 'api/index/add.php' , {'action':'editNotice', 'notice':notice, 'user':USER}, function(back){
+								if(back){
+									$('#user_notice').text(back.notice);
+								}
+							});
+						}
+					}
 				}
 			});
-		}
+		});
+
+		
 	});
 
 });
@@ -193,5 +209,30 @@ function comment_float(){
 		}
 	});
 	
+}
+
+function pop(){
+	var phtml = '  <form class="form-horizontal">\
+    <fieldset>\
+      <div id="legend" class="">\
+        <legend class="">表单名</legend>\
+      </div>\
+    <div class="control-group">\
+          <!-- Prepended text-->\
+          <label class="control-label">Prepended text</label>\
+          <div class="controls">\
+            <div class="input-prepend">\
+              <span class="add-on">^_^</span>\
+              <input class="span2" placeholder="placeholder" id="prependedInput" type="text">\
+            </div>\
+            <p class="help-block">Supporting help text</p>\
+          </div>\
+        </div>\
+    </fieldset>\
+  </form>';
+
+	SpaceUI.pop({
+		'text' : phtml
+	});
 }
 //--><!]]>

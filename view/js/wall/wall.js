@@ -33,7 +33,7 @@
 		AcolScrollPage.is_loading = true;
 		$('#loading').show();
 		//$_Helper.loading();
-		$.getJSON('http://xiaoqiqiu.com:8081/api/get_imgList?callback=?', {'action':'imgList', user:USER, page:page, rows:rows} , function(back){
+		$.getJSON('http://lua.xiaoqiqiu.com/api/get_imgList?callback=?', {'action':'imgList', user:USER, page:page, rows:rows} , function(back){
 			if(back){
 				var p_html = [];
 				var data 	= back.data;
