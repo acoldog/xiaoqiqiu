@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Javascript 字符串转换Array</title>
+<script type="text/javascript">
+function $(el){
+	if(el){
+		return document.getElementById(el);
+	}
+}
+
+function checkInput(){
+}
+
+//分隔
+//splitChar js的字符串连接符
+function splitInput(val,isJsContactChar){
+	val = val.replace(/\'/g , '\\\'');
+	var valLen = val.length;
+	var inputSplitChar = $('inputSplitChar').value;
+	var inputSplitCharCode = 10;
+	
+	if(inputSplitChar == 'br'){
+		inputSplitCharCode = 10;
+	}else if(inputSplitChar.length == 1){
+		inputSplitCharCode = inputSplitChar.charCodeAt(0);
+	}
+
+	var arr = [];
+	var temp = '';
+	var nums = 0;
+	var pos = 0;
+
+	if(inputSplitCharCode>0){
+		for(var i=0;i<valLen;i++){
+			if(val[i].charCodeAt(0)==inputSplitCharCode){
+				if(isJsContactChar){
+					temp = temp.substr(0,temp.length-1);
+				}
+				if(temp.substr(0,1)=='\'' || temp.substr(0,1)=='"'){
+					temp = temp.substr(1,temp.length);
+				}
+				if(temp.substr(temp.length - 1,1) == '\'' || temp.substr(temp.length - 1,1) == '"'){
+					temp = temp.substr(0,temp.length-1);
+				}
+				arr.push(temp);
+				nums++;
+				temp = '';
+				pos = i;
+			}else{
+				temp += val[i];
+			}
+		}
+		if(isJsContactChar){
+			temp = temp.substr(0,temp.length-1);
+		}
+		if(temp.substr(0,1)=='\'' || temp.substr(0,1)=='"'){
+			temp = temp.substr(1,temp.length);
+		}
+		if(temp.substr(temp.length - 1,1) == '\'' || temp.substr(temp.length - 1,1) == '"'){
+			temp = temp.substr(0,temp.length-1);
+		}
+		arr.push(temp);
+		nums++;
+		temp = '';
+		pos = i;
+	}else{
+		arr = val.split(inputSplitChar);
+	}
+	
+	
+	return arr;
+}
+
+
+//html转array格式变量
+function htmlToArray(type){
+	var html_code = $('html_code').value;
+	
+	checkInput();
+	var html_arr = [];
+	
+	switch(type){
+		case '1':
+			html_arr = splitInput(html_code);
+			break;
+		case '2':
+			html_arr = splitInput(html_code,'\\');
+			break;
+	}
+
+	response(html_arr);
+}
+
+function response(html_arr){
+	var result = '';
+	var var_name = $('var_name').value;
+	var lan = $('lan').value;
+	var char = '"';
+	
+	if($('char1').checked){
+		char = '\'';
+	}else{
+		char = '"';
+	}
+	switch(lan){
+		case 'javascript':
+			result = javascript(html_arr ,var_name ,char);
+			break;
+		case 'php':
+			result = php(html_arr ,var_name ,char);
+			break;
+	}
+	$('html_array').value = result;	
+}
+
+function javascript(html_arr,var_name,char){
+	var result = 'var '+ var_name +' = [];\n';
+	for(var i=0,len = html_arr.length;i<len;i++){
+		result += var_name + '.push('+char;
+		result += html_arr[i];
+		result += char +');\n';
+	}
+	
+	result += var_name +' = '+ var_name + '.join(\'' + $('splitChar').value + '\');';
+	return result;
+}
+
+function php(html_arr,var_name,char){
+	var result = '';
+	for(var i=0,len = html_arr.length;i<len;i++){
+		result += '$' + var_name + ' .= '+char;
+		result += html_arr[i];
+		result += char +';\n';
+	}
+	
+	return result;
+}
+
+</script>
+</head>
+
+<body>
+<table width="100%" border="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>html 转字符串换成代码(字符串分隔符(br为换行):<input type="text" name="inputSplitChar" id="inputSplitChar" value="br" />)</td>
+  </tr>
+  <tr>
+    <td><textarea name="html_code" id="html_code" cols="100" rows="10"></textarea></td>
+  </tr>
+  <tr>
+    <td>&gt;&gt;</td>
+  </tr>
+  <tr>
+    <td><textarea name="html_array" id="html_array" cols="100" rows="10"></textarea></td>
+  </tr>
+  <tr>
+    <td>变量名:
+      <input name="var_name" type="text" id="var_name" value="array1" />
+      分隔符
+      <input type="text" name="splitChar" id="splitChar" />
+      <input name="str" type="radio" id="char1" value="'" checked="checked" />
+      '
+      <input type="radio" name="str" id="char2" value="&quot;" />
+	   &quot;
+	  语言：<select name="lan" id="lan">
+		  <option value="javascript">Javascript</option>
+		  <option value="php">Php</option>
+		</select>
+     </td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="button" id="button" value="直接转换&gt;&gt;" onclick="htmlToArray('1');"/>
+    <input type="submit" name="button2" id="button2" value="转换以'\'为连接符(javascript)" onclick="htmlToArray('2');"/></td>
+  </tr>
+</table>
+</body>
+</html>
