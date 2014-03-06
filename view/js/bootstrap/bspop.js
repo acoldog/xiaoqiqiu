@@ -10,6 +10,7 @@ var $_BsPop = {
 
 	set : function(op){
 		var _that   		= this,
+			modal_obj		= $('#myModal'),
 			btn1_obj 		= $('#modal_btn1'),
 			btn2_obj 		= $('#modal_btn2'),
 			title_obj 		= $('#myModalLabel'),
@@ -43,10 +44,10 @@ var $_BsPop = {
 			op.height ? container_obj.css('height' , op.height) : '';
 		}
 
-		//绑定按钮事件
+		//绑定按钮事件，默认btn1为关闭按钮
 		typeof op.btn1_click == 'function' ? (
 				btn1_obj.unbind('click').bind('click' , op.btn1_click )
-			) : '';
+			) : btn1_obj.bind('click' , this.close );
 
 		typeof op.btn2_click == 'function' ? (
 				btn2_obj.unbind('click').bind('click' , op.btn2_click )
@@ -65,6 +66,8 @@ var $_BsPop = {
 		if( op.close_time ){
 			setTimeout($_BsPop.close , parseInt(op.close_time) );
 		}
+
+		modal_obj.find('.close').bind('click' , this.close);
 	},
 
 	//	回车事件
@@ -88,7 +91,8 @@ var $_BsPop = {
 
 	//关闭弹层
 	close : function(){
-		$('#modal_body').parent().parent('.modal-dialog').find('.close').click();
+		//$('#modal_body').parent().parent('.modal-dialog').find('.close').click();
+		$('#myModal').modal('hide');
 	}
 
 }	//class end

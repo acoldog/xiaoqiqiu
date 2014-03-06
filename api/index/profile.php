@@ -28,6 +28,22 @@
 			exit;
 		}
 
+		if( empty($_POST['desc']) ){
+			echo json_encode(array(
+					'status'	=>'error',
+					'msg'		=>'小站简介不能为空'
+				));
+			exit;
+		}
+
+		if( !preg_match('/[a-zA-Z0-9_]+/', $_POST['username']) ){
+			echo json_encode(array(
+					'status'	=>'error',
+					'msg'		=>'用户名只能是下划线，数字和字母'
+				));
+			exit;
+		}
+
 		$db = new Db();
 		$data_arr = array(
 				'username'		=>$_POST['username'],
@@ -40,7 +56,12 @@
 			);
 		$result = $db->insert($data_arr , 'ab_user');
 
-		echo json_encode($result);
+		if($result){
+			echo json_encode(array(
+					'status'	=>'success',
+					'msg'		=>'注册成功'
+				));
+		}
 		exit;
 	}
 	/**
@@ -48,7 +69,7 @@
 	*	修改资料
 	*
 	*/
-	if($_POST['action'] == 'edit')
+	if($_GET['action'] == 'edit')
 	{
 		//	如果已经登陆，则不让注册
 		if( !isset($_SESSION['username']) ){
@@ -61,20 +82,25 @@
 
 		$data_arr = array();
 		$db = new Db();
-		if(!empty( $_POST['password'] )){
-			$data_arr['password'] = sha1($_POST['password']);
+		if(!empty( $_GET['r_pass'] )){
+			$data_arr['password'] = sha1($_GET['r_pass']);
 		}
-		if(!empty( $_POST['desc'] )){
-			$data_arr['desc'] = $_POST['desc'];
+		if(!empty( $_GET['r_desc'] )){
+			$data_arr['desc'] = $_GET['r_desc'];
 		}
-		if(!empty( $_POST['face'] )){
-			$data_arr['face'] = $_POST['face'];
+		if(!empty( $_GET['face'] )){
+			$data_arr['face'] = $_GET['face'];
 		}
-		if(!empty( $_POST['tqq'] )){
-			$data_arr['tqq'] = $_POST['tqq'];
+		if(!empty( $_GET['r_tqq'] )){
+			$data_arr['tqq'] = $_GET['r_tqq'];
 		}
-		if(!empty( $_POST['weibo'] )){
-			$data_arr['weibo'] = $_POST['weibo'];
+		if(!empty( $_GET['r_weibo'] )){
+			$data_arr['weibo'] = $_GET['r_weibo'];
+		}
+
+		if(empty( $data_arr )){
+			echo json_encode(false);
+			exit;
 		}
 		$data_arr['reg_time'] = time();
 		

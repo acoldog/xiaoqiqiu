@@ -39,6 +39,7 @@
 				content 	: add_html,
 				width 		: e_width,
 				callback 	: function(){
+					$('#myModal').off('click.dismiss.bs.modal');	//层外点击关闭事件去掉
 
 					$_Helper.require(['ckeditor'] , function(){
 						$_BsAdd.acol_editor = CKEDITOR.replace( 'add_editor_'+ _that.rad,

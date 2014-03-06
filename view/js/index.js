@@ -119,7 +119,7 @@ var $_Index = {
 	page 			: 0,
 	last_page 		: 0,
 	switch_T 		: null,
-	request_url 	: 'http://xiaoqiqiu.com:8081/api/get_article?callback=?',
+	request_url 	: 'http://lua.xiaoqiqiu.com/api/get_article?callback=?',
 	request_action 	: 'index',
 	
 	ini : function(){
@@ -288,7 +288,7 @@ var $_Index = {
 				$("#gotop").click();
 
 				//var request_url = WEB_ROOT + 'api/index/index.php';
-				//var request_url = 'http://xiaoqiqiu.com:8081/api/get_article?callback=?';	//改成撸啊接口
+				//var request_url = 'http://lua.xiaoqiqiu.com/api/get_article?callback=?';	//改成撸啊接口
 				$.getJSON(_that.request_url , {'user':USER , 'action':_that.request_action , 'page':now_page} , function(callback){
 					if(callback){
 						var content_html 	= '',
@@ -451,7 +451,7 @@ var $_Index = {
 	},
 	//	加载分类列表
 	load_sort_list : function(){
-		$.getJSON('http://xiaoqiqiu.com:8081/api/get_sort?action=time&user='+ USER +'&callback=?' 
+		$.getJSON('http://lua.xiaoqiqiu.com/api/get_sort?action=time&user='+ USER +'&callback=?' 
 			, function(back){
 				var li_html = [];
 					//last_one = back.pop();
@@ -488,7 +488,7 @@ var $_Index = {
 	sort_list_event : function(time , other){
 		var other = other || '';
 
-		$_Index.request_url 		= 'http://xiaoqiqiu.com:8081/api/get_article?callback=?&time='+ time +'&other='+ other;
+		$_Index.request_url 		= 'http://lua.xiaoqiqiu.com/api/get_article?callback=?&time='+ time +'&other='+ other;
 		$_Index.request_action 		= 'sort';
 		//$_Index.page 				= 1;
 		$('#now_page').text(1);

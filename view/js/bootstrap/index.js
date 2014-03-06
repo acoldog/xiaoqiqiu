@@ -6,7 +6,7 @@
 var $_BsIndex = {
 	_page 			: 1,
 	_last_page 		: 0,
-	_request_url 	: 'http://xiaoqiqiu.com:8081/api/get_article?callback=?',
+	_request_url 	: 'http://lua.xiaoqiqiu.com/api/get_article?callback=?',
 	_request_action 	: 'index',
 	
 	login : function(){
@@ -162,14 +162,14 @@ var $_BsIndex = {
 	//	修改资料
 	edit : function(){
 		$_Helper.require(['bootstrap/bsprofile'] , function(){
-			if( typeof XQQ.profile == 'function'){
-				XQQ.profile().edit();
+			if( typeof XQQ.bsProfile == 'function'){
+				XQQ.bsProfile().edit();
 			}
 		});
 	},
 	//	加载分类列表
 	load_sort_list : function(){
-		$.getJSON('http://xiaoqiqiu.com:8081/api/get_sort?action=time&user='+ USER +'&callback=?' 
+		$.getJSON('http://lua.xiaoqiqiu.com/api/get_sort?action=time&user='+ USER +'&callback=?' 
 			, function(back){
 				var li_html = [],
 					last_one = back.pop();
@@ -193,7 +193,7 @@ var $_BsIndex = {
 	sort_list_event : function(time , other){
 		var other = other || '';
 
-		$_BsIndex._request_url 		= 'http://xiaoqiqiu.com:8081/api/get_article?callback=?&time='+ time +'&other='+ other;
+		$_BsIndex._request_url 		= 'http://lua.xiaoqiqiu.com/api/get_article?callback=?&time='+ time +'&other='+ other;
 		$_BsIndex._request_action 		= 'sort';
 		//$_BsIndex._page 				= 1;
 		$('#nowpage').val(0);
