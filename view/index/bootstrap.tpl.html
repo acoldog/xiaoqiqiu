@@ -5,9 +5,10 @@
 	<title>维尼的小气球 - acol</title>
 	<meta name="baidu-site-verification" content="UY0mGbX6Ub" />
 	<meta name="baidu-site-verification" content="c341d66811bc0367cce65fc557d035d0"/>
+	<meta property="wb:webmaster" content="c2efef57b2b53a48" />
 	<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
 	<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
-	<link rel="shortcut icon" href="weini.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="view/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <!--<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/css/bootstrap.min.css">-->
@@ -41,55 +42,29 @@
 				</h3>
 
 				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
-			        <div class="navbar-header">
-			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			            <span class="sr-only">Toggle navigation</span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			          </button>
-			          <a class="navbar-brand" href="">Home</a>
-			        </div>
-			        <div class="navbar-collapse collapse">
+				    <div class="navbar-header">
+				      <a class="navbar-brand" href="">Home</a>
+				    </div>
+				    <div class="navbar-collapse collapse">
+						
+						{php include('view/index/menu.tpl.html');}
+					
+						<ul id="profile_ul" class="nav navbar-nav navbar-right">
+				      	{if( !isset($_SESSION['username']) )}
+				        	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">登录</a></li>
+				        	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
+				      	{/else}
+							<li class="active"><a href="http://xiaoqiqiu.com/{echo $_SESSION['username'];}">当前登录：<?=$_SESSION['username']?></a></li>
+				        	<li><a id="edit_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">修改资料</a></li>
+				        	<li><a id="logout_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">退出</a></li>
 
-			          <ul class="nav navbar-nav">
-			            <li><a href="/{echo $data["user"];}/wall">图片墙</a></li>
-			            <li><a href="/{echo $data["user"];}/video">精彩视频墙</a></li>
-			            <li>
-			            	<a id="add_something" class="tooltip-acol" data-original-title="文章图片视频" href="#" {if($global['is_mine'] != 1)} style="display:none;" {/if} data-toggle="modal" data-target="#myModal">发表</a>
-			            </li>
-			            <li class="dropdown">
-			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
-			              
-			              <ul class="dropdown-menu">
-			                <li><a href="http://www.56.com" target="_blank">56视频</a></li>
-			                <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
-			                <li class="divider"></li>
-			                <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
-			                <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
-							<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
-			              </ul>
-
-			            </li>
-			          </ul>
-
-			          <ul id="profile_ul" class="nav navbar-nav navbar-right">
-			          {if( !isset($_SESSION['username']) )}
-			            	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">登录</a></li>
-			            	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
-			           {/else}
-							<li class="active"><a href="http://xiaoqiqiu.com/{echo $_SESSION['username'];}">当前登录：{echo $_SESSION['username'];}</a></li>
-			            	<li><a id="edit_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">修改资料</a></li>
-			            	<li><a id="logout_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">退出</a></li>
-
-			            	{if( $data["is_mine"] == 1 )}
-			            		<li><a href="<?=WEB_ROOT . 'api/index/changeVer.php?action=change_version&user='. $data["user"] .'&version='. ($data['userInfo']['version']==1 ? 0 : 1);?>">换版本</a></li>
-			            	{/if}
-			           {/if}
-			          </ul>
-			        </div><!--/.nav-collapse -->
-			    </div>
-
+				       		{if( $data["is_mine"] == 1 )}
+				        		<li><a href="<?=WEB_ROOT . 'api/index/changeVer.php?action=change_version&user='. $data["user"] .'&version='. ($data['userInfo']['version']==1 ? 0 : 1);?>">换版本</a></li>
+					        {/if}
+				        {/if}
+				      	</ul>
+			    	</div><!--/.nav-collapse -->
+				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -143,35 +118,14 @@
 					</div>
 				</div>
 
+				<!-- marquee photos -->
 				<div class="carousel slide hide" id="carousel-794314" data-ride="carousel">
 					<ol class="carousel-indicators" id="maquee-points">
-						<!-- <li class="active" data-slide-to="0" data-target="#carousel-794314">
-						</li>
-						<li data-slide-to="1" data-target="#carousel-794314">
-						</li>
-						<li data-slide-to="2" data-target="#carousel-794314">
-						</li> -->
+						
 					</ol>
 					<div class="carousel-inner" id="maquee-photos">
-						<!-- <div class="item active">
-							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20121111022246_.jpg" />
-							<div class="carousel-caption">
-								<p>由于自己的html+css比较业余，所以想用 Bootstrap 做另一个版本的UI，而且不再考虑SEO，首屏内容也直接异步。</p>
-							</div>
-						</div>
-						<div class="item">
-							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20130804175202_.JPG" />
-							<div class="carousel-caption">
-								<p>感谢涛锅大力协助，终于把小气球站的rewrite搞好了~~ 附上配置</p>
-							</div>
-						</div>
-						<div class="item">
-							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20130130223740_.jpg" />
-							<div class="carousel-caption">
-								<p>按文章发布时间分类已做好~ 下一步开始研究这个rewrite了</p>
-							</div>
-						</div> -->
-					</div> <!-- <a data-slide="prev" href="#carousel-794314" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-794314" class="right carousel-control">›</a> -->
+
+					</div> 
 					<a class="left carousel-control" href="#carousel-794314" data-slide="prev">
 			          <span class="glyphicon glyphicon-chevron-left"></span>
 			        </a>
@@ -181,18 +135,44 @@
 				</div>
 
 
-				{if( !empty($data['userInfo']['weibo']) )}
+				{if( !empty($data['userInfo']['weibo']) || !empty($data['userInfo']['tqq']) )}
 				<div class="jumbotron" style="padding:10px;margin-top:10px;">
-					<!-- <h1>
-						Hello, world!
-					</h1>
-					<p>
-						这是一个可视化布局模板, 你可以点击模板里的文字进行修改, 也可以通过点击弹出的编辑框进行富文本修改. 拖动区块能实现排序.
-					</p> -->
-					
-					<em class="weibo_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>新浪微博
-					<div class="slide_item">{echo $data['userInfo']['weibo'];}</div>
-					
+
+					<div class="tabbable" id="tabs-960853">
+						<ul class="nav nav-tabs">
+							{if(!empty($data['userInfo']['weibo']))}
+							<li class="active">
+								<a href="#panel-552731" data-toggle="tab">
+									<em class="weibo_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>新浪微博
+								</a>
+							</li>
+							{/if}
+							{if(!empty($data['userInfo']['tqq']))}
+							<li {echo (empty($data['userInfo']['weibo'])?'class="active"':'');}>
+								<a href="#panel-489029" data-toggle="tab">
+									<em class="tqq_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>腾讯微博
+								</a>
+							</li>
+							{/if}
+						</ul>
+						<div class="tab-content">
+							{if(!empty($data['userInfo']['weibo']))}
+							<div class="tab-pane active" id="panel-552731">
+								<p>
+									{echo $data['userInfo']['weibo'];}
+								</p>
+							</div>
+							{/if}
+							{if(!empty($data['userInfo']['tqq']))}
+							<div class="tab-pane {echo (empty($data['userInfo']['weibo'])?'active':'');}" id="panel-489029">
+								<p>
+									{echo $data['userInfo']['tqq'];}
+								</p>
+							</div>
+							{/if}
+						</div>
+					</div>
+
 					<p>
 						<a class="btn btn-default btn-primary btn-lg" href="http://weibo.com" target="_blank">查看更多 »</a>
 					</p>

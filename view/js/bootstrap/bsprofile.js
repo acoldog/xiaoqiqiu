@@ -68,7 +68,7 @@ XQQ.bsProfile = (function($){
 			r_html.push('  <div class="controls">');
 			r_html.push('    <input id="r_face" name="r_face" type="file" style="display:none;" />');
 			r_html.push('    <p class="help-block"><img id="r_face_src" src="" style="width: 150px;height: 150px;"></p>');
-			r_html.push('	 <p>说明：新浪微博和腾讯微博为选填，获取外接代码地址为：<a href="http://open.weibo.com/widgets?cat=wb">http://open.weibo.com/widgets?cat=wb</a> 和 <a href="http://dev.t.qq.com/websites/show/">http://dev.t.qq.com/websites/show/</a></p>');
+			r_html.push('	 <p>说明：新浪微博和腾讯微博为选填，获取外接代码地址为：<a href="http://open.weibo.com/widgets?cat=wb" target="_blank">http://open.weibo.com/widgets?cat=wb</a> 和 <a href="http://dev.t.qq.com/websites/show/" target="_blank">http://dev.t.qq.com/websites/show/</a></p>');
 			r_html.push('  </div>');
 			r_html.push('</div>');
 
@@ -228,7 +228,7 @@ XQQ.bsProfile = (function($){
 			r_html.push('  <div class="controls">');
 			r_html.push('    <input size="60" id="r_face" name="r_face" type="file" style="display:none;" />');
 			r_html.push('    <p class="help-block"><img id="r_face_src" src="" style="width: 150px;height: 150px;"></p>');
-			r_html.push('	 <p>说明：新浪微博和腾讯微博为选填，获取外接代码地址为：<a href="http://open.weibo.com/widgets?cat=wb">http://open.weibo.com/widgets?cat=wb</a> 和 <a href="http://dev.t.qq.com/websites/show/">http://dev.t.qq.com/websites/show/</a></p>');
+			r_html.push('	 <p>说明：新浪微博和腾讯微博为选填，获取外接代码地址为：<a href="http://open.weibo.com/widgets?cat=wb" target="_blank">http://open.weibo.com/widgets?cat=wb</a> 和 <a href="http://dev.t.qq.com/websites/show/" target="_blank">http://dev.t.qq.com/websites/show/</a></p>');
 			r_html.push('  </div>');
 			r_html.push('</div>');
 
@@ -395,7 +395,17 @@ XQQ.bsProfile = (function($){
 				check_text 	= ipt_obj.val();
 
 			switch(check_type){
+				case 'r_weibo':
+				case 'r_tqq':
 
+					if(exec && exec == 'edit'){
+						//直接发请求保存
+		                $.post(WEB_ROOT + 'api/index/profile.php?action=edit&'+ check_type
+		                		+'='+ encodeURIComponent(check_text), function(){
+		                			sign_obj.removeClass('hide');
+		                		});
+		            }
+					break;
 				default:
 					if( typeof this['check_'+ check_type] == 'function' 
 						&& this['check_'+ check_type]( check_text ) ){

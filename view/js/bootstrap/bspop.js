@@ -26,11 +26,12 @@ var $_BsPop = {
 		//	加载图片成功后重置弹层尺寸
 		if( op.type && op.type == 'img' && typeof op.content == 'object' ){
 
-			container_obj.css('width' , 1300);	//展示图片的时候初始设置大一点，为了好看~
+			//container_obj.css('width' , 1300);	//展示图片的时候初始设置大一点，为了好看~
+			container_obj.addClass('hide');
 			$_Helper.bs_top_loading('努力加载图片中...');
 			//	图片加载成功后重置cotainer的宽度
 			op.content.onload = function(){
-				container_obj.css('width' , this.width + extra_width);
+				container_obj.css('width' , this.width + extra_width).removeClass('hide');
 				$_Helper.bs_top_loading_done();
 			}
 		}

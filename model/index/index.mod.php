@@ -94,18 +94,22 @@ class Index_mod extends Model{
 	public function getMarqueePhotos($user){
 		if(empty($user))return array();
 		$sql = "SELECT diary_id , src FROM ab_photo WHERE `username`='". $user ."' GROUP BY diary_id ORDER BY id DESC LIMIT 6";
-		$res = $this->db->getAll($sql);
+		$res = $this->db->getAll($sql, 1);
 
-		$diary_id = array();
+		$diary_id 	= array();
+		$p_arr    	= array();
 		if( !empty($res) ){
 			foreach ($res as $key => $value) {
-				array_push($diary_id, $value['diary_id']);
+				$diary_id[] = $value['diary_id'];
+				$p_arr[$value['diary_id']] = $value;
 			}
 		}
-		$sql = "SELECT id,content FROM ab_diary WHERE id in (". implode(',', $diary_id) .") ";
+		unset($res);
+
+		$sql = "SELECT id,content FROM ab_diary WHERE id in (". implode(',', $diary_id) .") ORDER BY id DESC ";
 		$res2 = $this->db->getAll($sql, 1);
 		foreach ($res2 as $key => $value) {
-			$res2[$key]['src'] = $res[$key]['src'];
+			$res2[$key]['src'] = $p_arr[$value['id']]['src'];
 			$content = str_replace('&nbsp;', '', strip_tags($value['content']));
 			$content = trim($content);
 

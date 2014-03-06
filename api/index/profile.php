@@ -69,7 +69,7 @@
 	*	修改资料
 	*
 	*/
-	if($_GET['action'] == 'edit')
+	if($_REQUEST['action'] == 'edit')
 	{
 		//	如果已经登陆，则不让注册
 		if( !isset($_SESSION['username']) ){
@@ -82,20 +82,20 @@
 
 		$data_arr = array();
 		$db = new Db();
-		if(!empty( $_GET['r_pass'] )){
-			$data_arr['password'] = sha1($_GET['r_pass']);
+		if(!empty( $_REQUEST['r_pass'] )){
+			$data_arr['password'] = sha1($_REQUEST['r_pass']);
 		}
-		if(!empty( $_GET['r_desc'] )){
-			$data_arr['desc'] = $_GET['r_desc'];
+		if(!empty( $_REQUEST['r_desc'] )){
+			$data_arr['desc'] = $_REQUEST['r_desc'];
 		}
-		if(!empty( $_GET['face'] )){
-			$data_arr['face'] = $_GET['face'];
+		if(!empty( $_REQUEST['face'] )){
+			$data_arr['face'] = $_REQUEST['face'];
 		}
-		if(!empty( $_GET['r_tqq'] )){
-			$data_arr['tqq'] = $_GET['r_tqq'];
+		if(!empty( $_REQUEST['r_tqq'] )){
+			$data_arr['tqq'] = $_REQUEST['r_tqq'];
 		}
-		if(!empty( $_GET['r_weibo'] )){
-			$data_arr['weibo'] = $_GET['r_weibo'];
+		if(!empty( $_REQUEST['r_weibo'] )){
+			$data_arr['weibo'] = htmlentities($_REQUEST['r_weibo']);
 		}
 
 		if(empty( $data_arr )){

@@ -32,35 +32,11 @@
 
 				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
 			        <div class="navbar-header">
-			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			            <span class="sr-only">Toggle navigation</span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			          </button>
 			          <a class="navbar-brand" href="<?=WEB_ROOT . $global['user']?>">Home</a>
 			        </div>
 			        <div class="navbar-collapse collapse">
 
-			          <ul class="nav navbar-nav">
-			            <li><a href="/{echo $data["user"];}/wall">图片墙</a></li>
-			            <li><a href="/{echo $data["user"];}/video">精彩视频墙</a></li>
-
-			            <li class="dropdown">
-			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
-			              
-			              <ul class="dropdown-menu">
-			                <li><a href="http://www.56.com" target="_blank">56视频</a></li>
-			                <li><a href="http://www.xiaoqiqiu.com/milk" target="_blank">牛奶的空间</a></li>
-			                <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
-			                <li class="divider"></li>
-			                <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
-			                <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
-							<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
-			              </ul>
-
-			            </li>
-			          </ul>
+			          {php include('view/index/menu.tpl.html');}
 
 			          <ul id="profile_ul" class="nav navbar-nav navbar-right">
 			          {if(!isset($_SESSION['username']))}
@@ -70,7 +46,7 @@
 							<li class="active"><a href="<?=WEB_ROOT . $global['user']?>">当前登录：{echo $_SESSION['username'];}</a></li>
 			           {/if}
 			          </ul>
-			        </div><!--/.nav-collapse -->
+			        </div>
 			    </div>
 
 			</div>

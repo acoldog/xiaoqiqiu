@@ -140,14 +140,16 @@
 						}else if(file_exists(ROOT. '/controller/' . $ctl_path. $val . '.ctl.php')){
 							$has_controller = true;			//ctl唯一
 							$ctl_name = $val;
+
+							include ROOT.'/controller/'. $ctl_path. $val .'.ctl.php';
+							//	这里的controller里如果有类，就暂时不默认实例化它了，以后根据需要改！
+							$class_name = ucfirst($ctl_name . '_ctl');
+
 							if(file_exists(ROOT.'/model/'. $ctl_path. $val .'.mod.php')){
 								include ROOT.'/model/'. $ctl_path. $val .'.mod.php';
-								include ROOT.'/controller/'. $ctl_path. $val .'.ctl.php';
-								//	这里的controller里如果有类，就暂时不默认实例化它了，以后根据需要改！
-								$class_name = ucfirst($ctl_name . '_ctl');
 							}else{
-								include_once(ROOT . '/error.php');			//model不存在跳转到错误页
-								exit;
+								//include_once(ROOT . '/error.php');			//model不存在跳转到错误页
+								//exit;
 							}
 						}else{
 							//	找不到controller就默认为index_ctl	2012-10-23
@@ -282,7 +284,8 @@
 				if(class_exists($class_param['class_ctl_name'])){
 					$obj = new $class_param['class_ctl_name'];
 				}
-				if(method_exists($class_param['class_ctl_name'] , $class_param['class_method_name']) && is_object($obj)){
+				if( method_exists($class_param['class_ctl_name'] , $class_param['class_method_name']) 
+					&& is_object($obj) ){
 					$obj->$class_param['class_method_name']();
 				}
 			}

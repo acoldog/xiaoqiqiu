@@ -9,7 +9,7 @@
 		if (class_exists ( $class_file, false )) {
 			return;
 		} elseif (! is_readable ( $class_file )) {
-			echo $class;
+			//echo $class;
 		} else {
 			include_once($class_file);
 		}

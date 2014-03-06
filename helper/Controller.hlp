@@ -10,7 +10,10 @@ abstract class Controller{
 	{
 		$mod_name = str_replace('_ctl', '_mod', $class_name);
 		include_once ROOT . $mod_dir . strtolower( str_replace('_ctl', '', $class_name) ) .'.mod.php';
-		$this->mod = new $mod_name();
+
+		if( class_exists($mod_name) ){
+			$this->mod = new $mod_name();
+		}
 		//	检查登录用户
 		checkUser();
 	}
