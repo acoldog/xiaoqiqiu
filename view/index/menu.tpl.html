@@ -1,11 +1,20 @@
 
       <ul class="nav navbar-nav">
-        <li><a href="/<?=$data["user"]?>/wall">图片墙</a></li>
-        <li><a href="/<?=$data["user"]?>/video">精彩视频墙</a></li>
-        <li><a href="/<?=$data["user"]?>/ttwall">微博墙</a></li>
         <li>
-        	<a id="add_something" class="tooltip-acol" data-original-title="文章图片视频" href="#" <?php if($global['is_mine'] != 1){ ?> style="display:none;" <?php } ?> data-toggle="modal" data-target="#myModal">发表</a>
+          <a id="add_something" class="tooltip-acol" data-original-title="文章图片视频" href="#" <?php if($global['is_mine'] != 1){ ?> style="display:none;" <?php } ?> data-toggle="modal" data-target="#myModal">发表</a>
         </li>
+
+        <li><a href="/<?=$data["user"]?>/wall">图片墙</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用 <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/<?=$data["user"]?>/ttwall">微博墙</a></li>
+            <li><a href="/<?=$data["user"]?>/video">精彩视频墙</a></li>
+          </ul>
+
+        </li>
+        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
           

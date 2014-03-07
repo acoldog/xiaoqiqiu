@@ -111,18 +111,32 @@
 		flash_upload : function(){
 			var _that = this;
 
-			var flash_url = window.prompt("插入视频","请在此输入视频地址");
-			if( flash_url ){
-				var f_html = ParseSWF.parse_url('acol_flash_'+ _that.rad ,flash_url);
-				if(f_html){
-					var ed_html = _that.get_editor_content();
-					if(/<object[^>]*>/.test(ed_html)){
-						SpaceUI.alert('不能放置多个视频');
-						return false;
+			//var flash_url = window.prompt("插入视频","请在此输入视频地址");
+			SpaceUI.pop({
+				text:'<p>请在此输入视频地址: <input type="text" size="60" id="acol_flv_url" /></p>',
+				yes:{
+					'text':'确定',
+					callback:function(){
+						var flash_url = $('#acol_flv_url').val();
+						if( flash_url ){
+							var f_html = ParseSWF.parse_url('acol_flash_'+ _that.rad ,flash_url);
+							if(f_html){
+								var ed_html = _that.get_editor_content();
+								if(/<object[^>]*>/.test(ed_html)){
+									SpaceUI.alert('不能放置多个视频');
+									return false;
+								}
+								_that.insert_editor(f_html);
+							}
+						}
+
 					}
-					_that.insert_editor(f_html);
-				}
-			}
+				},
+				css:{width:'500px'},
+				container_id:'myModal',
+				is_cover:false,
+				iframe:'<iframe scrolling="no" frameborder="0" src="about:blank" style="filter:Alpha(opacity=0);position: absolute; z-index: -1; right:0px; top:0px; width: 700px; height: 300px;" id="pop_iframe'+ Math.random() +'"></iframe>'
+			});
 			
 		},
 		submit : function(aid){
@@ -144,6 +158,8 @@
 							$('.circle[aid='+ aid +']').remove();
 						}
 						$_BsAdd.insert_article(content , data.aid);
+
+						$_BsAdd.acol_editor.document.getBody().appendHtml('');
 						SpaceUI.alert('发表成功');
 					}else{
 						SpaceUI.alert(data.msg);

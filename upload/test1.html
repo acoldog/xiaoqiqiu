@@ -5,13 +5,34 @@
     <title>维尼的小气球 - acol</title>
     <meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
     <meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
-    
-    <script type="text/javascript" src="http://mat1.gtimg.com/app/vt/js/read/import.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://xiaoqiqiu.com/view/js/jquery.min.js" ></script>
+
   </head>
   <body style="height: 2000px;">
-
-
-    <iframe width="100%" height="100%" frameborder="0" allowtransparency="true" src="about:blank" id="txwbydq_01" srcolling="no"></iframe>  <script type="text/javascript">window.showTxWbYDQ(document.getElementById("txwbydq_01"), {"width":"100%","height":"100%","appkey":"801484616","theme":0,"nobg":0,"ModuleConfigure":{"TitleModule":1,"PubModule":1,"TabModule":1,"TimelineModule":1},"TimelineDetail":{"HeadStyle":1,"PageStyle":0,"PicStyle":0,"TwitterNum":20},"PubModuleConfigure":{"InitialContent":"#阅读墙测试# 说点什么吧","InsertFunction":[0,1,2],"SourceUrl":"http://xiaoqiqiu.com","position":0},"TitleModuleConfigure":{"OfficialAccount":"api_weibo"},"TimelineModuleConfigure":[{"Condition":["腾讯","微博","开放平台"],"ConditionType":1,"ContentType":0,"Famous":0,"MessageType":1,"Name":"腾讯微博开放平台","SortType":0}],"filter":"null"} , function(d){/*回调函数,d的值格式为：{"action":"发表","ret":0,"errcode":0,"msg":"ok","data":{"id":231174038614579,"time":1371544700}},其中action的值可能为“发表、转播、评论”*/} );</script>
+  
+    
+    
   </body>
+  <script type="text/javascript">
+      $(document).ready(function(){
 
+          $.getJSON('http://up.56.com:81/photo2video/_.php?a=saveP2VNew&callback=?',
+            {
+              vcode:'',
+              id:0,
+              pcode:0,
+              title:'发士大夫士大夫沃尔2',
+              intro:'',
+              magic:0,
+              music_data:'&mode=create&txtPos=d&fadetime=2&timer=2&panelColor=0&panelAlpha=80&fontColor=16777215&fontSize=16&song=no.mp3&songMD5=&songDid=1&songSize=&frameID=0&effectID=undefined&bgID=undefined&',
+              img_data:'&photoid=1327629972&imgUrl=http://p2.pfs.56img.com/photo2video/upImg/39/31/p2v_acoldog_52c001efb9a3e252.jpg&imgInf=&imgDid=1000&imgEffect=0&imgSize=0|&photoid=1327056020&imgUrl=http://p2.pfs.56img.com/photo2video/upImg/37/46/p2v_acoldog_52b80d1b503d633.jpg&imgInf=&imgDid=1000&imgEffect=9&imgSize=0|',
+              backFunc:window.parent.p2j_onSaveResult,
+              pdid:98177648
+            }, 
+            function(back){
+              console.log(back)
+            });
+
+      });
+  </script>
 </html>

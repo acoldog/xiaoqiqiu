@@ -123,6 +123,12 @@
 			pop_html.push('        </div>');
 			pop_html.push('    </div>');
 			pop_html.push('    <div class="win_pop_bg"></div>');
+
+			//加个iframe为了遮住flash或者其它iframe
+			if( typeof op.iframe != 'undefined' ){
+				pop_html.push(op.iframe);
+			}
+
 			pop_html.push('</div>');
 			pop_html = pop_html.join('');
 
@@ -135,7 +141,13 @@
 			//	生成遮罩
 			if(op.is_cover !== false)
 				this.cover('SpaceUI_cover');
-			$(document.body).append(pop_html);
+
+			if(typeof op.container_id != 'undefined'){
+				$('#'+ op.container_id).append(pop_html);
+			}else{
+				$(document.body).append(pop_html);
+			}
+			
 			//	各种绑定
 			$(document).bind('keydown' , SpaceUI.pop_keydown);	//	默认回车yes
 			var pop_obj = $('#spaceUI_container').parent();
