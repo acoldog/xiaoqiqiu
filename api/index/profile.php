@@ -50,8 +50,9 @@
 				'password'		=>sha1($_POST['password']),
 				'desc'			=>$_POST['desc'],
 				'face'			=>$_POST['face'],
-				'tqq'			=>($_POST['tqq'] == '微博组件代码，没有可不填' ? '' : $_POST['tqq']),
-				'weibo'			=>($_POST['weibo'] == '微博组件代码，没有可不填' ? '' : $_POST['weibo']),
+				'tqq'			=>empty($_POST['tqq']) ? '' : $_POST['tqq'],
+				'weibo'			=>empty($_POST['weibo']) ? '' : $_POST['weibo'],
+				'xiami' 		=>empty($_POST['xiami']) ? '' : $_POST['xiami'],
 				'reg_time'		=>time()
 			);
 		$result = $db->insert($data_arr , 'ab_user');
@@ -95,7 +96,10 @@
 			$data_arr['tqq'] = $_REQUEST['r_tqq'];
 		}
 		if(!empty( $_REQUEST['r_weibo'] )){
-			$data_arr['weibo'] = htmlentities($_REQUEST['r_weibo']);
+			$data_arr['weibo'] = $_REQUEST['r_weibo'];
+		}
+		if(!empty( $_REQUEST['r_xiami'] )){
+			$data_arr['xiami'] = $_REQUEST['r_xiami'];
 		}
 
 		if(empty( $data_arr )){

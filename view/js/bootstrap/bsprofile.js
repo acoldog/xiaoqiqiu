@@ -62,6 +62,12 @@ XQQ.bsProfile = (function($){
 			r_html.push('    <input id="r_tqq" type="text" placeholder="腾讯微博组件代码。没有，或者不会弄可不填" class="input-xlarge">');
 			r_html.push('  </div>');
 			r_html.push('</div>');
+			r_html.push('<div class="control-group">');
+			r_html.push('  <label class="control-label" for="input01"></label>');
+			r_html.push('  <div class="controls">');
+			r_html.push('    <input id="r_xiami" type="text" placeholder="虾米播放器代码。没有，或者不会弄可不填" class="input-xlarge">');
+			r_html.push('  </div>');
+			r_html.push('</div>');
 
 			r_html.push('<div class="control-group">');
 			r_html.push('  <label class="control-label" for="input01"></label>');
@@ -126,13 +132,14 @@ XQQ.bsProfile = (function($){
 				username = $('#r_username').val();
 			
 			var r_tqq 	= $('#r_tqq').val(),
-				r_weibo = $('#r_weibo').val();
-			if( r_tqq == '微博主键代码，没有可不填' ){
+				r_weibo = $('#r_weibo').val(),
+				r_weibo = $('#r_xiami').val();
+			/*if( r_tqq == '微博主键代码，没有可不填' ){
 				r_tqq = '';
 			}
 			if( r_weibo == '微博主键代码，没有可不填' ){
 				r_weibo = '';
-			}
+			}*/
 
 			var data = {
 				action		:'reg',
@@ -141,7 +148,8 @@ XQQ.bsProfile = (function($){
 				desc 		: $('#r_desc').val(),
 				face 		: $('#r_face_src').attr('src'),
 				tqq 		: r_tqq,
-				weibo 		: r_weibo
+				weibo 		: r_weibo,
+				xiami 		: r_xiami
 			};
 			$.post(WEB_ROOT + 'api/index/profile.php' , data , function(back){
 				if(back){
@@ -223,6 +231,16 @@ XQQ.bsProfile = (function($){
 			r_html.push('    </div>');
 			r_html.push('  </div>');
 			r_html.push('</div>');
+			r_html.push('<div class="control-group">');
+			r_html.push('  <label class="control-label"></label>');
+			r_html.push('  <div class="controls">');
+			r_html.push('    <div class="input-append">');
+			r_html.push('      <input size="60" id="r_xiami" class="span2" placeholder="修改虾米播放器代码" type="text">');
+			r_html.push('      <span class="add-on hide">^_^</span>');
+			r_html.push('    </div>');
+			r_html.push('  </div>');
+			r_html.push('</div>');
+
 			r_html.push('<div class="control-group">');
 			r_html.push('  <label class="control-label" for="input01"></label>');
 			r_html.push('  <div class="controls">');
@@ -397,6 +415,7 @@ XQQ.bsProfile = (function($){
 			switch(check_type){
 				case 'r_weibo':
 				case 'r_tqq':
+				case 'r_xiami':
 
 					if(exec && exec == 'edit'){
 						//直接发请求保存

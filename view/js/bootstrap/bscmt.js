@@ -15,7 +15,12 @@ XQQ.cmt = (function($){
 				}
 			}
 			
-			comment_data_html.push('	[ '+ data.comment_user +' ]');
+			if(SpaceUI.Helper.trim(data.link) == ''){
+				comment_data_html.push('	[ '+ data.comment_user +' ]');
+			}else{
+				comment_data_html.push('	[ <a href="'+ data.link +'" target="_blank">'+ data.comment_user +'</a> ]');
+			}
+
 			comment_data_html.push('	<span>'+ data.ip +'</span>');
 			comment_data_html.push('	<span>'+ data.time +'</span>');
 			comment_data_html.push('</div>');
@@ -55,7 +60,8 @@ XQQ.cmt = (function($){
 				cmt_html.push('		</div>');
 				cmt_html.push('		<hr />');
 				cmt_html.push('		<div style="text-align:left;margin: 5px 0;">');
-				cmt_html.push('			名字：<input id="cmt_name_'+ aid +'" type="text" value="'+ (IS_MINE!=0 ? USER : '游客') +'"/>');
+				cmt_html.push('			昵称：<input id="cmt_name_'+ aid +'" class="span2" placeholder="您的昵称？必填" type="text" />');
+				cmt_html.push('			网址：<input size="63" id="cmt_link_'+ aid +'" class="span2" placeholder="您的小站网址？可以在评论里外链，可不填" type="text" />');
 				cmt_html.push('		</div>');
 				cmt_html.push('	<div id="comment_editor_'+ this.rad +'">'+ content_data +'</div>');
 				cmt_html.push('		<button style="float:left;" onclick="XQQ.cmt.submit_cmt('+ aid +');">提交</button>');
@@ -188,18 +194,30 @@ XQQ.cmt = (function($){
 				return false;
 			}
 			var user = $('#cmt_name_'+ aid).val();
-			$.getJSON(WEB_ROOT + 'api/index/index.php' , {action:'insert_comment', aid:aid, content:content, user:user} , function(back){
+			if(SpaceUI.Helper.trim(user) == ''){
+				SpaceUI.alert('昵称不能为空');
+				return false;
+			}
+
+			var link = $('#cmt_link_'+ aid).val();
+
+			$.getJSON(WEB_ROOT + 'api/index/index.php' , {action:'insert_comment', aid:aid, link:link, content:content, user:user} , function(back){
 				if(back){
-					SpaceUI.alert({head:'评论成功' , timeout:1000 ,yes:{text:'确定'} ,is_cover:false});
-					_that.acol_editor[aid].setData('');
-					//	insert
-					var data = {
-						comment_user 	: user,
-						ip 				: '',
-						time 			: '刚刚',
-						comment 		: content
-					};
-					$('#cmt_content_'+ aid).append(_that.cmt_list_html(data));
+					if(back.status == 'success'){
+						SpaceUI.alert({head:'评论成功' , timeout:1000 ,yes:{text:'确定'} ,is_cover:false});
+						_that.acol_editor[aid].setData('');
+						//	insert
+						var data = {
+							comment_user 	: user,
+							ip 				: '',
+							time 			: '刚刚',
+							comment 		: content,
+							link 			: link
+						};
+						$('#cmt_content_'+ aid).append(_that.cmt_list_html(data));
+					}else{
+						SpaceUI.alert(back.msg);
+					}
 				}
 			});
 		},

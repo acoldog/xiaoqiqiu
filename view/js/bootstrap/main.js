@@ -148,7 +148,8 @@ $(document).ready(function(){
 	//comment
 	$_Helper.require(['bootstrap/bscmt'] , function(){
 
-		$('#content').delegate('.comment , .comment-float' , 'click' , function(){
+		$('#content').delegate('.comment , .comment-float' , 'click' , function(e){
+			e.preventDefault();
 			XQQ.cmt.init($(this).find('a'));
 		});
 	});

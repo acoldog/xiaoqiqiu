@@ -78,11 +78,37 @@
 		$aid	 	= $_GET['aid'];
 		$content 	= $_GET['content'];
 		$user 		= $_GET['user'];
-		$data = $mod->submit_comment($aid , $content , $user , 'say', '3');
-		if(empty($data['res']))
-			echo json_encode(false);
-		else
-			echo json_encode($data);
+		$link 		= $_GET['link'];
+
+		if( empty($user) ){
+			echo json_encode(array(
+					'status' 	=>'error',
+					'msg'		=>'昵称不能为空'
+				));
+			exit;
+		}
+		if( empty($content) ){
+			echo json_encode(array(
+					'status' 	=>'error',
+					'msg'		=>'评论内容不能为空'
+				));
+			exit;
+		}
+
+		$data = $mod->submit_comment($aid , $content , $user, $link , 'say', '3');
+		if(empty($data['res'])){
+			echo json_encode(array(
+					'status' 	=>'error',
+					'msg'		=>'评论失败'
+				));
+			exit;
+		}else{
+			echo json_encode(array(
+					'status' 	=>'success',
+					'msg'		=>'评论成功'
+				));
+			exit;
+		}
 	}
 	/**
 	 * 	拉黑评论

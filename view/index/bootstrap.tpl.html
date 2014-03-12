@@ -179,6 +179,10 @@
 				</div>
 				{/if}
 
+				<!-- 虾米播放器 -->
+				{if(!empty($data['userInfo']['xiami']))}
+					{echo $data['userInfo']['xiami'];}
+				{/if}
 				<!-- Modal -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true"><!-- data-backdrop为false不出遮罩层 -->
 				  <div class="modal-dialog">

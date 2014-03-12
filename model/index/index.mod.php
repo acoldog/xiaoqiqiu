@@ -45,7 +45,7 @@ class Index_mod extends Model{
 		return $comment;
 	}
 	//	提交评论
-	public function submit_comment($aid , $content , $user , $sort, $sort_id)
+	public function submit_comment($aid , $content , $user, $link , $sort, $sort_id)
 	{
 		$time = time();
 		$ip = get_client_ip();
@@ -53,6 +53,7 @@ class Index_mod extends Model{
 		$data_arr = array(
 			'comment'		=>$content, 
 			'comment_user'	=>$user, 
+			'link' 			=>$link,
 			'diary_id'		=>$aid, 
 			'sort'			=>$sort, 
 			'sort_id'		=>$sort_id,
