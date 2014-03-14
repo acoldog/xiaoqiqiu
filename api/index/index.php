@@ -54,7 +54,7 @@
 		$page = $_GET['page'];
 		if(empty($aid) || !is_numeric($aid))
 		{
-			echo json_encode(false);
+			//echo json_encode(false);exit;
 		}
 		if(empty($page) || !is_numeric($page))
 		{
@@ -75,7 +75,9 @@
 		include_once '../../model/index/index.mod.php';
 		$mod = new Index_mod();
 
-		$aid	 	= $_GET['aid'];
+		$aid	 	= intval($_GET['aid']);
+		$pid	 	= intval($_GET['pid']);
+		$bid	 	= intval($_GET['bid']);
 		$content 	= $_GET['content'];
 		$user 		= $_GET['user'];
 		$link 		= $_GET['link'];
@@ -95,7 +97,7 @@
 			exit;
 		}
 
-		$data = $mod->submit_comment($aid , $content , $user, $link , 'say', '3');
+		$data = $mod->submit_comment($aid, $pid, $bid, $content , $user, $link , 'say', '3');
 		if(empty($data['res'])){
 			echo json_encode(array(
 					'status' 	=>'error',

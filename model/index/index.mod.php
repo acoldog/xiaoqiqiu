@@ -32,7 +32,7 @@ class Index_mod extends Model{
 	public function get_comment($id , $page=1, $rows=2)
 	{
 		global $config;
-		$config['page']['sql'] = "SELECT * FROM ab_comment WHERE `sort`='say' AND `diary_id`='". $id ."' ORDER BY id DESC ";
+		/*$config['page']['sql'] = "SELECT * FROM ab_comment WHERE `sort`='say' AND `diary_id`='". $id ."' ORDER BY id DESC ";
 		$config['content']['article_url'] = WEB_ROOT . "/index/get_comment/";
 		$config['page']['page_listNum'] = "3";
 		$config['page']['content_num'] = "$rows";			// 每页显示多少条内容
@@ -41,19 +41,101 @@ class Index_mod extends Model{
 		$page = new Page();
 		$comment['data'] = $page->get_content();
 		$comment['page_list'] = $page->create_page_list();
-		$comment['max_page'] = $page->last_page();
+		$comment['max_page'] = $page->last_page();*/
+
+		if( empty($cnums) ){
+			$cnums = $this->db->nums('SELECT * FROM  `ab_comment_new` WHERE diary_id='. $id .' GROUP BY bid');
+		}
+		$db_pos = compute_db_pos($page , intval($rows) , $cnums);
+
+		$build = array();
+		//取盖楼者数据
+		$sql = 'SELECT * FROM  `ab_comment_new` WHERE diary_id='. $id
+		 .' GROUP BY bid ORDER BY id DESC LIMIT ' . $db_pos['x'] .','. $db_pos['y'];
+		$data = $this->db->getAll($sql, 1);
+
+		//查看它们有没有父id，如果没有则它自己就是一栋楼
+		foreach ($data as $value) {
+			if($value['pid'] == 0){
+				$build[] = $value;
+			}else{
+				$this_build = array();
+				//取楼顶
+				$sql = 'SELECT * FROM  `ab_comment_new` WHERE id='. $value['pid'];
+				$res = $this->db->getOne($sql, 1);
+				if( $res['pid'] == 0 ){
+					$this_build[] = $res;
+				}else{	//顶楼可能是另一栋楼的一部分
+					$this_build = self::getBuild($res['bid'], $this_build);
+				}
+				
+				//取同楼层其它层
+				$this_build = self::getBuild($value['bid'], $this_build);
+
+				$build[] = $this_build;
+			}
+
+		}
+		//按最新回复时间重排序
+		$cmt_time = array();
+		foreach ($build as $value) {
+			if( !is_array($value[0]) ){
+				$cmt_time[] = $value['id'];
+			}else{
+				$cmt_time[] = $value[ (count($value)-1) ]['id'];
+			}
+		}
+		array_multisort($cmt_time , SORT_DESC , $build);
+
+		$comment['data'] = $build;
+		$comment['max_page'] = $db_pos['last_page'];
+
 		return $comment;
 	}
+
+	//用楼ID取楼
+	private function getBuild($bid, $build_arr){
+		$sql = 'SELECT * FROM  `ab_comment_new` WHERE bid='. $bid .' ORDER BY id ASC ';
+		$res = $this->db->getAll($sql, 1);
+
+		foreach ($res as $value2) {
+			$build_arr[] = $value2;
+		}
+		return $build_arr;
+	}
+
 	//	提交评论
-	public function submit_comment($aid , $content , $user, $link , $sort, $sort_id)
+	public function submit_comment($aid, $pid, $bid, $content , $user, $link , $sort, $sort_id)
 	{
 		$time = time();
 		$ip = get_client_ip();
-		$table = 'ab_comment';
+		$table = 'ab_comment_new';
+
+		//是否盖楼
+		if( $pid == 0 ){
+			$bid = time();
+		}else{
+			//判断是不是从楼中间回复（是不是已经是别的楼的pid），是的话要盖出另一层楼
+			$sql = 'SELECT id FROM  `ab_comment_new` WHERE pid='. $pid;
+			$res = $this->db->getOne($sql, 1);
+			if( !empty($res) ){
+				$bid = time();
+			}
+
+			//判断父楼是不是顶楼，是的话也要另盖
+			$sql = 'SELECT pid FROM  `ab_comment_new` WHERE id='. $pid;
+			$res = $this->db->getOne($sql, 1);
+			if( !empty($res) && intval($res['pid'] === 0) ){
+				$bid = time();
+			}
+		}
+
 		$data_arr = array(
 			'comment'		=>$content, 
 			'comment_user'	=>$user, 
 			'link' 			=>$link,
+			'pid' 			=>$pid,
+			'bid' 			=>$bid,
 			'diary_id'		=>$aid, 
 			'sort'			=>$sort, 
 			'sort_id'		=>$sort_id,

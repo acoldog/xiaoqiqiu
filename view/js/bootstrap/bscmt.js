@@ -4,8 +4,67 @@ XQQ.cmt = (function($){
 		rad : 0,
 		acol_editor : {},
 		//	评论html
-		cmt_list_html : function(data){
-			var comment_data_html = [];
+		cmt_list_html : function(data, build, floors){
+			if( typeof data == 'object' && typeof data.comment_user == 'undefined' ){
+				//盖楼
+				var comment_data_html = '',
+					bnums = 0;
+				
+				for(var i in data){
+					if(  typeof data == 'object'){
+						bnums++;
+						comment_data_html += this.cmt_list_html(data[i], true, bnums);	//递归盖楼
+					}
+				}
+				for(var i=0; i<bnums; i++){
+					comment_data_html += '</div>';
+				}
+				return comment_data_html;
+			}
+
+			var comment_data_html = [],
+				floors = floors || 1;
+
+			comment_data_html.push('<div class="comment_rows'+ (build ? '_build' : '') +' '+ (floors>5 ? 'fls-5' :'') +'">');
+			comment_data_html.push('	<div class="comment_circle" style="text-align:left;">');
+			if(IS_MINE != 0){
+				if(typeof data.state != 'undefined' && data.state > 0){
+					comment_data_html.push('	<em title="把它和谐掉，其它用户就看不到它了"><a href="javascript:;" onclick="XQQ.cmt.act_comment(this ,'+ data.id +', \'black\')">黑它</a></em>');
+				}else{
+					comment_data_html.push('	<em title="解除和谐"><a href="javascript:;" onclick="XQQ.cmt.act_comment(this ,'+ data.id +', \'light\')">(已被黑)亮它</a></em>');
+				}
+			}
+			
+			if(SpaceUI.Helper.trim(data.link) == ''){
+				comment_data_html.push(floors +'.	[ '+ data.comment_user +' ]');
+			}else{
+				comment_data_html.push(floors +'.	[ <a href="'+ data.link +'" target="_blank">'+ data.comment_user +'</a> ]');
+			}
+
+			comment_data_html.push('	<span>'+ data.ip +'</span>');
+			comment_data_html.push('	<span>'+ data.time +'</span>');
+
+			//回复评论
+			if( data.time != '刚刚' ){
+				comment_data_html.push('	<a href="#cmt_name_'+ data.diary_id +'" onclick="XQQ.cmt.reply('+ data.id +', '+ data.bid +', event)">回复该评论</a>');
+			}
+
+			comment_data_html.push('</div>');
+			var color = '';
+			if(typeof data.state != 'undefined' && data.state < 1){
+				data.comment = '<strike>这条留言被河蟹咯</strike>';
+				color = 'color:#00C;font-weight:bold;';
+			}
+			comment_data_html.push('<div class="comment_content radius" style="text-align: left;'+ color +'">'+ data.comment +'</div>');
+
+			if( !build ){
+				comment_data_html.push('</div>');
+			}
+
+			comment_data_html = comment_data_html.join('');
+			return comment_data_html;
+
+			/*var comment_data_html = [];
 			comment_data_html.push('<div class="comment_circle" style="text-align:left;">');
 			if(IS_MINE != 0){
 				if(typeof data.state != 'undefined' && data.state > 0){
@@ -31,7 +90,7 @@ XQQ.cmt = (function($){
 			}
 			comment_data_html.push('<div class="comment_content radius" style="text-align: left;'+ color +'">'+ data.comment +'</div>');
 			comment_data_html = comment_data_html.join('');
-			return comment_data_html;
+			return comment_data_html;*/
 		},
 		init : function(obj){
 			//	加载CSS
@@ -60,8 +119,16 @@ XQQ.cmt = (function($){
 				cmt_html.push('		</div>');
 				cmt_html.push('		<hr />');
 				cmt_html.push('		<div style="text-align:left;margin: 5px 0;">');
+
+				cmt_html.push('			<p><input onclick="XQQ.cmt.get_cmt_list(null , '+ aid +');" type="button" value="刷新评论"></p>');
+				cmt_html.push('		<hr />');
+
 				cmt_html.push('			昵称：<input id="cmt_name_'+ aid +'" class="span2" placeholder="您的昵称？必填" type="text" />');
 				cmt_html.push('			网址：<input size="63" id="cmt_link_'+ aid +'" class="span2" placeholder="您的小站网址？可以在评论里外链，可不填" type="text" />');
+
+				cmt_html.push('		<input type="hidden" id="reply_cmt" value="0" />');
+				cmt_html.push('		<input type="hidden" id="reply_bid" value="0" />');
+
 				cmt_html.push('		</div>');
 				cmt_html.push('	<div id="comment_editor_'+ this.rad +'">'+ content_data +'</div>');
 				cmt_html.push('		<button style="float:left;" onclick="XQQ.cmt.submit_cmt('+ aid +');">提交</button>');
@@ -128,11 +195,11 @@ XQQ.cmt = (function($){
 
 		},
 		//	评论列表
-		get_cmt_list : function(obj){
+		get_cmt_list : function(obj, aid){
 			var _that = this,
 				obj = $(obj),
 				row = 5,
-				aid = obj.attr('alt');
+				aid = aid || obj.attr('alt');
 			//if($('#acolPage_'+ aid).length > 0)return;
 			$.getJSON(WEB_ROOT + 'api/index/index.php' , {'action':'get_comment' , 'aid':aid , 'page':1, 'rows':row} , function(callback){
 				if(callback){
@@ -172,6 +239,14 @@ XQQ.cmt = (function($){
 				}
 			});
 		},
+
+		//回复评论
+		reply : function(pid, bid, e){
+			//e.preventDefault();
+			$('#reply_cmt').val(pid);
+			$('#reply_bid').val(bid);
+		},
+
 		//	取编辑器内容	
 		get_editor_content : function(aid){
 			if( SpaceUI.Helper.is_empty_obj(this.acol_editor[aid]) )return;
@@ -200,8 +275,12 @@ XQQ.cmt = (function($){
 			}
 
 			var link = $('#cmt_link_'+ aid).val();
+			var pid  = $('#reply_cmt').val();
+			var bid  = $('#reply_bid').val();
 
-			$.getJSON(WEB_ROOT + 'api/index/index.php' , {action:'insert_comment', aid:aid, link:link, content:content, user:user} , function(back){
+			$.getJSON(WEB_ROOT + 'api/index/index.php' ,
+			 {action:'insert_comment', aid:aid, pid:pid, bid:bid, link:link, content:content, user:user}
+			  , function(back){
 				if(back){
 					if(back.status == 'success'){
 						SpaceUI.alert({head:'评论成功' , timeout:1000 ,yes:{text:'确定'} ,is_cover:false});

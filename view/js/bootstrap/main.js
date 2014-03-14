@@ -57,9 +57,9 @@ $(document).ready(function(){
 
 	/*$("#time_line").pin({
 	      containerSelector: ".container"
-	});*/
-	/*$("#top_menu").pin({
-	      containerSelector: ".container"
+	});
+	$("#top_menu").pin({
+	      containerSelector: "body"
 	});*/
 
 
