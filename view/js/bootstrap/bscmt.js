@@ -46,7 +46,8 @@ XQQ.cmt = (function($){
 
 			//回复评论
 			if( data.time != '刚刚' ){
-				comment_data_html.push('	<a href="#cmt_name_'+ data.diary_id +'" onclick="XQQ.cmt.reply('+ data.id +', '+ data.bid +', event)">回复该评论</a>');
+				comment_data_html.push('	<a href="#cmt_name_'+ data.diary_id +'" onclick="XQQ.cmt.reply(\''+
+				 data.comment_user +'\', '+ data.id +', '+ data.bid +', event)">回复该评论</a>');
 			}
 
 			comment_data_html.push('</div>');
@@ -120,7 +121,7 @@ XQQ.cmt = (function($){
 				cmt_html.push('		<hr />');
 				cmt_html.push('		<div style="text-align:left;margin: 5px 0;">');
 
-				cmt_html.push('			<p><input onclick="XQQ.cmt.get_cmt_list(null , '+ aid +');" type="button" value="刷新评论"></p>');
+				cmt_html.push('			<p><input onclick="XQQ.cmt.get_cmt_list(null , '+ aid +');" type="button" value="刷新评论"> <span class="float-right">引用<em id="quote_cmt"></em>的评论<a type="button" class="acticle-close" onclick="XQQ.cmt.cancel_reply();" title="取消对他的评论的引用">×</a></span> </p>');
 				cmt_html.push('		<hr />');
 
 				cmt_html.push('			昵称：<input id="cmt_name_'+ aid +'" class="span2" placeholder="您的昵称？必填" type="text" />');
@@ -241,10 +242,18 @@ XQQ.cmt = (function($){
 		},
 
 		//回复评论
-		reply : function(pid, bid, e){
+		reply : function(user, pid, bid, e){
 			//e.preventDefault();
 			$('#reply_cmt').val(pid);
 			$('#reply_bid').val(bid);
+			$('#quote_cmt').text(user).parent().show();
+		},
+
+		//取消回复评论
+		cancel_reply : function(){
+			$('#reply_cmt').val(0);
+			$('#reply_bid').val(0);
+			$('#quote_cmt').text('').parent().hide();
 		},
 
 		//	取编辑器内容	

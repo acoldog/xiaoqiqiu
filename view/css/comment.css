@@ -6,3 +6,5 @@
 .comment_rows{border: 1px solid #999;margin-top: 5px;}
 .comment_rows_build{padding:2px;border: 1px solid #999;margin-top: 10px;}
 .comment_rows_build .fls-5{padding:0px;border-right: 0px;border-left: 0px;border-bottom: 0px;}
+.float-right{float: right;padding:2px 0px;display:none;}
+.float-right .acticle-close{cursor:pointer;}
