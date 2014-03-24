@@ -1,380 +1,400 @@
-1392864687&lt;?php $data=array('db'=&gt;array('0'=&gt;array('id'=&gt;'121','username'=&gt;'acol','title'=&gt;'','content'=&gt;'&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&lt;span style=&quot;font-size:28px;&quot;&gt;&lt;strong&gt;一些常用的linux命令：&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	vim /etc/rc.local&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; //开机自启动服务配置&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	ps -ef | grep proftpd&amp;nbsp;&amp;nbsp;&amp;nbsp; // 查看运行的服务&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&lt;span style=&quot;font-size: 13px; font-family: Consolas, 'Lucida Console', monospace; color: rgb(34, 34, 34);&quot;&gt;#/usr/local/php/bin/php test.php&amp;nbsp;&amp;nbsp; 执行PHP脚本&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	vim /etc/sysconfig/iptables&amp;nbsp;&amp;nbsp; // 防火墙配置&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&lt;span style=&quot;font-size: 12px; line-height: 18px; font-family: 'Courier New', monospace; white-space: pre; background-color: rgb(247, 247, 247);&quot;&gt;/etc/init.d/iptables&amp;nbsp;stop&amp;nbsp; // 开启防火墙服务&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&lt;span style=&quot;font-size: 12px; line-height: 18px; font-family: 'Courier New', monospace; white-space: pre; background-color: rgb(247, 247, 247);&quot;&gt;&amp;nbsp;tail error.log -f&amp;nbsp;&amp;nbsp; // 实时查看最新的log&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;pre accuse=&quot;aContent&quot; class=&quot;answer-text mb-10&quot; id=&quot;answer-content-547509093&quot; style=&quot;font-size: 14px; padding: 0px; margin-top: 0px; margin-bottom: 10px; line-height: 24px; font-family: arial, 'courier new', courier, 宋体, monospace; color: rgb(51, 51, 51); word-wrap: break-word;&quot;&gt;
-vim 命令模式下，输入 /word 后回车，即查找word，
-按 n 查找下一个匹配单词，按 N 查找上一个匹配单词&lt;/pre&gt;
-&lt;pre accuse=&quot;aContent&quot; class=&quot;answer-text mb-10&quot; style=&quot;font-size: 14px; padding: 0px; margin-top: 0px; margin-bottom: 10px; line-height: 24px; font-family: arial, 'courier new', courier, 宋体, monospace; color: rgb(51, 51, 51); word-wrap: break-word;&quot;&gt;
-&lt;/pre&gt;
-&lt;pre accuse=&quot;aContent&quot; class=&quot;answer-text mb-10&quot; style=&quot;font-size: 14px; padding: 0px; margin-top: 0px; margin-bottom: 10px; line-height: 24px; font-family: arial, 'courier new', courier, 宋体, monospace; color: rgb(51, 51, 51); word-wrap: break-word;&quot;&gt;
-在当前目录里查找文件：  find -name 文件名&lt;/pre&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	copy文件： cp&amp;nbsp; file&amp;nbsp; file.bak&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	copy文件夹：cp&amp;nbsp; -R file&amp;nbsp; file.bak&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	强制删除文件： rm -ef file&amp;nbsp; (-rf 是删除目录)&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	设置文件权限：chmod 777 file （最高权限&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&lt;span style=&quot;color: rgb(51, 51, 51);&quot;&gt;&lt;span style=&quot;color: rgb(69, 69, 69);&quot;&gt;&lt;span style=&quot;line-height: 26px; font-family: Arial; color: rgb(0, 0, 0);&quot;&gt;ps -ef&amp;nbsp; | grep nginx&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;查进程&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	查看所有端口占用：&lt;span style=&quot;font-size: 13px; line-height: 24px; font-family: 'Microsoft YaHei', 微软雅黑, Arial, 'Lucida Grande', Tahoma, sans-serif; text-indent: 26px;&quot;&gt;netstat -ntlp&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	设置alias：vim /etc/bashrc&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;source&amp;nbsp;&amp;nbsp;/etc/bashrc&lt;/p&gt;
-&lt;p style=&quot;margin: 5px 0px; color: rgb(0, 0, 0); font-family: 微软雅黑; font-size: 14px;&quot;&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;
-	&lt;img class=&quot;comp_img&quot;  src=&quot;http://static.xiaoqiqiu.com/default.jpg&quot;  title=&quot;点击查看原图&quot; / data=&quot;http://xiaoqiqiu.com/upload/imgCompress/20140219190347_.jpg&quot;  lazyload=&quot;1&quot; /&gt;&lt;/p&gt;
-','sort_id'=&gt;'0','time'=&gt;'2014-02-19 19:05:55','ip'=&gt;'113.107.234.109','cmt_num'=&gt;'0','comment_num'=&gt;'0',),'1'=&gt;array('id'=&gt;'120','username'=&gt;'acol','title'=&gt;'','content'=&gt;'&lt;p&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;
-	&lt;img class=&quot;comp_img&quot;  src=&quot;http://static.xiaoqiqiu.com/default.jpg&quot;  title=&quot;点击查看原图&quot; / data=&quot;http://xiaoqiqiu.com/upload/imgCompress/20140212183826_.JPG&quot;  lazyload=&quot;1&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;
-	&lt;span style=&quot;font-size:48px;&quot;&gt;奔跑的维尼&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;
-	&lt;font size=&quot;3&quot;&gt;大图片上传有问题~~好像nginx配置没改对&lt;/font&gt;&lt;/p&gt;
-','sort_id'=&gt;'0','time'=&gt;'2014-02-12 18:57:08','ip'=&gt;'113.107.234.109','cmt_num'=&gt;'0','comment_num'=&gt;'0',),'2'=&gt;array('id'=&gt;'113','username'=&gt;'acol','title'=&gt;'','content'=&gt;'&lt;p&gt;
-	&lt;img class=&quot;comp_img&quot;  src=&quot;http://static.xiaoqiqiu.com/default.jpg&quot;  title=&quot;点击查看原图&quot; / data=&quot;http://xiaoqiqiu.com/upload/imgCompress/20140122172208_.jpg&quot;  lazyload=&quot;1&quot; /&gt;新版你好~&lt;/p&gt;
-&lt;p&gt;
-	维尼的表情 哈哈&lt;/p&gt;
-','sort_id'=&gt;'0','time'=&gt;'2014-01-24 18:05:18','ip'=&gt;'113.107.234.109','cmt_num'=&gt;'4','comment_num'=&gt;'0',),'3'=&gt;array('id'=&gt;'119','username'=&gt;'acol','title'=&gt;'','content'=&gt;'&lt;p&gt;
-	&lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; codebase=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0&quot; height=&quot;505&quot; id=&quot;object_acol_flash_0.02186332060955465&quot; width=&quot;600&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://player.youku.com/player.php/sid/XMjMwNTA0MTYw/v.swf&quot; /&gt;&lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;wmode&quot; value=&quot;opaque&quot; /&gt;&lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;embed allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; height=&quot;505&quot; id=&quot;embed_acol_flash_0.02186332060955465&quot; pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot; src=&quot;http://player.youku.com/player.php/sid/XMjMwNTA0MTYw/v.swf&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;600&quot; wmode=&quot;opaque&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
+1395670509<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+	<title>维尼的小气球 - acol</title>
+	<meta name="baidu-site-verification" content="UY0mGbX6Ub" />
+	<meta name="baidu-site-verification" content="c341d66811bc0367cce65fc557d035d0"/>
+	<meta property="wb:webmaster" content="c2efef57b2b53a48" />
+	<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+	<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+	<link rel="shortcut icon" href="view/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <!--<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/grumble/css/grumble.min.css">
 
-	&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Broken Angel的MV画面唯美，故事动人。
+	<link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+	<link type="text/css" rel="stylesheet" href="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shThemeDefault.css"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/bootstrap/main.css">
+	<link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/global.css">
 
-	理解MV的故事，听歌时更添丝丝感动...
+  </head>
+  <body>
+  	<div id="loading_bar" class="progress active progress-striped progress-success hide">
+		<div class="progress-bar" style="width: 10%;">加载中</div>
+	</div>
 
-	这是一个经典的三部曲
-
-	第一个是《Arash》初见相恋
-
-	第二个是《Pure Love》生死离别
-
-	街上发生了车祸，Arash赶到现场，发现爱人Marianne Puglia受伤被送上救护车。
-
-	他跟上车，握住爱人的手，回忆起甜蜜往事点点滴滴, 纯纯的爱
-
-	医院中，Marianne Puglia在救护后醒来，Arash才发现自已已死去，只是灵魂留在了世上
-
-	他悄然离去...
-
-	第三个是《Broken Angel》
-
-	Arash回来找恋人，看到Marianne Puglia已结婚，有丈夫、小孩和家。
-
-	她回忆往事，深感孤独痛苦。人鬼之恋，缠绵悱恻。
-
-	Marianne Puglia驱车来到悬崖，将旧照片洒向空中...
-','sort_id'=&gt;'0','time'=&gt;'2014-01-24 18:04:10','ip'=&gt;'113.107.234.109','cmt_num'=&gt;'0','comment_num'=&gt;'0',),'4'=&gt;array('id'=&gt;'116','username'=&gt;'acol','title'=&gt;'','content'=&gt;'&lt;p&gt;
-	&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;
-	&lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; codebase=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0&quot; height=&quot;505&quot; id=&quot;object_acol_flash_0.17552793701179326&quot; width=&quot;600&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://player.youku.com/player.php/sid/XNjU5NTkyMjQ0/v.swf&quot; /&gt;&lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;wmode&quot; value=&quot;opaque&quot; /&gt;&lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;embed allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; height=&quot;505&quot; id=&quot;embed_acol_flash_0.17552793701179326&quot; pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot; src=&quot;http://player.youku.com/player.php/sid/XNjU5NTkyMjQ0/v.swf&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;600&quot; wmode=&quot;opaque&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
-','sort_id'=&gt;'0','time'=&gt;'2014-01-24 17:51:38','ip'=&gt;'113.107.234.109','cmt_num'=&gt;'0','comment_num'=&gt;'0',),'5'=&gt;array('id'=&gt;'111','username'=&gt;'acol','title'=&gt;'','content'=&gt;'&lt;p&gt;
-	由于自己的html+css比较业余，所以想用 Bootstrap 做另一个版本的UI，而且不再考虑SEO，首屏内容也直接异步。&lt;img alt=&quot;&quot; height=&quot;96&quot;  src=&quot;http://static.xiaoqiqiu.com/default.jpg&quot;  title=&quot;&quot; width=&quot;96&quot; / data=&quot;http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/22.gif&quot;  lazyload=&quot;1&quot; /&gt;&lt;/p&gt;
-','sort_id'=&gt;'0','time'=&gt;'2013-12-10 18:20:11','ip'=&gt;'113.107.234.109','cmt_num'=&gt;'0','comment_num'=&gt;'0',),'6'=&gt;array('id'=&gt;'108','username'=&gt;'acol','title'=&gt;'','content'=&gt;'&lt;p&gt;
-	感谢涛锅大力协助，终于把小气球站的rewrite搞好了~~ 附上配置&lt;/p&gt;
-&lt;pre class=&quot;brush:bash;&quot;&gt;
-server {
-        ,,,,,
-
-        rewrite ^/view/(.*)$ /view/$1 break;  #break 终止匹配, 不再匹配后面的规则
-        rewrite ^/api/(.*)$ /api/$1 break;
-        rewrite ^/plugin/(.*)$ /plugin/$1 break;
-        rewrite ^/ckeditor/(.*)$ /ckeditor/$1 break;
-        rewrite ^/upload/(.*)$ /upload/$1 break;
-
-        rewrite ^/(.*)$ /index.php break;   #所有匹配到的都指向入口文件index.php
-            
-        error_page  404  /404.html;
-  
-        ......
-  }&lt;/pre&gt;
-','sort_id'=&gt;'0','time'=&gt;'2013-11-29 11:31:34','ip'=&gt;'113.107.234.109','cmt_num'=&gt;'0','comment_num'=&gt;'0',),'7'=&gt;array('id'=&gt;'107','username'=&gt;'acol','title'=&gt;'','content'=&gt;'&lt;p&gt;
-	按文章发布时间分类已做好~&lt;/p&gt;
-&lt;p&gt;
-	下一步开始研究这个rewrite了&lt;/p&gt;
-','sort_id'=&gt;'0','time'=&gt;'2013-11-15 11:15:31','ip'=&gt;'113.107.234.109','cmt_num'=&gt;'0','comment_num'=&gt;'0',),),'userInfo'=&gt;array('0'=&gt;'1','id'=&gt;'1','1'=&gt;'acol','username'=&gt;'acol','2'=&gt;'7d167d2061829b54eec7170420de558327546422','password'=&gt;'7d167d2061829b54eec7170420de558327546422','3'=&gt;'野生纯种程序猿一枚，求包养','desc'=&gt;'野生纯种程序猿一枚，求包养','4'=&gt;'http://xiaoqiqiu.com/view/img/1.jpg','face'=&gt;'http://xiaoqiqiu.com/view/img/1.jpg','5'=&gt;'&lt;iframe frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://show.v.t.qq.com/index.php?c=show&amp;a=index&amp;n=acolcat&amp;w=180&amp;h=552&amp;fl=2&amp;l=4&amp;o=31&amp;co=4&amp;cs=29455F_29455F_238C1C_0B0B0D&quot; width=&quot;180&quot; height=&quot;552&quot;&gt;&lt;/iframe&gt;','tqq'=&gt;'&lt;iframe frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://show.v.t.qq.com/index.php?c=show&amp;a=index&amp;n=acolcat&amp;w=180&amp;h=552&amp;fl=2&amp;l=4&amp;o=31&amp;co=4&amp;cs=29455F_29455F_238C1C_0B0B0D&quot; width=&quot;180&quot; height=&quot;552&quot;&gt;&lt;/iframe&gt;','6'=&gt;'&lt;iframe width=&quot;100%&quot; height=&quot;550&quot; class=&quot;share_self&quot;  frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://widget.weibo.com/weiboshow/index.php?language=&amp;width=0&amp;height=550&amp;fansRow=1&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=1&amp;noborder=1&amp;isWeibo=1&amp;isFans=1&amp;uid=1879892684&amp;verifier=6d797160&amp;dpc=1&quot;&gt;&lt;/iframe&gt;','weibo'=&gt;'&lt;iframe width=&quot;100%&quot; height=&quot;550&quot; class=&quot;share_self&quot;  frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://widget.weibo.com/weiboshow/index.php?language=&amp;width=0&amp;height=550&amp;fansRow=1&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=1&amp;noborder=1&amp;isWeibo=1&amp;isFans=1&amp;uid=1879892684&amp;verifier=6d797160&amp;dpc=1&quot;&gt;&lt;/iframe&gt;','7'=&gt;'1392790613','login_time'=&gt;'1392790613','8'=&gt;'113.107.234.109','login_ip'=&gt;'113.107.234.109','9'=&gt;'1362480155','reg_time'=&gt;'1362480155','10'=&gt;'1','status'=&gt;'1','11'=&gt;'1','version'=&gt;'1',),'page'=&gt;'1','last_page'=&gt;'9','user'=&gt;'acol','is_mine'=&gt;'0',); ?&gt;&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-	&lt;title&gt;维尼的小气球 - acol&lt;/title&gt;
-	&lt;meta name=&quot;baidu-site-verification&quot; content=&quot;QLZgvM8k8P&quot; /&gt;
-	&lt;meta name=&quot;Keywords&quot; content=&quot;小气球，维尼的小气球，acol的小气球，简单交互是我的追求&quot; /&gt;
-	&lt;meta name=&quot;Description&quot; content=&quot;小气球，维尼的小气球，acol的小气球，简单交互是我的追求&quot; /&gt;
-	&lt;link rel=&quot;shortcut icon&quot; href=&quot;weini.ico&quot; type=&quot;image/x-icon&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;!-- Bootstrap --&gt;
-    &lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;http://xiaoqiqiu.com/plugin/bootstrap2.x/css/bootstrap.min.css&quot;&gt; --&gt;
-	&lt;link rel=&quot;stylesheet&quot; href=&quot;http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css&quot;&gt;
-	&lt;link rel=&quot;stylesheet&quot; href=&quot;http://xiaoqiqiu.com/plugin/grumble/css/grumble.min.css&quot;&gt;
-
-	&lt;link href=&quot;http://xiaoqiqiu.com/plugin/uploadify/uploadify.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-	&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shCore.css&quot;/&gt;
-	&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Styles/shThemeDefault.css&quot;/&gt;
-    &lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;
-    &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt;
-    &lt;!--[if lt IE 9]&gt;
-        &lt;script src=&quot;http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;
-    &lt;![endif]--&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://static.xiaoqiqiu.com/css/bootstrap/main.css&quot;&gt;
-	&lt;link rel=&quot;stylesheet&quot; href=&quot;http://static.xiaoqiqiu.com/css/global.css&quot;&gt;
-
-  &lt;/head&gt;
-  &lt;body&gt;
-  	&lt;div id=&quot;loading_bar&quot; class=&quot;progress active progress-striped progress-success hide&quot;&gt;
-		&lt;div class=&quot;progress-bar&quot; style=&quot;width: 10%;&quot;&gt;加载中&lt;/div&gt;
-	&lt;/div&gt;
-
-    &lt;div id=&quot;container&quot; class=&quot;container&quot;&gt;
-		&lt;div class=&quot;row&quot;&gt;
-			&lt;div class=&quot;col-md-12&quot;&gt;
+    <div id="container" class="container">
+		<div class="row">
+			<div class="col-md-11">
 				
-				&lt;h3 class=&quot;text-center&quot;&gt;
-					&lt;?php echo  $data['userInfo']['desc']; ?&gt;
-				&lt;/h3&gt;
+				<h3 class="text-center">
+					野生纯种程序猿一枚，求包养啊				</h3>
 
-				&lt;div id=&quot;top_menu&quot; class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
-			        &lt;div class=&quot;navbar-header&quot;&gt;
-			          &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
-			            &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
-			            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
-			            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
-			            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
-			          &lt;/button&gt;
-			          &lt;a class=&quot;navbar-brand&quot; href=&quot;&quot;&gt;Home&lt;/a&gt;
-			        &lt;/div&gt;
-			        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
+				    <div class="navbar-header">
+				      <a class="navbar-brand" href="">Home</a>
+				    </div>
+				    <div class="navbar-collapse collapse">
+						
+						
+      <ul class="nav navbar-nav">
+        <li>
+          <a id="add_something" class="tooltip-acol" data-original-title="文章图片视频" href="#"  style="display:none;"  data-toggle="modal" data-target="#myModal">发表</a>
+        </li>
 
-			          &lt;ul class=&quot;nav navbar-nav&quot;&gt;
-			            &lt;li&gt;&lt;a href=&quot;/&lt;?php echo  $data[&quot;user&quot;]; ?&gt;/wall&quot;&gt;图片墙&lt;/a&gt;&lt;/li&gt;
-			            &lt;li&gt;&lt;a href=&quot;/&lt;?php echo  $data[&quot;user&quot;]; ?&gt;/video&quot;&gt;精彩视频墙&lt;/a&gt;&lt;/li&gt;
-			            &lt;li&gt;
-			            	&lt;a id=&quot;add_something&quot; class=&quot;tooltip-acol&quot; data-original-title=&quot;文章图片视频&quot; href=&quot;#&quot; &lt;?php if($global['is_mine'] != 1){ ?&gt; style=&quot;display:none;&quot; &lt;?php } ?&gt; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;发表&lt;/a&gt;
-			            &lt;/li&gt;
-			            &lt;li class=&quot;dropdown&quot;&gt;
-			              &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;友情链接 &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
-			              
-			              &lt;ul class=&quot;dropdown-menu&quot;&gt;
-			                &lt;li&gt;&lt;a href=&quot;http://www.56.com&quot; target=&quot;_blank&quot;&gt;56视频&lt;/a&gt;&lt;/li&gt;
-			                &lt;li&gt;&lt;a href=&quot;http://somoban.net/&quot; target=&quot;_blank&quot;&gt;海滨的搜模板&lt;/a&gt;&lt;/li&gt;
-			                &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
-			                &lt;li&gt;&lt;a href=&quot;http://www.68waibo.com/&quot; target=&quot;_blank&quot;&gt;海滨的歪脖&lt;/a&gt;&lt;/li&gt;
-			                &lt;li&gt;&lt;a href=&quot;http://www.langag.net/&quot; target=&quot;_blank&quot;&gt;烂GAG&lt;/a&gt;&lt;/li&gt;
-							&lt;li&gt;&lt;a href=&quot;http://blogger.readplan.com/&quot; target=&quot;_blank&quot;&gt;小勇的blog&lt;/a&gt;&lt;/li&gt;
-			              &lt;/ul&gt;
+        <li><a href="/acol/wall" target="_blank">图片墙</a></li>
 
-			            &lt;/li&gt;
-			          &lt;/ul&gt;
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用 <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/acol/ttwall" target="_blank">微博墙</a></li>
+            <li><a href="/acol/video" target="_blank">精彩视频墙</a></li>
+          </ul>
 
-			          &lt;ul id=&quot;profile_ul&quot; class=&quot;nav navbar-nav navbar-right&quot;&gt;
-			          &lt;?php if( !isset($_SESSION['username']) ){ ?&gt;
-			            	&lt;li class=&quot;active&quot;&gt;&lt;a id=&quot;login_btn&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;登录&lt;/a&gt;&lt;/li&gt;
-			            	&lt;li&gt;&lt;a id=&quot;reg_btn&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;注册&lt;/a&gt;&lt;/li&gt;
-			           &lt;? }else{ ?&gt;
-							&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;http://xiaoqiqiu.com/&lt;?php echo  $_SESSION['username']; ?&gt;&quot;&gt;当前登录：&lt;?php echo  $_SESSION['username']; ?&gt;&lt;/a&gt;&lt;/li&gt;
-			            	&lt;li&gt;&lt;a id=&quot;edit_btn&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;修改资料&lt;/a&gt;&lt;/li&gt;
-			            	&lt;li&gt;&lt;a id=&quot;logout_btn&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;退出&lt;/a&gt;&lt;/li&gt;
+        </li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
+          
+          <ul class="dropdown-menu">
+            <li><a href="http://www.56.com" target="_blank">56视频</a></li>
+            <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
+            <li class="divider"></li>
+            <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
+            <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
+			      <li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
+          </ul>
 
-			            	&lt;?php if( $data[&quot;is_mine&quot;] == 1 ){ ?&gt;
-			            		&lt;li&gt;&lt;a href=&quot;http://xiaoqiqiu.com/api/index/changeVer.php?action=change_version&amp;user=acol&amp;version=0&quot;&gt;换版本&lt;/a&gt;&lt;/li&gt;
-			            	&lt;?php } ?&gt;
-			           &lt;?php } ?&gt;
-			          &lt;/ul&gt;
-			        &lt;/div&gt;&lt;!--/.nav-collapse --&gt;
-			    &lt;/div&gt;
+        </li>
+      </ul>
 
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&quot;row&quot;&gt;
-			&lt;div id=&quot;content&quot; class=&quot;col-md-8&quot;&gt;
+     					
+						<ul id="profile_ul" class="nav navbar-nav navbar-right">
+				      					        	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">登录</a></li>
+				        	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
+				      					      	</ul>
+			    	</div><!--/.nav-collapse -->
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			
+			<div id="content" class="col-md-8">
 				
-				&lt;?php foreach($data['db'] as $i=&gt;$arr){ ?&gt;
-					&lt;div class=&quot;circle radius&quot; aid=&quot;&lt;?php echo $arr['id']; ?&gt;&quot;&gt;
-						&lt;div class=&quot;comment-float&quot;&gt;&lt;em&gt;&lt;a href=&quot;#&quot; alt=&quot;&lt;?php echo $arr['id']; ?&gt;&quot;&gt;&lt;?php echo $arr['cmt_num']; ?&gt;&lt;/a&gt;&lt;/em&gt;&lt;/div&gt;
-						&lt;?php if($data[&quot;is_mine&quot;] == 1){ ?&gt;
-						&lt;a class=&quot;acticle-close&quot; href=&quot;#&quot; onfocus=&quot;this.blur();&quot; onclick=&quot;$_BsAdd.del_article(&lt;?php echo $arr['id']; ?&gt;);return false;&quot;&gt; × &lt;/a&gt;
-						&lt;a class=&quot;acticle-edit&quot; href=&quot;#&quot; onfocus=&quot;this.blur();&quot; onclick=&quot;$_BsAdd.edit_article(&lt;?php echo $arr['id']; ?&gt;);return false;&quot;&gt; + &lt;/a&gt;
-						&lt;?php } ?&gt;
-						&lt;div class=&quot;acticle-content&quot;&gt;
-							&lt;?php echo $arr['content']; ?&gt;
-						&lt;/div&gt;
-						&lt;div class=&quot;comment_div&quot;&gt;
-							&lt;span class=&quot;author&quot;&gt; &lt;?php echo $arr['username']; ?&gt; 于 &lt;?php echo $arr['time']; ?&gt; 发表&lt;/span&gt;
-							&lt;span class=&quot;comment&quot;&gt;&lt;a href=&quot;#&quot; alt=&quot;&lt;?php echo $arr['id']; ?&gt;&quot;&gt;我有想法(&lt;?php echo $arr['cmt_num']; ?&gt;)&lt;/a&gt;&lt;/span&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-					&lt;div class=&quot;left_shadow&quot;&gt;
-						&lt;div class=&quot;right_shadow&quot;&gt;&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;?php } ?&gt;
-
-			&lt;/div&gt;
-			&lt;div class=&quot;col-md-4&quot;&gt;
+									<div class="circle radius" aid="149">
+						<div class="comment-float"><em><a href="#" alt="149">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	<img class="comp_img"  src="http://static.xiaoqiqiu.com/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20140322024901_.jpg"  lazyload="1" /><img class="comp_img"  src="http://static.xiaoqiqiu.com/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20140322024923_.jpg"  lazyload="1" /><img class="comp_img"  src="http://static.xiaoqiqiu.com/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20140322024939_.jpg"  lazyload="1" /><img class="comp_img"  src="http://static.xiaoqiqiu.com/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20140322024948_.jpg"  lazyload="1" /><img class="comp_img"  src="http://static.xiaoqiqiu.com/default.jpg"  title="点击查看原图" / data="http://xiaoqiqiu.com/upload/imgCompress/20140322025001_.JPG"  lazyload="1" /></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-03-22 03:04:57 发表</span>
+							<span class="comment"><a href="#" alt="149">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="148">
+						<div class="comment-float"><em><a href="#" alt="148">4</a></em></div>
+												<div class="acticle-content">
+							<p>
+	<img alt="blush" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="blush" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/07.gif"  lazyload="1" />好枯燥的考驾照文考复习资料...</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-03-21 00:08:12 发表</span>
+							<span class="comment"><a href="#" alt="148">我有想法(4)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="147">
+						<div class="comment-float"><em><a href="#" alt="147">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	<img alt="broken heart" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="broken heart" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/19.gif"  lazyload="1" />晚上下班回来跑步的时候冒出很多想法。</p>
+<p>
+	空间重构我一定要好好做，就像做我这个小站一样或者更加用心<img alt="enlightened" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="enlightened" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/15.gif"  lazyload="1" />&nbsp;做好了就是自己的儿子了，能用上openrestry真的是让我士气大振。</p>
+<p>
+	&nbsp;</p>
+<p>
+	晚安广州的深夜</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-03-20 00:15:59 发表</span>
+							<span class="comment"><a href="#" alt="147">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="146">
+						<div class="comment-float"><em><a href="#" alt="146">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	越来越感触 &nbsp;经常挑你毛病说你不好的人才是对你好的人，愿前程似锦，顺顺利利<img alt="yes" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="yes" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/17.gif"  lazyload="1" /></p>
+<p>
+	&nbsp;</p>
+<p>
+	一个值得我学习的友人<img alt="crying" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="crying" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/14.gif"  lazyload="1" /></p>
+<p>
+	&nbsp;</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-03-19 00:14:45 发表</span>
+							<span class="comment"><a href="#" alt="146">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="144">
+						<div class="comment-float"><em><a href="#" alt="144">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	折腾了半个下午，把评论盖楼功能弄好了~~</p>
+<p>
+	有时间公布算法和数据结构，跟网易评论盖楼不一样，是我自己想的，不用这么多SQL查询。</p>
+<p>
+	&nbsp;</p>
+<p>
+	有时间我想证明一下哪种方法更高效~~<img alt="angry" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="angry" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/10.gif"  lazyload="1" /></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-03-14 21:10:40 发表</span>
+							<span class="comment"><a href="#" alt="144">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="143">
+						<div class="comment-float"><em><a href="#" alt="143">26</a></em></div>
+												<div class="acticle-content">
+							<p>
+	小站的视频墙被56封了，不开心<img alt="wink" height="96"  src="http://static.xiaoqiqiu.com/default.jpg"  title="wink" width="96" / data="http://xiaoqiqiu.com/ckeditor/plugins/smiley/images/03.gif"  lazyload="1" /></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-03-12 18:41:38 发表</span>
+							<span class="comment"><a href="#" alt="143">我有想法(26)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="142">
+						<div class="comment-float"><em><a href="#" alt="142">0</a></em></div>
+												<div class="acticle-content">
+							<p>
+	《<span style="color: rgb(51, 51, 51); font-family: 'microsoft yaHei', 微软雅黑, arial; font-size: 24px; line-height: 30px;">爆笑黑人兄弟：不许动</span><span style="line-height: 30px;">》</span></p>
+<p>
+	<span style="line-height: 30px;">逗比警察，哈哈哈</span></p>
+<p>
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" height="505" width="600"><embed allowfullscreen="true" allowscriptaccess="always" height="505" id="embed_acol_flash_0.4830273964907974" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://player.youku.com/player.php/sid/XNjU3NDAxOTcy/v.swf" type="application/x-shockwave-flash" width="600" wmode="opaque"></embed></object></p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-03-12 16:37:00 发表</span>
+							<span class="comment"><a href="#" alt="142">我有想法(0)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
+									<div class="circle radius" aid="141">
+						<div class="comment-float"><em><a href="#" alt="141">1</a></em></div>
+												<div class="acticle-content">
+							<p style="margin: 10px auto;">
+	twemproxy,也叫nutcraker。是一个twtter开源的一个redis和memcache代理服务器。 redis作为一个高效的缓存服务器，非常具有应用价值。但是当使用比较多的时候，就希望可以通过某种方式 统一进行管理。避免每个应用每个客户端管理连接的松散性。同时在一定程度上变得可以控制。 搜索了不少的开源代理项目，知乎实现的python分片客户端。node的代理中间层，还有各种restfull的开源代理。</p>
+<p style="margin: 10px auto;">
+	&nbsp;</p>
+<p style="margin: 10px auto;">
+	支持失败节点自动删除</p>
+<p>
+	可以设置重新连接该节点的时间 可以设置连接多少次之后删除该节点 该方式适合作为cache存储</p>
+<p style="margin: 10px auto;">
+	支持设置HashTag</p>
+<p>
+	通过HashTag可以自己设定将两个KEYhash到同一个实例上去。</p>
+<p style="margin: 10px auto;">
+	减少与redis的直接连接数</p>
+<p>
+	保持与redis的长连接 可设置代理与后台每个redis连接的数目</p>
+<p style="margin: 10px auto;">
+	自动分片到后端多个redis实例上</p>
+<p>
+	多种hash算法（部分还没有研究明白) 可以设置后端实例的权重</p>
+<p style="margin: 10px auto;">
+	避免单点问题</p>
+<p>
+	可以平行部署多个代理层.client自动选择可用的一个</p>
+<p style="margin: 10px auto;">
+	支持redis pipelining request</p>
+<p style="margin: 10px auto;">
+	支持状态监控</p>
+<p>
+	可设置状态监控ip和端口，访问ip和端口可以得到一个json格式的状态信息串 可设置监控信息刷新间隔时间</p>
+<p style="margin: 10px auto;">
+	高吞吐量</p>
+<p>
+	连接复用，内存复用。 将多个连接请求，组成reids pipelining统一向redis请求。</p>
+						</div>
+						<div class="comment_div">
+							<span class="author"> acol 于 2014-03-12 12:40:24 发表</span>
+							<span class="comment"><a href="#" alt="141">我有想法(1)</a></span>
+						</div>
+					</div>
+					<div class="left_shadow">
+						<div class="right_shadow"></div>
+					</div>
 				
-				&lt;div&gt;
-					&lt;img height=&quot;200px&quot; width=&quot;200px&quot; src=&quot;&lt;?php echo  $data['userInfo']['face']; ?&gt;&quot; class=&quot;img-circle&quot; /&gt;
-					&lt;p&gt;&lt;label id=&quot;now_user&quot;&gt;&lt;/label&gt;&lt;/p&gt;
-				&lt;/div&gt;
+			</div>
 
-				&lt;div id=&quot;time_line&quot; class=&quot;menu radius&quot;&gt;
-					&lt;h4&gt;时间轴&lt;/h4&gt;
-					&lt;div class=&quot;slide_item&quot; style=&quot;display:block;&quot;&gt;
-						&lt;ul id=&quot;sort_ul&quot; class=&quot;sort_ul&quot;&gt;&lt;/ul&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
+			<div class="col-md-3">
+				
+				<div class="face-container">
+					<img height="200px" width="200px" src="http://xiaoqiqiu.com/view/img/1.jpg" class="img-circle" />
+					<!-- <p><label id="now_user"></label></p> -->
+				</div>
 
-				&lt;div class=&quot;carousel slide&quot; id=&quot;carousel-794314&quot; data-ride=&quot;carousel&quot;&gt;
-					&lt;ol class=&quot;carousel-indicators&quot;&gt;
-						&lt;li class=&quot;active&quot; data-slide-to=&quot;0&quot; data-target=&quot;#carousel-794314&quot;&gt;
-						&lt;/li&gt;
-						&lt;li data-slide-to=&quot;1&quot; data-target=&quot;#carousel-794314&quot;&gt;
-						&lt;/li&gt;
-						&lt;li data-slide-to=&quot;2&quot; data-target=&quot;#carousel-794314&quot;&gt;
-						&lt;/li&gt;
-					&lt;/ol&gt;
-					&lt;div class=&quot;carousel-inner&quot;&gt;
-						&lt;div class=&quot;item active&quot;&gt;
-							&lt;img width=&quot;360px&quot; alt=&quot;&quot; src=&quot;http://xiaoqiqiu.com/upload/imgCompress/20121111022246_.jpg&quot; /&gt;
-							&lt;div class=&quot;carousel-caption&quot;&gt;
-								&lt;p&gt;由于自己的html+css比较业余，所以想用 Bootstrap 做另一个版本的UI，而且不再考虑SEO，首屏内容也直接异步。&lt;/p&gt;
-							&lt;/div&gt;
-						&lt;/div&gt;
-						&lt;div class=&quot;item&quot;&gt;
-							&lt;img width=&quot;360px&quot; alt=&quot;&quot; src=&quot;http://xiaoqiqiu.com/upload/imgCompress/20130804175202_.JPG&quot; /&gt;
-							&lt;div class=&quot;carousel-caption&quot;&gt;
-								&lt;p&gt;感谢涛锅大力协助，终于把小气球站的rewrite搞好了~~ 附上配置&lt;/p&gt;
-							&lt;/div&gt;
-						&lt;/div&gt;
-						&lt;div class=&quot;item&quot;&gt;
-							&lt;img width=&quot;360px&quot; alt=&quot;&quot; src=&quot;http://xiaoqiqiu.com/upload/imgCompress/20130130223740_.jpg&quot; /&gt;
-							&lt;div class=&quot;carousel-caption&quot;&gt;
-								&lt;p&gt;按文章发布时间分类已做好~ 下一步开始研究这个rewrite了&lt;/p&gt;
-							&lt;/div&gt;
-						&lt;/div&gt;
-					&lt;/div&gt; &lt;!-- &lt;a data-slide=&quot;prev&quot; href=&quot;#carousel-794314&quot; class=&quot;left carousel-control&quot;&gt;‹&lt;/a&gt; &lt;a data-slide=&quot;next&quot; href=&quot;#carousel-794314&quot; class=&quot;right carousel-control&quot;&gt;›&lt;/a&gt; --&gt;
-					&lt;a class=&quot;left carousel-control&quot; href=&quot;#carousel-794314&quot; data-slide=&quot;prev&quot;&gt;
-			          &lt;span class=&quot;glyphicon glyphicon-chevron-left&quot;&gt;&lt;/span&gt;
-			        &lt;/a&gt;
-			        &lt;a class=&quot;right carousel-control&quot; href=&quot;#carousel-794314&quot; data-slide=&quot;next&quot;&gt;
-			          &lt;span class=&quot;glyphicon glyphicon-chevron-right&quot;&gt;&lt;/span&gt;
-			        &lt;/a&gt;
-				&lt;/div&gt;
+								<div class="menu radius">
+					<em class="leftqout">&nbsp;&nbsp;&nbsp;&nbsp;</em>
+					<span id="user_notice">小站新增背景音乐，都是好听的轻音乐哦~~</span>
+					<em class="rightqout">&nbsp;&nbsp;&nbsp;&nbsp;</em>
+									</div>
+				
+				<div id="time_line" class="menu radius">
+					<h4>时间点滴</h4>
+					<div class="slide_item" style="display:block;">
+						<ul id="sort_ul" class="sort_ul"></ul>
+					</div>
+				</div>
+
+				<!-- marquee photos -->
+				<div class="carousel slide hide" id="carousel-794314" data-ride="carousel">
+					<ol class="carousel-indicators" id="maquee-points">
+						
+					</ol>
+					<div class="carousel-inner" id="maquee-photos">
+
+					</div> 
+					<a class="left carousel-control" href="#carousel-794314" data-slide="prev">
+			          <span class="glyphicon glyphicon-chevron-left"></span>
+			        </a>
+			        <a class="right carousel-control" href="#carousel-794314" data-slide="next">
+			          <span class="glyphicon glyphicon-chevron-right"></span>
+			        </a>
+				</div>
 
 
-				&lt;?php if( !empty($data['userInfo']['weibo']) ){ ?&gt;
-				&lt;div class=&quot;jumbotron&quot; style=&quot;margin-top:10px&quot;&gt;
-					&lt;!-- &lt;h1&gt;
-						Hello, world!
-					&lt;/h1&gt;
-					&lt;p&gt;
-						这是一个可视化布局模板, 你可以点击模板里的文字进行修改, 也可以通过点击弹出的编辑框进行富文本修改. 拖动区块能实现排序.
-					&lt;/p&gt; --&gt;
-					
-					&lt;em class=&quot;weibo_logo&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/em&gt;新浪微博
-					&lt;div class=&quot;slide_item&quot;&gt;&lt;?php echo  $data['userInfo']['weibo']; ?&gt;&lt;/div&gt;
-					
-					&lt;p&gt;
-						&lt;a class=&quot;btn btn-default btn-primary btn-lg&quot; href=&quot;http://weibo.com&quot; target=&quot;_blank&quot;&gt;查看更多 »&lt;/a&gt;
-					&lt;/p&gt;
-				&lt;/div&gt;
-				&lt;?php } ?&gt;
+								<div class="jumbotron" style="padding:10px;margin-top:10px;">
 
-				&lt;!-- Modal --&gt;
-				&lt;div class=&quot;modal fade&quot; id=&quot;myModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
-				  &lt;div class=&quot;modal-dialog&quot;&gt;
-				    &lt;div class=&quot;modal-content&quot;&gt;
-				      &lt;div class=&quot;modal-header&quot;&gt;
-				        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
-				        &lt;h4 class=&quot;modal-title&quot; id=&quot;myModalLabel&quot;&gt;Modal title&lt;/h4&gt;
-				      &lt;/div&gt;
-				      &lt;div id=&quot;modal_body&quot; class=&quot;modal-body&quot;&gt;
-				        ...
-				      &lt;/div&gt;
-				      &lt;div class=&quot;modal-footer&quot;&gt;
-				        &lt;button id=&quot;modal_btn1&quot; type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
-				        &lt;button id=&quot;modal_btn2&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
-				      &lt;/div&gt;
-				    &lt;/div&gt;&lt;!-- /.modal-content --&gt;
-				  &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;
-				&lt;/div&gt;&lt;!-- /.modal --&gt;
+					<div class="tabbable" id="tabs-960853">
+						<ul class="nav nav-tabs">
+														<li class="active">
+								<a href="#panel-552731" data-toggle="tab">
+									<em class="weibo_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>新浪微博
+								</a>
+							</li>
+																					<li >
+								<a href="#panel-489029" data-toggle="tab">
+									<em class="tqq_logo">&nbsp;&nbsp;&nbsp;&nbsp;</em>腾讯微博
+								</a>
+							</li>
+													</ul>
+						<div class="tab-content">
+														<div class="tab-pane active" id="panel-552731">
+								<p>
+									<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1879892684&verifier=6d797160&dpc=1"></iframe>								</p>
+							</div>
+																					<div class="tab-pane " id="panel-489029">
+								<p>
+									<iframe frameborder="0" scrolling="no" src="http://show.v.t.qq.com/index.php?c=show&a=index&n=acolcat&w=242&h=552&fl=1&l=3&o=31&co=0" width="242" height="552"></iframe>								</p>
+							</div>
+													</div>
+					</div>
 
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+					<p>
+						<a class="btn btn-default btn-primary btn-lg" href="http://weibo.com" target="_blank">查看更多 »</a>
+					</p>
+				</div>
+				
+				<!-- 虾米播放器 -->
+									<embed src="http://www.xiami.com/widget/12089145_3105425,2073730,2096331,3351346,3105432,3483231,2091668,1769023557,2868586,_235_346_FF8719_494949_1/multiPlayer.swf" type="application/x-shockwave-flash" width="235" height="346" wmode="opaque"></embed>								
 
-	&lt;div id=&quot;gotop&quot; style=&quot;position: fixed; bottom: 50px; left: 1000px; cursor: pointer;display:none;&quot; title=&quot;猛击我可以灰~&quot;&gt;
-		&lt;img src=&quot;http://static.xiaoqiqiu.com/img/gotop.png&quot; style=&quot;width:64px; height:64px;&quot; /&gt;
-	&lt;/div&gt;
-	&lt;input id=&quot;nowpage&quot; type=&quot;hidden&quot; value=&quot;1&quot; /&gt;
+			</div>
+		</div>
+	</div>
+
+	<div id="gotop" style="position: fixed; bottom: 50px; left: 1000px; cursor: pointer;display:none;" title="猛击我可以灰~">
+		<img src="http://static.xiaoqiqiu.com/img/gotop.png" style="width:64px; height:64px;" />
+	</div>
+	<input id="nowpage" type="hidden" value="1" />
 	
-	&lt;!--弹层hepler--&gt;
-	&lt;a id=&quot;pop_helper&quot; href=&quot;#&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/a&gt;
+	<!--弹层hepler-->
+	<a id="pop_helper" href="#" data-toggle="modal" data-target="#myModal" data-keyboard="true"></a>
 
-	&lt;!--百度分享--&gt;
-	&lt;script&gt;window._bd_share_config={&quot;common&quot;:{&quot;bdSnsKey&quot;:{},&quot;bdText&quot;:&quot;&quot;,&quot;bdMini&quot;:&quot;2&quot;,&quot;bdMiniList&quot;:false,&quot;bdPic&quot;:&quot;&quot;,&quot;bdStyle&quot;:&quot;0&quot;,&quot;bdSize&quot;:&quot;16&quot;},&quot;slide&quot;:{&quot;type&quot;:&quot;slide&quot;,&quot;bdImg&quot;:&quot;2&quot;,&quot;bdPos&quot;:&quot;right&quot;,&quot;bdTop&quot;:&quot;110&quot;}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];&lt;/script&gt;
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true"><!-- data-backdrop为false不出遮罩层 -->
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      <div id="modal_body" class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button id="modal_btn1" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button id="modal_btn2" type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shCore.js&quot;&gt;&lt;/script&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shBrushes.js&quot;&gt;&lt;/script&gt;
-	&lt;script type=&quot;text/javascript&quot;&gt;
+	<!--百度分享-->
+	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"110"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+	<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shCore.js"></script>
+	<script type="text/javascript" src="http://xiaoqiqiu.com/plugin/SyntaxHighlighter/Scripts/shBrushes.js"></script>
+	<script type="text/javascript">
 		//	初始化
-		var WEB_ROOT = '&lt;?php echo  WEB_ROOT; ?&gt;',
-			STATIC_ROOT = '&lt;?php echo  STATIC_ROOT; ?&gt;',
-			IS_MINE = &lt;?php echo  $data[&quot;is_mine&quot;]; ?&gt;,
-			USER = '&lt;?php echo  $data[&quot;user&quot;]; ?&gt;';
+		var WEB_ROOT = 'http://xiaoqiqiu.com/',
+			STATIC_ROOT = 'http://static.xiaoqiqiu.com/',
+			IS_MINE = 0,
+			USER = 'acol';
 		SyntaxHighlighter.config.clipboardSwf = WEB_ROOT +'plugin/SyntaxHighlighter/Scripts/clipboard.swf';
 		SyntaxHighlighter.all();
-	&lt;/script&gt;
-    &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) --&gt;
-    &lt;script src=&quot;http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;
-    &lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;
-    &lt;!--&lt;script src=&quot;http://xiaoqiqiu.com/plugin/bootstrap2.x/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;--&gt;
-	&lt;script src=&quot;http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
-	&lt;script src=&quot;http://xiaoqiqiu.com/plugin/grumble/js/jquery.grumble.min.js&quot;&gt;&lt;/script&gt;
-	&lt;script src=&quot;http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js&quot;&gt;&lt;/script&gt;
+	</script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/js/bootstrap.js"></script>-->
+	<script src="http://cdn.bootcss.com/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="http://xiaoqiqiu.com/plugin/grumble/js/jquery.grumble.min.js"></script>
+	<script src="http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js"></script>
 
-	&lt;script src=&quot;http://static.xiaoqiqiu.com/js/bootstrap/bspop.js&quot;&gt;&lt;/script&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.xiaoqiqiu.com/js/helper.js&quot;&gt;&lt;/script&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.xiaoqiqiu.com/js/space_ui_v2.js&quot;&gt;&lt;/script&gt;
-	&lt;script src=&quot;http://static.xiaoqiqiu.com/js/bootstrap/main.js&quot;&gt;&lt;/script&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.xiaoqiqiu.com/js/curtain.js&quot;&gt;&lt;/script&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.xiaoqiqiu.com/js/weather.js&quot;&gt;&lt;/script&gt;
+	<script src="http://static.xiaoqiqiu.com/js/bootstrap/bspop.js"></script>
+	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/helper.js"></script>
+	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/space_ui_v2.js"></script>
+	<script src="http://static.xiaoqiqiu.com/js/bootstrap/main.js"></script>
+	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/curtain.js"></script>
+	<!--<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/weather.js"></script>-->
 
-	&lt;script type=&quot;text/javascript&quot;&gt;
-var _bdhmProtocol = ((&quot;https:&quot; == document.location.protocol) ? &quot; https://&quot; : &quot; http://&quot;);
-document.write(unescape(&quot;%3Cscript src='&quot; + _bdhmProtocol + &quot;hm.baidu.com/h.js%3F2c99824a3757f51aecbd3546e2bf0724' type='text/javascript'%3E%3C/script%3E&quot;));
-&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
+	<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c99824a3757f51aecbd3546e2bf0724' type='text/javascript'%3E%3C/script%3E"));
+</script>
+  </body>
+</html>

@@ -76,7 +76,7 @@ class Index_mod extends Model{
 			}
 
 		}
-		//按最新回复时间重排序
+		//按最新回复时间重排序，取每栋楼最底层来排序
 		$cmt_time = array();
 		foreach ($build as $value) {
 			if( !is_array($value[0]) ){

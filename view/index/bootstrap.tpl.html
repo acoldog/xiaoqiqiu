@@ -183,24 +183,7 @@
 				{if(!empty($data['userInfo']['xiami']))}
 					{echo $data['userInfo']['xiami'];}
 				{/if}
-				<!-- Modal -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true"><!-- data-backdrop为false不出遮罩层 -->
-				  <div class="modal-dialog">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				      </div>
-				      <div id="modal_body" class="modal-body">
-				        ...
-				      </div>
-				      <div class="modal-footer">
-				        <button id="modal_btn1" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				        <button id="modal_btn2" type="button" class="btn btn-primary">Save changes</button>
-				      </div>
-				    </div><!-- /.modal-content -->
-				  </div><!-- /.modal-dialog -->
-				</div><!-- /.modal -->
+				
 
 			</div>
 		</div>
@@ -213,6 +196,25 @@
 	
 	<!--弹层hepler-->
 	<a id="pop_helper" href="#" data-toggle="modal" data-target="#myModal" data-keyboard="true"></a>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true"><!-- data-backdrop为false不出遮罩层 -->
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      <div id="modal_body" class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button id="modal_btn1" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button id="modal_btn2" type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 	<!--百度分享-->
 	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"110"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>

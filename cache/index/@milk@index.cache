@@ -1,16 +1,18 @@
-1392559686<!DOCTYPE html>
+1395646586<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8"/>
 	<title>维尼的小气球 - acol</title>
-	<meta name="baidu-site-verification" content="QLZgvM8k8P" />
+	<meta name="baidu-site-verification" content="UY0mGbX6Ub" />
+	<meta name="baidu-site-verification" content="c341d66811bc0367cce65fc557d035d0"/>
+	<meta property="wb:webmaster" content="c2efef57b2b53a48" />
 	<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
 	<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
-	<link rel="shortcut icon" href="weini.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="view/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/bootstrap2.x/css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/grumble/css/grumble.min.css">
 
 	<link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
@@ -33,54 +35,60 @@
 
     <div id="container" class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-11">
 				
 				<h3 class="text-center">
 					milk的小窝				</h3>
 
 				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
-			        <div class="navbar-header">
-			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			            <span class="sr-only">Toggle navigation</span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			          </button>
-			          <a class="navbar-brand" href="">Home</a>
-			        </div>
-			        <div class="navbar-collapse collapse">
+				    <div class="navbar-header">
+				      <a class="navbar-brand" href="">Home</a>
+				    </div>
+				    <div class="navbar-collapse collapse">
+						
+						
+      <ul class="nav navbar-nav">
+        <li>
+          <a id="add_something" class="tooltip-acol" data-original-title="文章图片视频" href="#"  style="display:none;"  data-toggle="modal" data-target="#myModal">发表</a>
+        </li>
 
-			          <ul class="nav navbar-nav">
-			            <li><a href="/milk/wall">图片墙</a></li>
-			            <li><a href="/milk/video">精彩视频墙</a></li>
-			            <li>
-			            	<a id="add_something" class="tooltip-acol" data-original-title="文章图片视频" href="#"  style="display:none;"  data-toggle="modal" data-target="#myModal">发表</a>
-			            </li>
-			            <li class="dropdown">
-			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
-			              
-			              <ul class="dropdown-menu">
-			                <li><a href="http://www.56.com" target="_blank">56视频</a></li>
-			                <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
-			                <li class="divider"></li>
-			                <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
-			                <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
-							<li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
-			              </ul>
+        <li><a href="/milk/wall" target="_blank">图片墙</a></li>
 
-			            </li>
-			          </ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用 <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/milk/ttwall" target="_blank">微博墙</a></li>
+            <li><a href="/milk/video" target="_blank">精彩视频墙</a></li>
+          </ul>
 
-			          <ul id="profile_ul" class="nav navbar-nav navbar-right">
-			          			            	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">登录</a></li>
-			            	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
-			           			          </ul>
-			        </div><!--/.nav-collapse -->
-			    </div>
+        </li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接 <b class="caret"></b></a>
+          
+          <ul class="dropdown-menu">
+            <li><a href="http://www.56.com" target="_blank">56视频</a></li>
+            <li><a href="http://somoban.net/" target="_blank">海滨的搜模板</a></li>
+            <li class="divider"></li>
+            <li><a href="http://www.68waibo.com/" target="_blank">海滨的歪脖</a></li>
+            <li><a href="http://www.langag.net/" target="_blank">烂GAG</a></li>
+			      <li><a href="http://blogger.readplan.com/" target="_blank">小勇的blog</a></li>
+          </ul>
 
+        </li>
+      </ul>
+
+     					
+						<ul id="profile_ul" class="nav navbar-nav navbar-right">
+				      					        	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">登录</a></li>
+				        	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
+				      					      	</ul>
+			    	</div><!--/.nav-collapse -->
+				</div>
 			</div>
 		</div>
 		<div class="row">
+			
 			<div id="content" class="col-md-8">
 				
 									<div class="circle radius" aid="70">
@@ -99,49 +107,30 @@
 					</div>
 				
 			</div>
-			<div class="col-md-4">
+
+			<div class="col-md-3">
 				
-				<div>
+				<div class="face-container">
 					<img height="200px" width="200px" src="http://xiaoqiqiu.com/view/img/14.jpg" class="img-circle" />
-					<p><label id="now_user"></label></p>
+					<!-- <p><label id="now_user"></label></p> -->
 				</div>
 
+				
 				<div id="time_line" class="menu radius">
-					<h4>时间轴</h4>
+					<h4>时间点滴</h4>
 					<div class="slide_item" style="display:block;">
 						<ul id="sort_ul" class="sort_ul"></ul>
 					</div>
 				</div>
 
-				<div class="carousel slide" id="carousel-794314" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li class="active" data-slide-to="0" data-target="#carousel-794314">
-						</li>
-						<li data-slide-to="1" data-target="#carousel-794314">
-						</li>
-						<li data-slide-to="2" data-target="#carousel-794314">
-						</li>
+				<!-- marquee photos -->
+				<div class="carousel slide hide" id="carousel-794314" data-ride="carousel">
+					<ol class="carousel-indicators" id="maquee-points">
+						
 					</ol>
-					<div class="carousel-inner">
-						<div class="item active">
-							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20121111022246_.jpg" />
-							<div class="carousel-caption">
-								<p>由于自己的html+css比较业余，所以想用 Bootstrap 做另一个版本的UI，而且不再考虑SEO，首屏内容也直接异步。</p>
-							</div>
-						</div>
-						<div class="item">
-							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20130804175202_.JPG" />
-							<div class="carousel-caption">
-								<p>感谢涛锅大力协助，终于把小气球站的rewrite搞好了~~ 附上配置</p>
-							</div>
-						</div>
-						<div class="item">
-							<img width="360px" alt="" src="http://xiaoqiqiu.com/upload/imgCompress/20130130223740_.jpg" />
-							<div class="carousel-caption">
-								<p>按文章发布时间分类已做好~ 下一步开始研究这个rewrite了</p>
-							</div>
-						</div>
-					</div> <!-- <a data-slide="prev" href="#carousel-794314" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-794314" class="right carousel-control">›</a> -->
+					<div class="carousel-inner" id="maquee-photos">
+
+					</div> 
 					<a class="left carousel-control" href="#carousel-794314" data-slide="prev">
 			          <span class="glyphicon glyphicon-chevron-left"></span>
 			        </a>
@@ -152,24 +141,8 @@
 
 
 				
-				<!-- Modal -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				  <div class="modal-dialog">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				      </div>
-				      <div id="modal_body" class="modal-body">
-				        ...
-				      </div>
-				      <div class="modal-footer">
-				        <button id="modal_btn1" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				        <button id="modal_btn2" type="button" class="btn btn-primary">Save changes</button>
-				      </div>
-				    </div><!-- /.modal-content -->
-				  </div><!-- /.modal-dialog -->
-				</div><!-- /.modal -->
+				<!-- 虾米播放器 -->
+								
 
 			</div>
 		</div>
@@ -178,9 +151,29 @@
 	<div id="gotop" style="position: fixed; bottom: 50px; left: 1000px; cursor: pointer;display:none;" title="猛击我可以灰~">
 		<img src="http://static.xiaoqiqiu.com/img/gotop.png" style="width:64px; height:64px;" />
 	</div>
+	<input id="nowpage" type="hidden" value="1" />
 	
 	<!--弹层hepler-->
-	<a id="pop_helper" href="#" data-toggle="modal" data-target="#myModal"></a>
+	<a id="pop_helper" href="#" data-toggle="modal" data-target="#myModal" data-keyboard="true"></a>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true"><!-- data-backdrop为false不出遮罩层 -->
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      <div id="modal_body" class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button id="modal_btn1" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button id="modal_btn2" type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 	<!--百度分享-->
 	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"110"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
@@ -199,8 +192,8 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!--<script src="http://xiaoqiqiu.com/plugin/bootstrap2.x/js/bootstrap.min.js"></script>-->
-	<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!--<script src="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/js/bootstrap.js"></script>-->
+	<script src="http://cdn.bootcss.com/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="http://xiaoqiqiu.com/plugin/grumble/js/jquery.grumble.min.js"></script>
 	<script src="http://xiaoqiqiu.com/plugin/jquery.pin/jquery.pin.min.js"></script>
 
@@ -209,7 +202,7 @@
 	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/space_ui_v2.js"></script>
 	<script src="http://static.xiaoqiqiu.com/js/bootstrap/main.js"></script>
 	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/curtain.js"></script>
-	<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/weather.js"></script>
+	<!--<script type="text/javascript" src="http://static.xiaoqiqiu.com/js/weather.js"></script>-->
 
 	<script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");

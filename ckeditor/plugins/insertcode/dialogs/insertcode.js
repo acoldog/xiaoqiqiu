@@ -34,7 +34,14 @@ CKEDITOR.dialog.add('insertcode', function(editor){
             html = '' + escape(code) + '';
             editor.insertHtml("<pre class=\"brush:" + lang + ";\">" + html + "</pre>");
         },
+        onShow: function(){
+            $('#myModal').modal('hide');    //解决modal弹层影响的modal元素外文本框失去焦点的问题
+        },
+        onHide: function(){
+            $('#myModal').modal('show')
+        },
         onLoad: function(){
+            
         }
     };
 });
