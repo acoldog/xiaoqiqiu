@@ -115,8 +115,8 @@
 		$db = new Db();
 		$nums = $db->nums('SELECT * FROM ab_user WHERE username="'. $username .'"');
 		if($nums < 1){
-			Header('Location:http://xiaoqiqiu.com');
-			exit;
+			throw new Exception('用户不存在');
+
 		}else{
 			$global['user'] = $username;
 		}

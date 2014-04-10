@@ -65,33 +65,6 @@ XQQ.cmt = (function($){
 			comment_data_html = comment_data_html.join('');
 			return comment_data_html;
 
-			/*var comment_data_html = [];
-			comment_data_html.push('<div class="comment_circle" style="text-align:left;">');
-			if(IS_MINE != 0){
-				if(typeof data.state != 'undefined' && data.state > 0){
-					comment_data_html.push('	<em title="把它和谐掉，其它用户就看不到它了"><a href="javascript:;" onclick="XQQ.cmt.act_comment(this ,'+ data.id +', \'black\')">黑它</a></em>');
-				}else{
-					comment_data_html.push('	<em title="解除和谐"><a href="javascript:;" onclick="XQQ.cmt.act_comment(this ,'+ data.id +', \'light\')">(已被黑)亮它</a></em>');
-				}
-			}
-			
-			if(SpaceUI.Helper.trim(data.link) == ''){
-				comment_data_html.push('	[ '+ data.comment_user +' ]');
-			}else{
-				comment_data_html.push('	[ <a href="'+ data.link +'" target="_blank">'+ data.comment_user +'</a> ]');
-			}
-
-			comment_data_html.push('	<span>'+ data.ip +'</span>');
-			comment_data_html.push('	<span>'+ data.time +'</span>');
-			comment_data_html.push('</div>');
-			var color = '';
-			if(typeof data.state != 'undefined' && data.state < 1){
-				data.comment = '<strike>这条留言被河蟹咯</strike>';
-				color = 'color:#00C;font-weight:bold;';
-			}
-			comment_data_html.push('<div class="comment_content radius" style="text-align: left;'+ color +'">'+ data.comment +'</div>');
-			comment_data_html = comment_data_html.join('');
-			return comment_data_html;*/
 		},
 		init : function(obj){
 			//	加载CSS

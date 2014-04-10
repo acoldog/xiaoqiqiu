@@ -5,7 +5,20 @@
 	*	如果有多个c参数，则取第一个
 	*
 	*		c=acol-1&a=2&p=10
+	*
+	* http://xiaoqiqiu.com/index/acol4
+	* http://xiaoqiqiu.com/acol4
+	* http://xiaoqiqiu.com/index.php?c=index-index&user=acol4
 	**/
-	include_once('config/config.inc.php');
+	try{
+		include_once('config/config.inc.php');
 
-	$a = new Url();
+		new Url();
+	}catch(ErrorPageException $e){
+		include_once(ROOT .'/error.php');
+		//var_dump( $e->getMessage() );
+	}catch(Exception $e){
+		Header('Location:http://xiaoqiqiu.com');
+		//var_dump( $e->getMessage() );
+	}
+	
