@@ -273,7 +273,8 @@ XQQ.cmt = (function($){
 							ip 				: '',
 							time 			: '刚刚',
 							comment 		: content,
-							link 			: link
+							link 			: link,
+							state 			: 1
 						};
 						$('#cmt_content_'+ aid).append(_that.cmt_list_html(data));
 					}else{

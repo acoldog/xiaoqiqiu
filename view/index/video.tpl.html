@@ -4,11 +4,11 @@
 		<meta charset="utf-8"/>
 		<meta property="wb:webmaster" content="c2efef57b2b53a48" />
 		<title>维尼的视频墙 - acol</title>
-		<link href="http://s1.56img.com/style/base/v4/css/base_v.1.css" type="text/css" rel="stylesheet"/>
-		<link href="http://s1.56img.com/style/i/v3/css/global/global_v.2.css" type="text/css" rel="stylesheet"/>
+		<!-- <link href="http://s1.56img.com/style/base/v4/css/base_v.1.css" type="text/css" rel="stylesheet"/> -->
+		<!-- <link href="http://s1.56img.com/style/i/v3/css/global/global_v.2.css" type="text/css" rel="stylesheet"/> -->
 		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.2.css" type="text/css" rel="stylesheet"/>
 		<link href="http://s1.56img.com/style/space/v3/css/space_v.1.css" type="text/css" rel="stylesheet"/>
-		<link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+		<!-- <link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/> -->
 		<link href="<?=WEB_ROOT?>plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
 
 		<link href="css/reset.css" type="text/css" rel="stylesheet"/>
@@ -126,6 +126,8 @@
 					$('#container').masonry('destroy');
 		    		SquareOfSpace.videoList.masonrySet();
 		    		SquareOfSpace.videoList.append_video_list(AcolScrollPage.now_page);
+
+		    		$("#gotop").click();
 				});
 
 				//钉子
@@ -133,6 +135,11 @@
 			    	containerSelector: "body"
 				});
 			});
+
+			
+			setTimeout(function(){
+				SquareOfSpace.videoList.masonrySet();	//预防失败
+			}, 5000);
 			
 
 			(function(){ 
