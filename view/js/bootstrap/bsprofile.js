@@ -133,7 +133,7 @@ XQQ.bsProfile = (function($){
 			
 			var r_tqq 	= $('#r_tqq').val(),
 				r_weibo = $('#r_weibo').val(),
-				r_weibo = $('#r_xiami').val();
+				r_xiami = $('#r_xiami').val();
 			/*if( r_tqq == '微博主键代码，没有可不填' ){
 				r_tqq = '';
 			}
