@@ -53,6 +53,8 @@ class Index_ctl extends Controller{
 		$data['user'] = $global['user'];
 		$data['is_mine'] = $global['is_mine'];
 
+		$data['nickname'] = empty($data['userInfo']['nickname']) ? $data['userInfo']['username'] : $data['userInfo']['nickname'];
+
 		//导入模板
 		if( $data['userInfo']['version'] == 1 ){
 			$this->load->tpl('index/bootstrap',$data ,'index');

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-	<title>维尼的小气球 - acol</title>
+	<title><?=$data['nickname']?> - 维尼的小气球</title>
 	<meta name="baidu-site-verification" content="UY0mGbX6Ub" />
 	<meta name="baidu-site-verification" content="c341d66811bc0367cce65fc557d035d0"/>
 	<meta property="wb:webmaster" content="c2efef57b2b53a48" />
@@ -82,7 +82,7 @@
 							{$content}
 						</div>
 						<div class="comment_div">
-							<span class="author"> {$username} 于 {$time} 发表</span>
+							<span class="author"> {echo $data['nickname'];} 于 {$time} 发表</span>
 							<span class="comment"><a href="#" alt="{$id}">我有想法({$cmt_num})</a></span>
 						</div>
 					</div>
@@ -226,6 +226,7 @@
 		var WEB_ROOT = '{echo WEB_ROOT;}',
 			STATIC_ROOT = '{echo STATIC_ROOT;}',
 			IS_MINE = {echo $data["is_mine"];},
+			NICK_NAME = '{echo $data["nickname"];}',
 			USER = '{echo $data["user"];}';
 		SyntaxHighlighter.config.clipboardSwf = WEB_ROOT +'plugin/SyntaxHighlighter/Scripts/clipboard.swf';
 		SyntaxHighlighter.all();

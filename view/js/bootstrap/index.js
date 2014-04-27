@@ -24,10 +24,13 @@ var $_BsIndex = {
 				var password = $('#password').val();
 				//验证
 				var regExp = /[a-zA-Z0-9]+/ig;
-				if(regExp.test(username))
+				// if(regExp.test(username))
+				if( username != '' )
 				{
 					$.post(WEB_ROOT + 'api/index/login.php' , {'action':'login' , 'username':username , 'password':password} , function(back){
-						if(back == 'success')
+						back = eval('('+ back +')');
+
+						if(back.status == 'success')
 						{
 							var welcome_html = '<h1 style="margin:20px 40px;"> '+ username +'   欢迎回来！  </h1>';
 							$_BsPop.set({
@@ -38,7 +41,7 @@ var $_BsIndex = {
 							});
 
 							$('#add_something').show();
-							$('#profile_ul').html('<li class="active"><a href="http://xiaoqiqiu.com/'+ username +'">当前登录：'+ username +'</a></li><li><a id="edit_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">修改资料</a></li><li><a id="logout_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">退出</a></li>');
+							$('#profile_ul').html('<li class="active"><a href="http://xiaoqiqiu.com/'+ back.username +'">当前登录：'+ username +'</a></li><li><a id="edit_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">修改资料</a></li><li><a id="logout_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">退出</a></li>');
 						}else{
 							SpaceUI.alert('用户名或密码错误..亲！');
 							$('#username').val('');
@@ -87,7 +90,7 @@ var $_BsIndex = {
 		content_html.push('<div class="acticle-content">'+ data.content +'</div>');
 		content_html.push('<div class="comment_div">');
 		content_html.push('	<span class="comment_div">');
-		content_html.push('		<span class="author"> '+ data.username +' 于 '+ data.time +' 发表</span>');
+		content_html.push('		<span class="author"> '+ NICK_NAME +' 于 '+ data.time +' 发表</span>');
 		content_html.push('		<span class="comment"><a href="javascript:;" alt="'+ data.id +'">我有想法('+ data.cmt_num +')</a></span>');
 		content_html.push('	</span>');
 		content_html.push('</div></div>');
@@ -109,14 +112,19 @@ var $_BsIndex = {
 		}else{
 			gopage = +gopage + 1;
 		}
-		$_Helper.bs_top_loading('努力加载图文中...');
 
+		if( _that._last_page != 0 && _that._last_page <= gopage ){
+			return false;
+		}
+
+		$_Helper.bs_top_loading('努力加载图文中...');
 		$.getJSON(this._request_url , {'user':USER , 'action':this._request_action , 'page':gopage} , function(callback){
 			if(callback){
 				var content_html 	= '',
 					last_page 		= callback['last_page'],
 					callback 		= callback['data'];
 
+				_that._last_page = last_page;
 				//$('#page_btn').attr('last_page' , last_page);
 
 				for(var i in callback){

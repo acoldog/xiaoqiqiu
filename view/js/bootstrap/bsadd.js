@@ -16,13 +16,22 @@
 		upload_pop : null,
 		rad : 0,
 		ini : function(content_data , aid){
-
-			if($('#file_upload').length > 0)return;		//	不能重复生成
-			$_Helper.bs_top_loading();
 			var _that = this,
 				content_data = content_data || '',
 				aid = aid || 0;
 			if(typeof content_data != 'string')content_data = '';
+			content_data = content_data.replace('\"', '"');
+			content_data = content_data.replace('\/', '/');
+
+			if($('#file_upload').length > 0){
+				if( typeof $_BsAdd.acol_editor.document != 'undefined' ){
+					this.insert_editor(content_data);
+				}
+				return;		//	不能重复生成
+			}
+
+			$_Helper.bs_top_loading();
+
 			this.rad = Math.random();
 			var add_html = '<input type="file" name="file_upload" id="file_upload" style="display:none;"/>\
 				<div id="add_editor_'+ this.rad +'">'+ content_data +'</div>';
@@ -81,7 +90,7 @@
 				                		var data = eval('('+ data +')');
 					                    $_BsAdd.upload_photo_src[data.img_name] = data.compress_src;
 					                    var img_html = '<img class="comp_img" title="点击查看原图" src="'+ data.compress_src +'"/>';
-					                    $_BsAdd.insert_editor(img_html);
+					                    $_BsAdd.append_editor(img_html);
 				                	}catch(e){
 				                		SpaceUI.alert('上传失败，请检查图片格式');
 				                	}
@@ -96,9 +105,14 @@
 			
 		},
 		//	写入编辑器
-		insert_editor : function(html){
+		append_editor : function(html){
 			this.acol_editor.document.getBody().appendHtml(html);
 		},
+		//	写入编辑器
+		insert_editor : function(html){
+			this.acol_editor.document.getBody().setHtml(html);
+		},
+
 		//	取编辑器内容	
 		get_editor_content : function(){
 			if( SpaceUI.Helper.is_empty_obj($_BsAdd.acol_editor) )return;
@@ -126,7 +140,7 @@
 									SpaceUI.alert('不能放置多个视频');
 									return false;
 								}
-								_that.insert_editor(f_html);
+								_that.append_editor(f_html);
 							}
 						}
 

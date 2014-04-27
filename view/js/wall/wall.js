@@ -49,6 +49,10 @@
 						p_html.push('<a class="del_img" href="javascript:;" onclick="WallObj.del_img('+ data[i].id +')">x</a>');
 					}
 					p_html.push('<img lazyload="1" style="height:'+ rand_h +'px;" class="comp_img" src="'+ STATIC_ROOT +'default.jpg" data="'+ data[i].src +'"/>');
+
+					if( SpaceUI.Helper.trim(data[i].introduce) != '' ){
+						p_html.push('<p>'+ data[i].introduce +'</p>');
+					}
 					p_html.push('</div>');
 				}
 				p_html = p_html.join('');

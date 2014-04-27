@@ -199,6 +199,15 @@ XQQ.bsProfile = (function($){
 			r_html.push('  <label class="control-label"></label>');
 			r_html.push('  <div class="controls">');
 			r_html.push('    <div class="input-append">');
+			r_html.push('      <input size="60" id="r_nickname" class="span2" placeholder="添加昵称后可以使用昵称进行登录" type="text">');
+			r_html.push('      <span class="add-on hide">^_^</span>');
+			r_html.push('    </div>');
+			r_html.push('  </div>');
+			r_html.push('</div>');
+			r_html.push('<div class="control-group">');
+			r_html.push('  <label class="control-label"></label>');
+			r_html.push('  <div class="controls">');
+			r_html.push('    <div class="input-append">');
 			r_html.push('      <input size="60" id="r_pass" class="span2" placeholder="请输入新密码" type="password">');
 			r_html.push('      <span class="add-on hide">^_^</span>');
 			r_html.push('    </div>');
@@ -444,6 +453,9 @@ XQQ.bsProfile = (function($){
 		},
 
 		//######验证方法
+		check_r_nickname : function(t){
+			return SpaceUI.Helper.str_len(t) < 50;
+		},
 		//验证用户名
 		check_r_username : function(t){
 			if(t == '请输入用户名,用户名只支持字母和数字')return false;

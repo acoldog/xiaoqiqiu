@@ -5,6 +5,8 @@
 		private $conn;
 		public $login_success = 'failed';
 		public $logout_success = 'failed';
+		private $username = '';
+		private $nickname = '';
 
 		public function __construct()
 		{
@@ -24,13 +26,36 @@
 		public function check_db($username , $password)
 		{
 			$sql = "SELECT * FROM ab_user WHERE status=1 AND username='". $username ."' AND password='". $password."'";
+			$res = $this->conn->getOne($sql);
 			//验证通过
-			if( $this->conn->getOne($sql)!='' )
+			if( $res != '' )
 			{
+				$this->username = $res['username'];
+				$this->nickname = $res['nickname'];
+
 				//	更新登陆时间
 				$this->conn->update(array('login_time'=>time() , 'login_ip'=>get_client_ip()) , array('username'=>$username) , 'ab_user');
 				return true;
+			}else{
+				//用户名验证不通过就验证昵称
+				$sql = "SELECT * FROM ab_user WHERE status=1 AND nickname='". $username ."' AND password='". $password."'";
+				$res = $this->conn->getOne($sql);
+				if( $res != '' )
+				{
+					$this->username = $res['username'];
+					$this->nickname = $res['nickname'];
+
+					//	更新登陆时间
+					$this->conn->update(array('login_time'=>time() , 'login_ip'=>get_client_ip()) , array('username'=>$username) , 'ab_user');
+					return true;
+				}
 			}
+		}
+
+		//取登录成功用户名
+		public function GetUserName()
+		{
+			return $this->username;
 		}
 		
 		//登陆操作
@@ -40,7 +65,8 @@
 			{
 				if($this->check_db($username , sha1($password)))
 				{
-					$_SESSION['username'] = $username;
+					$_SESSION['username'] = $this->username;
+					$_SESSION['nickname'] = $this->nickname;
 					$_SESSION['login_time'] = time();
 					$this->login_success = 'success';
 				}

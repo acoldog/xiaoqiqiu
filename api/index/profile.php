@@ -83,6 +83,9 @@
 
 		$data_arr = array();
 		$db = new Db();
+		if(!empty( $_REQUEST['r_nickname'] )){
+			$data_arr['nickname'] = $_REQUEST['r_nickname'];
+		}
 		if(!empty( $_REQUEST['r_pass'] )){
 			$data_arr['password'] = sha1($_REQUEST['r_pass']);
 		}

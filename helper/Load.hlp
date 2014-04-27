@@ -69,7 +69,7 @@
 			//	如果文件夹不存在则逐级创建
 			$file_path_part = ROOT.'/cache/';
 			foreach($filename_arr as $path_val){
-				if(!file_exists($file_path_part . $path_val)){echo $file_path_part . $path_val;
+				if(!file_exists($file_path_part . $path_val)){//echo $file_path_part . $path_val;
 					mkdir($file_path_part . $path_val,0700);            //若不存在，则创建目录并赋予最高权限
 			    }
 			    $file_path_part .= '/'. $path_val;

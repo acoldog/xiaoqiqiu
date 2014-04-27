@@ -48,21 +48,32 @@
 			}
 		}
 		//	保存图片
-		public function SavePhoto($photo){
+		public function SavePhoto($photo, $op){
 			$time = time();
 			$ip = get_client_ip();
+			$desc = '';
 			
 			$photoData = str_replace("'", "\"", $photo);
 			$photoData = json_decode($photoData , true);
 			if(!empty($photoData)){
-				$diary_id = mysql_insert_id();
+				if( empty($op['diary_id']) ){
+					$diary_id = mysql_insert_id();
+				}else{
+					$diary_id = $op['diary_id'];
+				}
+				if( !empty($op['desc']) ){
+					$desc = $op['desc'];
+				}
+
+				
 				foreach ($photoData as $key => $value) {
 					//判断图片格式
 					if( !preg_match('/[\.jpg|\.gif|\.png|\.bmp]/' , $value) ){
 						continue;
 					}
 
-					$insert_arr = array('diary_id'=>$diary_id ,'time'=>$time, 'ip'=>$ip,'username'=>$_SESSION['username'],'src'=>$value);
+					$insert_arr = array('diary_id'=>$diary_id ,'time'=>$time, 'ip'=>$ip,
+					 'username'=>$_SESSION['username'],'src'=>$value, 'introduce'=>$desc);
 					$result = $this->db->insert($insert_arr , 'ab_photo');
 				}
 			}

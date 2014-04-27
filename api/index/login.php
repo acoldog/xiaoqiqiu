@@ -12,7 +12,10 @@
 
 		$login = new PassPort();
 		$login->login($username , $password);
-		echo $login->login_success;
+		echo json_encode(array(
+			'status'	=>$login->login_success,
+			'username'	=>$login->GetUserName()
+		));
 	}
 	//	退出
 	if($_POST['action'] == 'logout')

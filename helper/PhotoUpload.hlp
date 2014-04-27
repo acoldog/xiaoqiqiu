@@ -11,6 +11,7 @@
 		public $success_num = 0;
 		public $photo_data;
 		public $check_type;
+		public $max_width = 1024;	//	原图限制1024*768最大
 
 		public function __construct($photo_data , $check_type=true)
 		{
@@ -47,7 +48,7 @@
 							//	原图限制1280*800最大
 							//	git动画图不压缩
 							if(!$this->IsAnimatedGif($tmp_adr_name)){
-								$this->generate_thumb($tmp_adr_name , $path , $name ,'1280','0');	//	高度不裁剪
+								$this->generate_thumb($tmp_adr_name , $path , $name , $this->max_width, '0');	//	高度不裁剪
 								@unlink($tmp_adr_name);
 							}else{
 								@rename($tmp_adr_name , $adr_name);
@@ -129,7 +130,7 @@
 									//将存在临时目录里上传文件的移到指定目录下
 									$result = move_uploaded_file($this->photo_data['tmp_name'][$i],$adr_name);
 									//	原图限制1280*800最大
-									$this->generate_thumb($tmp_adr_name , $path , $name ,'1280','0');
+									$this->generate_thumb($tmp_adr_name , $path , $name , $this->max_width, '0');
 									@unlink($tmp_adr_name);
 									//	上传保存成功
 									if($result)
@@ -226,6 +227,7 @@
 					break;  
 				}
 			}
+			
 			return $type;
 		}
 
@@ -235,7 +237,7 @@
 		*
 		*/
 
-		private function generate_thumb($source_img , $target_dir , $target_name , $new_width , $new_height='0' , $if_cut='0')
+		public function generate_thumb($source_img , $target_dir , $target_name , $new_width , $new_height='0' , $if_cut='0')
         {
                 //图片类型
                 $img_type = strtolower(substr(strrchr($source_img,"."),1));
