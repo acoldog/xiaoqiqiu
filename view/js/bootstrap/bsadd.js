@@ -56,7 +56,7 @@
 							toolbar :
 							[
 								['Flash'],
-								['Font', 'FontSize'],
+								['Link', 'Font', 'FontSize'],
 								['Bold', 'Italic', 'Underline' , 'Strike', 'TextColor','BGColor' , '-', 'Outdent' , 'Indent' , 'JustifyLeft','JustifyCenter','JustifyRight', '-', 'RemoveFormat'],
 								['Smiley','insertcode']
 							],
