@@ -54,7 +54,7 @@
 				        	<li class="active"><a id="login_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">登录</a></li>
 				        	<li><a id="reg_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">注册</a></li>
 				      	{/else}
-							<li class="active"><a href="http://xiaoqiqiu.com/{echo $_SESSION['username'];}">当前登录：<?=$_SESSION['username']?></a></li>
+							<li class="active"><a href="http://xiaoqiqiu.com/{echo $_SESSION['username'];}">当前登录：<?=$data['now_user']?></a></li>
 				        	<li><a id="edit_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">修改资料</a></li>
 				        	<li><a id="logout_btn" data-toggle="modal" data-target="#myModal" href="#" onclick="return false;">退出</a></li>
 
