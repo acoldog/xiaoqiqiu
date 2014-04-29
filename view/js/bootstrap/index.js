@@ -113,9 +113,9 @@ var $_BsIndex = {
 			gopage = +gopage + 1;
 		}
 
-		if( _that._last_page != 0 && _that._last_page <= gopage ){
+		/*if( _that._last_page != 0 && _that._last_page <= gopage ){
 			return false;
-		}
+		}*/
 
 		$_Helper.bs_top_loading('努力加载图文中...');
 		$.getJSON(this._request_url , {'user':USER , 'action':this._request_action , 'page':gopage} , function(callback){

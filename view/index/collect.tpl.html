@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>站外图片采集工具 - acol</title>
+    <meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+    <meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+    <link rel="shortcut icon" href="../view/favicon.ico" type="image/x-icon" />
+    <!--<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/bootstrap/main.css">
+    
+  </head>
+  <body style="height: 2000px;">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div id="top_menu" class="navbar navbar-inverse" role="navigation">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="<?=WEB_ROOT . $global['user']?>">Home</a>
+              </div>
+              <div class="navbar-collapse collapse">
+
+                {php include('view/index/menu.tpl.html');}
+
+                <ul id="profile_ul" class="nav navbar-nav navbar-right">
+                {if(!isset($_SESSION['username']))}
+                    <li class="active"><a href="<?=WEB_ROOT . $global['user']?>">登录</a></li>
+                    <li><a href="<?=WEB_ROOT . $global['user']?>">注册</a></li>
+                 {/else}
+              <li class="active"><a href="<?=WEB_ROOT . $_SESSION['username']?>">当前登录：{echo $_SESSION['username'];}</a></li>
+                 {/if}
+                </ul>
+              </div><!--/.nav-collapse -->
+          </div>
+
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="col-md-7">
+          <div class="hero-unit">
+            <h1>
+              Welcome!
+            </h1>
+            <p>
+              这是一个浏览器插件，下面的按钮收藏后，你可以在浏览其它网页时，点击收藏的按钮来快速将图片保存到自己的小站里，收藏后的图片会在自己小站的图片墙展示。
+            </p>
+            <p>
+              采集插件工作时要求自己的小站是已登录状态，如有问题，请往<a href="http://xiaoqiqiu.com/notice" target="_blank">小秘书</a>留言
+            </p>
+            <p>
+              或者给我发邮件 acolcat@qq.com
+            </p>
+            <p>
+              <a class="btn btn-primary btn-large"  href="javascript:void function(b,c){ if(b.xqq_collect){b.xqq_collect.showGrubTool() }else{b.limit_w=300;b.limit_h=200;var a=document.createElement('script');a.setAttribute('charset','utf-8');a.id='xqq_grub_tool';a.src='http://static.xiaoqiqiu.com/js/bootstrap/collect-images.js?'+Math.random();c.body.appendChild(a) }}(window,document);" id="btn_grub" onclick="alert('请右键点击加入收藏或将本按钮拖动至收藏栏,保存采集工具');return false;" title="小气球 － 站外图片采集工具">小气球 － 站外图片采集工具(图片最小限制：宽300*高200)</a>
+            </p>
+
+            <p>
+              <a class="btn btn-primary btn-large"  href="javascript:void function(b,c){ if(b.xqq_collect){b.xqq_collect.showGrubTool() }else{b.limit_w=100;b.limit_h=80;var a=document.createElement('script');a.setAttribute('charset','utf-8');a.id='xqq_grub_tool';a.src='http://static.xiaoqiqiu.com/js/bootstrap/collect-images.js?'+Math.random();c.body.appendChild(a) }}(window,document);" id="btn_grub" onclick="alert('请右键点击加入收藏或将本按钮拖动至收藏栏,保存采集工具');return false;" title="小气球 － 站外图片采集工具">小气球 － 站外图片采集工具(图片最小限制：宽100*高80)</a>
+            </p>
+
+          </div>      
+      </div>
+
+    </div>
+
+  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/js/bootstrap.js"></script>-->
+  <script src="http://cdn.bootcss.com/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</html>
