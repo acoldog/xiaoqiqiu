@@ -146,7 +146,9 @@ var $_Index = {
 			if(regExp.test(username))
 			{
 				$.post(WEB_ROOT + 'api/index/login.php' , {'action':'login' , 'username':username , 'password':password} , function(back){
-					if(back == 'success')
+					back = eval('('+ back +')');
+
+					if(back.status == 'success')
 					{
 						$_Pop.close_flash(now_Pop_obj);
 						var welcome_html = '<h1 style="margin:20px 40px;"> '+ username +'   欢迎回来！  </h1>';
