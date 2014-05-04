@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>维尼的小气球 - acol</title>
+    <meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+    <meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+    <link rel="shortcut icon" href="weini.ico" type="image/x-icon" />
+    <link href="http://s1.56img.com/style/i/v3/css/global/global.css" type="text/css" rel="stylesheet"/>
+    <link href="http://xiaoqiqiu.com/view/css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="http://xiaoqiqiu.com/view/css/pop.css" type="text/css" rel="stylesheet"/>
+    <link href="http://s1.56img.com/style/include/module/v1/combo/css/module_v.1.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="http://xiaoqiqiu.com/view/js/jquery.min.js" ></script>
+    <script type="text/javascript" src="http://xiaoqiqiu.com/view/js/helper.js"></script>
+    <script type="text/javascript" src="http://xiaoqiqiu.com/view/js/space_ui_v2.js"></script>
+    <script type="text/javascript" src="http://xiaoqiqiu.com/view/js/pop.js"></script>
+    <script type="text/javascript">
+      //  初始化
+      var WEB_ROOT = 'http://xiaoqiqiu.com/',
+        IS_MINE = 1,
+        USER = 'acol';
+    </script>
+    <link href="http://xiaoqiqiu.com/plugin/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://xiaoqiqiu.com/plugin/uploadify/jquery.uploadify-3.1.min.js"></script>
+    <style type="text/css">
+      .marquee div{float:left;}
+    </style>
+  </head>
+  <body style="height: 2000px;">
+    <div id="acol" style="width:50px;height:50px;">acol</div>
+    
+
+    <!-- <div id="marquee" class="marquee" style="margin-left:300px;height:65px;width:100px;position:absolute;overflow:hidden;">
+      <div class="marquee-move" style="overflow: hidden;zoom: 1;width: 32766px;position:absolute">
+        <div class="marquee-cover" style="overflow: hidden;zoom: 1;float: left;">
+          <div>维尼的小气球1</div>
+          <div>维尼的小气球2</div>
+          <div>维尼的小气球3</div>
+          <div>维尼的小气球4</div>
+          <div>维尼的小气球5</div>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div style="text-align: center;position:fixed;top:0px;background: #000;width: 100%;">
+      <a href="javascript:;" onclick="return false;" style="position:fixed;left:10px;top: 300px;font-size:40px;font-weight:bold;color:#fff;">《 </a>
+      <img src="http://xiaoqiqiu.com/upload/img/20130218220628_.JPG" />    
+      <a href="javascript:;" onclick="return false;" style="position:fixed;right:10px;top: 300px;font-size:40px;font-weight:bold;color:#fff;"> 》 </a>
+    </div> -->
+    <!-- <div style="float:left;width:80px;">
+      <ul>
+        <li>用户名：</li>
+        <li>密码：</li>
+        <li>简介：</li>
+        <li>头像：</li>
+        <li>腾讯微博外接代码：</li>
+        <li>新浪微博外接代码：</li>
+      </ul>  
+    </div>
+    <div style="margi6+n-left:80px;">
+      <ul>
+        <li><input type="text" /></li>
+        <li><input type="password" /></li>
+        <li><input type="text" /></li>
+        <li><input type="file" /></li>
+        <li><textarea></textarea></li>
+        <li><textarea></textarea></li>
+      </ul>  
+    </div> -->
+  </body>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+      $('#acol').mousedown(function(e){
+          SpaceUI.bind_move($(this) , e , {type:'shadow',limit_y:'fixed' , limit_x:{min:0 , max:600}});
+      });
+
+
+    });
+
+  </script>
+
+  <script type="text/javascript" src="http://xiaoqiqiu.com/view/js/profile.js"></script>
+  <script type="text/javascript" src="http://xiaoqiqiu.com/view/js/curtain.js"></script>
+  <script type="text/javascript" src="http://xiaoqiqiu.com/view/js/marquee.js"></script>
+</html>

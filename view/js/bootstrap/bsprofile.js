@@ -75,6 +75,7 @@ XQQ.bsProfile = (function($){
 			r_html.push('    <input id="r_face" name="r_face" type="file" style="display:none;" />');
 			r_html.push('    <p class="help-block"><img id="r_face_src" src="" style="width: 150px;height: 150px;"></p>');
 			r_html.push('	 <p>说明：新浪微博和腾讯微博为选填，获取外接代码地址为：<a href="http://open.weibo.com/widgets?cat=wb" target="_blank">http://open.weibo.com/widgets?cat=wb</a> 和 <a href="http://dev.t.qq.com/websites/show/" target="_blank">http://dev.t.qq.com/websites/show/</a></p>');
+			r_html.push('  	 <p>虾米播放器代码获取地址：<a href="http://www.xiami.com/widget/imulti?sid=2110611,1769658634" target="_blank">http://www.xiami.com/widget/imulti?sid=2110611,1769658634</a></p>');
 			r_html.push('  </div>');
 			r_html.push('</div>');
 
@@ -256,6 +257,7 @@ XQQ.bsProfile = (function($){
 			r_html.push('    <input size="60" id="r_face" name="r_face" type="file" style="display:none;" />');
 			r_html.push('    <p class="help-block"><img id="r_face_src" src="" style="width: 150px;height: 150px;"></p>');
 			r_html.push('	 <p>说明：新浪微博和腾讯微博为选填，获取外接代码地址为：<a href="http://open.weibo.com/widgets?cat=wb" target="_blank">http://open.weibo.com/widgets?cat=wb</a> 和 <a href="http://dev.t.qq.com/websites/show/" target="_blank">http://dev.t.qq.com/websites/show/</a></p>');
+			r_html.push('  	 <p>虾米播放器代码获取地址：<a href="http://www.xiami.com/widget/imulti?sid=2110611,1769658634" target="_blank">http://www.xiami.com/widget/imulti?sid=2110611,1769658634</a></p>');
 			r_html.push('  </div>');
 			r_html.push('</div>');
 
@@ -272,6 +274,7 @@ XQQ.bsProfile = (function($){
 			//登陆框弹出层	
 			$_BsPop.set({
 				btn1 		: 'Close',
+				btn2 		: '刷新',
 				title 		: '修改个人资料~想改啥就填啥',
 				content 	: r_html
 			});

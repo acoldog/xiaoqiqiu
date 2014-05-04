@@ -46,10 +46,11 @@ body {width:100%;height:100%;margin:0px;overflow-y:scroll;background:#E3E3E3;/*b
 	_background-image: none;
 	background-repeat: no-repeat;}
 .row .right_shadow{
-	position: absolute;
-	right: -429px;
+	position: relative;
+	display: none;
+	left: 410px;
 	top: 0;
-	width: 65%;
+	width: 210px;
 	height: 12px;
 	background-image: url(../../footer_shadow.png);
 	background-position: -228px -78px;

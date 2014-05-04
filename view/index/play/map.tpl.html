@@ -5,6 +5,7 @@
     <title>地图应用 - acol</title>
     <meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
     <meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <link rel="shortcut icon" href="../view/favicon.ico" type="image/x-icon" />
     <!--<link rel="stylesheet" href="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
@@ -15,23 +16,16 @@
         <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="http://static.xiaoqiqiu.com/css/bootstrap/main.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nSTHNnB8KE0B66dFOOkM1FbY"></script>
     
-    <script type="text/javascript">  
-      function initialize() {  
-        var mp = new BMap.Map('map');  
-        mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);  
-      }  
-         
-      function loadScript() {  
-        var script = document.createElement("script");  
-        script.src = "http://api.map.baidu.com/api?v=1.5&ak=nSTHNnB8KE0B66dFOOkM1FbY&callback=initialize";//此为v1.5版本的引用方式
-        document.body.appendChild(script);  
-      }  
-         
-      window.onload = loadScript;
-    </script>  
+    <style type="text/css">  
+      html{height:100%}    
+      body{height:100%;margin:0px;padding:0px}    
+      #map{height:500px;width:1000px;}    
+    </style>  
+    
   </head>
-  <body style="height: 2000px;">
+  <body>
     <div class="row">
       <div class="col-md-12">
 
@@ -59,7 +53,7 @@
 
     <div class="content">
       <div class="col-md-7">
-          <div id="map" style="width:800px;height:420px"></div>  
+          <div id="map"></div>  
       </div>
 
     </div>
@@ -71,3 +65,24 @@
     <!--<script src="http://xiaoqiqiu.com/plugin/bootstrap-3.1.1/js/bootstrap.js"></script>-->
   <script src="http://cdn.bootcss.com/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </html>
+<script type="text/javascript">  
+    var map = new BMap.Map('map');  
+    //map.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+    map.centerAndZoom("广州",11); 
+    map.addControl(new BMap.NavigationControl());    
+    map.addControl(new BMap.ScaleControl());    
+    map.addControl(new BMap.OverviewMapControl());    
+    map.addControl(new BMap.MapTypeControl());    
+
+    var transit = new BMap.TransitRoute(map, {    
+     renderOptions: {map: map, panel: "results"}    
+    });    
+    transit.search("杨桃公园", "体育西路");
+
+    // var local = new BMap.LocalSearch(map, {
+    //   renderOptions:{map: map}
+    // });
+    // local.search("景点");
+    
+
+</script>  
