@@ -97,7 +97,7 @@ XQQ.cmt = (function($){
 				cmt_html.push('			<p><input onclick="XQQ.cmt.get_cmt_list(null , '+ aid +');" type="button" value="刷新评论"> <span class="float-right">引用<em id="quote_cmt"></em>的评论<a type="button" class="acticle-close" onclick="XQQ.cmt.cancel_reply();" title="取消对他的评论的引用">×</a></span> </p>');
 				cmt_html.push('		<hr />');
 
-				cmt_html.push('			昵称：<input id="cmt_name_'+ aid +'" class="span2" placeholder="您的昵称？必填" type="text" />');
+				cmt_html.push('			昵称：<input id="cmt_name_'+ aid +'" class="span2" placeholder="您的昵称？必填" type="text" '+ (NICK_NAME != '' ? ' value="'+ NICK_NAME +'" ' : '') +' />');
 				cmt_html.push('			网址：<input size="63" id="cmt_link_'+ aid +'" class="span2" placeholder="您的小站网址？可以在评论里外链，可不填" type="text" />');
 
 				cmt_html.push('		<input type="hidden" id="reply_cmt" value="0" />');

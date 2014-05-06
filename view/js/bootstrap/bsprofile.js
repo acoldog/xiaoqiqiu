@@ -274,7 +274,8 @@ XQQ.bsProfile = (function($){
 			//登陆框弹出层	
 			$_BsPop.set({
 				btn1 		: 'Close',
-				btn2 		: '刷新',
+				btn2 		: '刷新修改',
+				btn2_click  : function(){window.location.reload();},
 				title 		: '修改个人资料~想改啥就填啥',
 				content 	: r_html
 			});

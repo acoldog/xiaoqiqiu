@@ -226,7 +226,7 @@
 		var WEB_ROOT = '{echo WEB_ROOT;}',
 			STATIC_ROOT = '{echo STATIC_ROOT;}',
 			IS_MINE = {echo $data["is_mine"];},
-			NICK_NAME = '{echo $data["nickname"];}',
+			NICK_NAME = '{echo $_SESSION['nickname'];}',
 			USER = '{echo $data["user"];}';
 		SyntaxHighlighter.config.clipboardSwf = WEB_ROOT +'plugin/SyntaxHighlighter/Scripts/clipboard.swf';
 		SyntaxHighlighter.all();

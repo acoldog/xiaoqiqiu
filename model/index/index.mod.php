@@ -56,10 +56,11 @@ class Index_mod extends Model{
 
 		//查看它们有没有父id，如果没有则它自己就是一栋楼
 		foreach ($data as $value) {
+			$this_build = array();
+
 			if($value['pid'] == 0){
-				$build[] = $value;
+				$this_build = self::getBuild($value['bid'], $this_build);
 			}else{
-				$this_build = array();
 				//取楼顶
 				$sql = 'SELECT * FROM  `ab_comment_new` WHERE id='. $value['pid'];
 				$res = $this->db->getOne($sql, 1);
@@ -71,10 +72,8 @@ class Index_mod extends Model{
 				
 				//取同楼层其它层
 				$this_build = self::getBuild($value['bid'], $this_build);
-
-				$build[] = $this_build;
 			}
-
+			$build[] = $this_build;
 		}
 		//按最新回复时间重排序，取每栋楼最底层来排序
 		$cmt_time = array();
