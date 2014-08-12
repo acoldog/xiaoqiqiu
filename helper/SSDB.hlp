@@ -79,6 +79,8 @@ class SSDB
 		if(function_exists('stream_set_chunk_size')){
 			@stream_set_chunk_size($this->sock, 1024 * 1024);
 		}
+
+		$this->easy();
 	}
 
 	/**
@@ -501,6 +503,16 @@ class SSDB
 	}
 
 	function qpush($name, $item){
+		$args = func_get_args();
+		return $this->__call(__FUNCTION__, $args);
+	}
+	
+	function qpush_front($name, $item){
+		$args = func_get_args();
+		return $this->__call(__FUNCTION__, $args);
+	}
+
+	function qpop_back($name, $item){
 		$args = func_get_args();
 		return $this->__call(__FUNCTION__, $args);
 	}

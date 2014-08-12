@@ -29,6 +29,12 @@
 
   </head>
   <body>
+  	<div id="visNums" style="position:absolute;font-size:10px;">
+  		<p>
+  			<em style="font-size:20px;">{echo $data["visNums"];}</em>次访问
+  		</p>
+  	</div>
+
   	<div id="loading_bar" class="progress active progress-striped progress-success hide">
 		<div class="progress-bar" style="width: 10%;">加载中</div>
 	</div>
@@ -184,6 +190,18 @@
 					{echo $data['userInfo']['xiami'];}
 				{/if}
 				
+				<div id="visitors" class="menu radius">
+					<h4>最近访客</h4>
+					<div class="slide_item">
+				  		<ul>
+				  			{loop $visitors}
+					  		<li>
+					  			{$visitors}
+					  		</li>
+				  			{/loop}
+				  		</ul>
+			  		</div>
+			  	</div>
 
 			</div>
 		</div>
