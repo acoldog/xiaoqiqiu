@@ -134,6 +134,7 @@
 				foreach($request_arr as $key=>$val){
 					//	controller唯一，找到了就不再寻找
 					if($has_controller === false){
+						
 						//元素是文件夹名
 						if(is_dir(ROOT . '/controller/' . $ctl_path . $val)){
 							$ctl_path .= $val.'/';

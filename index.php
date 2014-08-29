@@ -16,9 +16,9 @@
 		new Url();
 	}catch(ErrorPageException $e){
 		include_once(ROOT .'/error.php');
-		//var_dump( $e->getMessage() );
+		var_dump( $e->getMessage() );
 	}catch(Exception $e){
-		Header('Location:http://xiaoqiqiu.com');
-		//var_dump( $e->getMessage() );
+		//Header('Location:http://xiaoqiqiu.com');
+		var_dump( $e->getMessage() );
 	}
 	

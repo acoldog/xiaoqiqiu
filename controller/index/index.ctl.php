@@ -56,6 +56,9 @@ class Index_ctl extends Controller{
 		$data['nickname'] = empty($data['userInfo']['nickname']) ? $data['userInfo']['username'] : $data['userInfo']['nickname'];
 		$data['now_user'] = empty($_SESSION['nickname']) ? $_SESSION['username'] : $_SESSION['nickname'];
 
+		//访问数统计
+		list($data['visNums'], $data['visitors']) = Visit::setVisitData($data['user']);
+
 		//导入模板
 		if( $data['userInfo']['version'] == 1 ){
 			$this->load->tpl('index/bootstrap',$data ,'index');

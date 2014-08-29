@@ -14,6 +14,9 @@
 			global $global;
 			//导入模板
 			$data['user'] = $global['user'];
+
+			Visit::setVisitData($data['user']);
+
 			$this->load->tpl('index/video' , $data);
 		}
 		public function test(){

@@ -62,6 +62,9 @@ $(document).ready(function(){
 	      containerSelector: "body"
 	});*/
 
+	// $("#visNums").pin({
+	//       containerSelector: "body"
+	// });
 
 	// 返回顶部	
 	$("#gotop").click(function(){

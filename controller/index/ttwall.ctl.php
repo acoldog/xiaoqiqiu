@@ -14,6 +14,9 @@
 			//导入模板
 			$load = new Load();
 			$data['user'] = $global['user'];
+
+			Visit::setVisitData($data['user']);
+
 			$this->load->tpl('index/ttwall' , $data);
 		}
 

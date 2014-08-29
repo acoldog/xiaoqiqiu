@@ -1,0 +1,48 @@
+<?php
+
+class Visit{
+    const VISITOR_LIMIT = 100;  //只存最近N个访客数据
+
+    /**
+     *  $user 当前访问的空间
+     */
+    static public function setVisitData($user)
+    {
+        if( empty($user) )return array(0, array());
+        $nickname = empty($_SESSION['nickname']) ? $_SESSION['username'] : $_SESSION['nickname'];
+
+        $data = array();
+        $cache_key = 'xqq@vis-'. $user;
+        $cache_key2 = 'xqq@visl-'. $user;
+
+        $ssdb = new SSDB('127.0.0.1', 8888);
+        $ssdb->incr($cache_key, 1);
+        $data[] = $ssdb->get($cache_key);
+
+        //保存最近10个访客数据
+        if( !empty($nickname) ){
+            $visitor = $nickname;
+        }else{
+            $ip = get_client_ip();
+            $visitor = Http::Get('geo.api.56.com', 'geoinfo?ip='. $ip);
+        }
+        
+
+        $first_vis = $ssdb->qfront($cache_key2);
+        $first_vis = explode('，', $first_vis);
+
+
+        if( $first_vis[0] != $visitor ){
+            $visitor .= '，'. date('Y-m-d H:i:s') .'来过';
+            $qsize = $ssdb->qpush_front($cache_key2, $visitor);
+            if( $qsize > self::VISITOR_LIMIT ){
+                $ssdb->qpop_back($cache_key2);
+            }
+        }
+
+        $data[] = $ssdb->qslice($cache_key2, 0, -1);
+
+        return $data;
+    }
+
+}   //end class

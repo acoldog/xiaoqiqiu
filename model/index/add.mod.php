@@ -116,8 +116,11 @@
 		//	提交评论
 		public function submit_comment($aid, $pid, $bid, $content , $user, $link , $sort, $sort_id)
 		{
+<<<<<<< HEAD
 			$this->initDB();
 
+=======
+>>>>>>> b1bf9e6ffa014eea1f219c17c21dce737d69401a
 			$time = time();
 			$ip = get_client_ip();
 			$table = 'ab_comment_new';
@@ -164,8 +167,11 @@
 		//	拉黑评论
 		public function black_comment($cid , $action)
 		{
+<<<<<<< HEAD
 			$this->initDB();
 			
+=======
+>>>>>>> b1bf9e6ffa014eea1f219c17c21dce737d69401a
 			if(empty($cid) || !is_numeric($cid))return false;
 			$table = 'ab_comment_new';
 			$where_arr = array('id'=>$cid);

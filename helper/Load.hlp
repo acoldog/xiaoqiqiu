@@ -11,7 +11,7 @@
 		}
 		public function tpl($filename , $data , $cache_file=FALSE)
 		{
-			global $global;
+			global $global, $config;
 			$file = explode('.',$filename);
 			$file = $file['0'];				//去除文件名后缀
 			//	如果filename中带路径
@@ -56,7 +56,7 @@
 			$info = ob_get_contents();
 			//	解析模板里的PHP
 			$info = $this->parse_tpl($data , $info);
-			
+
 			$now = date('Ymd' , time());
 			$fp = fopen(ROOT .'/cache/'.$now.'.cache.php', 'w+');	//生成处理后的暂时缓存文件，方便查错（通常报错会导致“暂时缓存文件”未被删除）
 			fwrite($fp , $info);
@@ -83,6 +83,7 @@
 			echo $info2;
 			// 输出成功后再删除“暂时缓存文件”，方便中间出错时可以在缓存文件看到出错时的代码
 			@unlink(ROOT .'/cache/'.$now.'.cache.php');
+			
 			//include_once(ROOT.'html/'.$file.'.tpl.html');
 		}
 		//控制器

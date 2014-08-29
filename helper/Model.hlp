@@ -7,10 +7,17 @@ abstract class Model{
 
 	public function __construct()
 	{
-		$this->db = new Db();
+		
 	}
 
 	public function __destruct(){
 		
 	}
+
+    public function initDB()
+    {
+        if( empty($db) ){
+            $this->db = new Db();
+        }
+    }
 }
