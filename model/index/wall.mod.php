@@ -6,6 +6,8 @@
 		}
 		//	取照片数据
 		public function getImgList($page , $rows , $user=''){
+			$this->initDB();
+
 			if($user == ''){
 				global $global;
 				$user = $global['user'];
@@ -22,6 +24,8 @@
 
 		//	删除指定图片及图片文件
 		public function delOneImg($pid){
+			$this->initDB();
+			
 			if(!is_numeric($pid)){
 				$back = array(
 					'status'=>'error',

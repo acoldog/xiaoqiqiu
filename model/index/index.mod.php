@@ -9,6 +9,8 @@ class Index_mod extends Model{
 	}
 	public function get_data($username , $page=0 , $content_num=8)
 	{
+		$this->initDB();
+
 		if(empty($this->data_nums_from_db)){
 			$this->data_nums_from_db = $this->db->nums('SELECT * FROM ab_diary WHERE username="'. $username .'"');
 		}
@@ -25,12 +27,15 @@ class Index_mod extends Model{
 	//	抓取指定内容的评论数
 	public function get_comment_num($id)
 	{
+		$this->initDB();
+
 		$sql = "SELECT * FROM ab_comment WHERE `sort`='say' AND `sort_id`='". $id ."'";
 		return $this->db->nums($sql);
 	}
 	//	抓取评论
 	public function get_comment($id , $page=1, $rows=2)
 	{
+		$this->initDB();
 		global $config;
 		/*$config['page']['sql'] = "SELECT * FROM ab_comment WHERE `sort`='say' AND `diary_id`='". $id ."' ORDER BY id DESC ";
 		$config['content']['article_url'] = WEB_ROOT . "/index/get_comment/";
@@ -94,6 +99,8 @@ class Index_mod extends Model{
 
 	//用楼ID取楼
 	private function getBuild($bid, $build_arr){
+		$this->initDB();
+
 		$sql = 'SELECT * FROM  `ab_comment_new` WHERE bid='. $bid .' ORDER BY id ASC ';
 		$res = $this->db->getAll($sql, 1);
 
@@ -103,70 +110,11 @@ class Index_mod extends Model{
 		return $build_arr;
 	}
 
-	//	提交评论
-	public function submit_comment($aid, $pid, $bid, $content , $user, $link , $sort, $sort_id)
-	{
-		$time = time();
-		$ip = get_client_ip();
-		$table = 'ab_comment_new';
-
-		//是否盖楼
-		if( $pid == 0 ){
-			$bid = time();
-		}else{
-			//判断是不是从楼中间回复（是不是已经是别的楼的pid），是的话要盖出另一层楼
-			$sql = 'SELECT id FROM  `ab_comment_new` WHERE pid='. $pid;
-			$res = $this->db->getOne($sql, 1);
-			if( !empty($res) ){
-				$bid = time();
-			}
-
-			//判断父楼是不是顶楼，是的话也要另盖
-			$sql = 'SELECT pid FROM  `ab_comment_new` WHERE id='. $pid;
-			$res = $this->db->getOne($sql, 1);
-			if( !empty($res) && intval($res['pid'] === 0) ){
-				$bid = time();
-			}
-		}
-
-		$data_arr = array(
-			'comment'		=>$content, 
-			'comment_user'	=>$user, 
-			'link' 			=>$link,
-			'pid' 			=>$pid,
-			'bid' 			=>$bid,
-			'diary_id'		=>$aid, 
-			'sort'			=>$sort, 
-			'sort_id'		=>$sort_id,
-			'time'			=>date('Y-m-d H:i:s' , $time),
-			'ip'			=>$ip
-		);
-		if(!empty($aid) && $aid > 0){
-			$result = $this->db->insert($data_arr , $table);
-			return array(
-				'res'	=>$result,
-				'cid'	=>mysql_insert_id()
-			);
-		}
-	}
-	//	拉黑评论
-	public function black_comment($cid , $action){
-		if(empty($cid) || !is_numeric($cid))return false;
-		$table = 'ab_comment';
-		$where_arr = array('id'=>$cid);
-		if($action == 'black'){
-			$data_arr = array('state'=>0);
-		}else{
-			$data_arr = array('state'=>1);
-		}
-		$result = $this->db->update($data_arr , $where_arr , $table);
-		return array(
-				'res'	=>$result,
-				'cid'	=>$cid
-			);
-	}
+	
 	//	取用户资料
 	public function get_userInfo($user){
+		$this->initDB();
+
 		if(empty($user))return array();
 		$sql = "SELECT * FROM ab_user WHERE `username`='". $user ."' LIMIT 1";
 		return $this->db->getOne($sql);
@@ -174,6 +122,8 @@ class Index_mod extends Model{
 
 	//取幻灯片图片
 	public function getMarqueePhotos($user){
+		$this->initDB();
+		
 		if(empty($user))return array();
 		$sql = "SELECT diary_id , src FROM ab_photo WHERE `username`='". $user ."' GROUP BY diary_id ORDER BY id DESC LIMIT 6";
 		$res = $this->db->getAll($sql, 1);

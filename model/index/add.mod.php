@@ -6,6 +6,8 @@
 		}
 		public function save_data($data)
 		{
+			$this->initDB();
+
 			$time = time();
 			$ip = get_client_ip();
 			
@@ -26,6 +28,8 @@
 		}
 		//	保存文章
 		public function SaveArticle($content , $aid){
+			$this->initDB();
+
 			$time = time();
 			$ip = get_client_ip();
 			$table = 'ab_diary';
@@ -65,7 +69,7 @@
 					$desc = $op['desc'];
 				}
 
-				
+				$this->initDB();
 				foreach ($photoData as $key => $value) {
 					//判断图片格式
 					if( !preg_match('/[\.jpg|\.gif|\.png|\.bmp]/' , $value) ){
@@ -82,15 +86,18 @@
 
 		//	删除文章
 		public function DelArticle($aid){
+			$this->initDB();
 			$where = array('id'=>$aid);
 			return $result = $this->db->del($where , 'ab_diary');
 		}
 		//	取指定文章内容
 		public function GetArticle($aid){
+			$this->initDB();
 			return $this->db->getOne('SELECT content FROM `ab_diary` WHERE id='. intval($aid));
 		}
 		// 编辑公告
 		public function editNotice($notice, $user){
+			$this->initDB();
 			$where_arr = array('username'=>$user);
 			$data_arr  = array('notice'=>$notice);
 
@@ -104,6 +111,74 @@
 				$res = false;
 			}
 			return $res;
+		}
+
+		//	提交评论
+		public function submit_comment($aid, $pid, $bid, $content , $user, $link , $sort, $sort_id)
+		{
+			$this->initDB();
+
+			$time = time();
+			$ip = get_client_ip();
+			$table = 'ab_comment_new';
+
+			//是否盖楼
+			if( $pid == 0 ){
+				$bid = time();
+			}else{
+				//判断是不是从楼中间回复（是不是已经是别的楼的pid），是的话要盖出另一层楼
+				$sql = 'SELECT id FROM  `ab_comment_new` WHERE pid='. $pid;
+				$res = $this->db->getOne($sql, 1);
+				if( !empty($res) ){
+					$bid = time();
+				}
+
+				//判断父楼是不是顶楼，是的话也要另盖
+				$sql = 'SELECT pid FROM  `ab_comment_new` WHERE id='. $pid;
+				$res = $this->db->getOne($sql, 1);
+				if( !empty($res) && intval($res['pid'] === 0) ){
+					$bid = time();
+				}
+			}
+
+			$data_arr = array(
+				'comment'		=>$content, 
+				'comment_user'	=>$user, 
+				'link' 			=>$link,
+				'pid' 			=>$pid,
+				'bid' 			=>$bid,
+				'diary_id'		=>$aid, 
+				'sort'			=>$sort, 
+				'sort_id'		=>$sort_id,
+				'time'			=>date('Y-m-d H:i:s' , $time),
+				'ip'			=>$ip
+			);
+			if(!empty($aid) && $aid > 0){
+				$result = $this->db->insert($data_arr , $table);
+				return array(
+					'res'	=>$result,
+					'cid'	=>mysql_insert_id()
+				);
+			}
+		}
+		//	拉黑评论
+		public function black_comment($cid , $action)
+		{
+			$this->initDB();
+			
+			if(empty($cid) || !is_numeric($cid))return false;
+			$table = 'ab_comment_new';
+			$where_arr = array('id'=>$cid);
+			if($action == 'black'){
+				$data_arr = array('state'=>0);
+			}else{
+				$data_arr = array('state'=>1);
+			}
+			$result = $this->db->update($data_arr , $where_arr , $table);
+			return array(
+					'res'	=>$result,
+					'cid'	=>$cid
+				);
 		}
 
 	}

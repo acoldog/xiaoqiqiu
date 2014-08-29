@@ -72,8 +72,8 @@
 	*/
 	if($_GET['action'] == 'insert_comment')
 	{
-		include_once '../../model/index/index.mod.php';
-		$mod = new Index_mod();
+		include_once '../../model/index/add.mod.php';
+		$mod = new Add_mod();
 
 		$aid	 	= intval($_GET['aid']);
 		$pid	 	= intval($_GET['pid']);
@@ -121,8 +121,8 @@
 		checkUser();
 		if($global['is_mine'] != 1)exit('error user');
 
-		include_once '../../model/index/index.mod.php';
-		$mod = new Index_mod();
+		include_once '../../model/index/add.mod.php';
+		$mod = new Add_mod();
 
 		$cid	 	= $_GET['cid'];
 		$action	 	= $_GET['act'];
