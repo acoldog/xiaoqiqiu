@@ -90,7 +90,7 @@ var $_BsIndex = {
 		content_html.push('<div class="acticle-content">'+ data.content +'</div>');
 		content_html.push('<div class="comment_div">');
 		content_html.push('	<span class="comment_div">');
-		content_html.push('		<span class="author"> '+ NICK_NAME +' 于 '+ data.time +' 发表</span>');
+		content_html.push('		<span class="author"><a href="http://xiaoqiqiu.com/'+ data.username +'/diary/'+ data.id +'" target="_blank"> '+ NICK_NAME +' 于 '+ data.time +' 发表</a></span>');
 		content_html.push('		<span class="comment"><a href="javascript:;" alt="'+ data.id +'">我有想法('+ data.cmt_num +')</a></span>');
 		content_html.push('	</span>');
 		content_html.push('</div></div>');

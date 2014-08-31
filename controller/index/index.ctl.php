@@ -39,6 +39,7 @@ class Index_ctl extends Controller{
 				$val['content'] = preg_replace('/<img (.*?)src="(.*?)(\.jpg|\.gif|\.png){1}"([^>]*)>/is', "<img $1 src=\"". STATIC_ROOT ."default.jpg\" $4 data=\"$2$3\"  lazyload=\"1\" />", $val['content']);
 				$val['content'] = str_replace("\\\'", "\\'", $val['content']);
 				$val['time'] = date('Y-m-d H:i:s' , $val['time']);
+				$val['url'] = WEB_ROOT . $val['username'] .'/diary/'. $val['id'];
 			}
 		}else{
 			$data['db'] = array();

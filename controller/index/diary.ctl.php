@@ -17,10 +17,11 @@ class Diary_ctl extends Controller{
         $data['is_mine'] = $global['is_mine'];
         $diary_id = $_GET[1];
 
-        $article = $this->mod->getArticle($diary_id);//var_dump($article);exit;
+        $article = $this->mod->getArticle($diary_id, $data['user']);//var_dump($article);exit;
         $data['username'] = $article['username'];
         $data['time'] = date('Y-m-d H:i:s', $article['time']);
         $data['article'] = $article['content'];
+        $data['pre_aid'] = $article['id'] < 2 ? $article['id'] : ($article['id'] - 1);
         unset($article);
         
         Visit::setVisitData($data['user']);

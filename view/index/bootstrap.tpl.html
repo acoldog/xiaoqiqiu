@@ -29,15 +29,11 @@
 
   </head>
   <body>
-  	<div id="visNums" style="position:fixed;top:0px;right:75px;_position:absolute;_right:6%;">
-  		<p>
-  			<em style="font-size:20px;">{echo $data["visNums"];}</em>次访问
-  		</p>
-  	</div>
-
   	<div id="loading_bar" class="progress active progress-striped progress-success hide">
 		<div class="progress-bar" style="width: 10%;">加载中</div>
 	</div>
+
+	<div class="floater" style="right:70px;">访客：<em>{echo $data['visNums'];}</em></div>
 
     <div id="container" class="container">
 		<div class="row">
@@ -88,7 +84,7 @@
 							{$content}
 						</div>
 						<div class="comment_div">
-							<span class="author"> {echo $data['nickname'];} 于 {$time} 发表</span>
+							<span class="author"><a href="{$url}" target="_blank"> {echo $data['nickname'];} 于 {$time} 发表</a></span>
 							<span class="comment"><a href="#" alt="{$id}">我有想法({$cmt_num})</a></span>
 						</div>
 					</div>
@@ -190,18 +186,11 @@
 					{echo $data['userInfo']['xiami'];}
 				{/if}
 				
-				<div id="visitors" class="menu radius">
-					<h4>最近访客</h4>
-					<div class="slide_item">
-				  		<ul>
-				  			{loop $visitors}
-					  		<li>
-					  			{$visitors}
-					  		</li>
-				  			{/loop}
-				  		</ul>
-			  		</div>
-			  	</div>
+				<div class="circle radius">
+				{php foreach($data['visitors'] as $val){;}
+					<p>{echo $val;}</p>
+				{php };}
+				</div>
 
 			</div>
 		</div>

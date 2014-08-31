@@ -94,9 +94,9 @@
 			var op = {
 				page_container : $('#acolScrollPage'),
 				content_container : $('#container'),
-				per_page_screen : 5,
+				per_page_screen : 50,
 				scroll_delay : 0,
-				scroll_height : 200,
+				scroll_height : 400,
 				auto_show_page_list : true,
 				now_page : 1
 			};
@@ -131,7 +131,12 @@
 					if(back){
 						if(back.status == 'success'){
 							$('#container').find('div[pid='+ pid +']').remove();
-							SpaceUI.alert('删除成功');
+							SpaceUI.alert({
+						  		title:'哈哈哈哈哈',
+						  		timeout : 2
+						 	})
+						 	$('#container').masonry('destroy');
+	    					SquareOfSpace.videoList.masonrySet();
 						}else{
 							SpaceUI.alert(back.msg);
 						}

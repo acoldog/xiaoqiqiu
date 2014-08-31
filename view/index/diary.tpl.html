@@ -6,7 +6,7 @@
 		<title><?=$data['user']?>的文章</title>
 		<meta name="Keywords" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
 		<meta name="Description" content="小气球，维尼的小气球，acol的小气球，简单交互是我的追求" />
-		<link rel="shortcut icon" href="../view/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../../view/favicon.ico" type="image/x-icon" />
 		<link href="css/global.css" type="text/css" rel="stylesheet"/>
 		<link href="css/reset.css" type="text/css" rel="stylesheet"/>
 		<link href="css/main.css" type="text/css" rel="stylesheet"/>
@@ -31,7 +31,7 @@
 		<div class="row">
 			<div class="col-md-12">
 
-				<div id="top_menu" class="navbar navbar-inverse" role="navigation">
+				<div id="top_menu" class="navbar navbar-inverse" role="navigation" style="z-index:9999999">
 			        <div class="navbar-header">
 			          <a class="navbar-brand" href="<?=WEB_ROOT . $global['user']?>">Home</a>
 			        </div>
@@ -55,7 +55,9 @@
 
 		<div id="container" class="container radius" style="background:rgb(247, 247, 247)">
 			{echo $data['article'];}
-			<div class="author"> {echo $data['username'];} 于 {echo $data['time'];} 发表</div>
+			<hr />
+			<h4 class="author" style="float:right;"> {echo $data['username'];} 于 {echo $data['time'];} 发表</h4>
+			<h4 style="float:left;"><a href="<?=WEB_ROOT . $global['user'] .'/diary/'. $data['pre_aid']?>">上一篇</a></h4>
 		</div>
 		
 
